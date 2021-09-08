@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-
+// You need to find Max Depth or height of the Tree.
 public class MaxDepthTree {
     public static class TreeNode {
         int val;
@@ -18,8 +18,8 @@ public class MaxDepthTree {
 
     // One Approach is to use Level Order (BFS) to find max depth, S-> O(n)
 
-    //recursive auxiliary space T->O(n)
-    public int maxDepth(TreeNode root) {
+    //recursive auxiliary space T->O(n), where n is number of nodes in a Tree
+    public int maxDepth(TreeNode root){
         if(root == null)
             return 0;
 
