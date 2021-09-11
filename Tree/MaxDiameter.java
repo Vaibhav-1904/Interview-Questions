@@ -30,18 +30,18 @@ public class MaxDiameter {
 
     // Optimal T->O(n)
     public int diameterOfBinaryTree(Node root) {
-        int[] diameter = new int[1];
-        maxHeight(root, diameter);
-        return diameter[0];
+        int[] maxDiameter = new int[1];
+        maxHeight(root, maxDiameter);
+        return maxDiameter[0];
     }
 
-    int maxHeight(Node root, int[] diameter){
+    int maxHeight(Node root, int[] maxDiameter){
         if(root == null)
             return 0;
 
-        int left = maxHeight(root.left, diameter);
-        int right = maxHeight(root.right, diameter);
-        diameter[0] = Math.max(diameter[0], left + right);
+        int left = maxHeight(root.left, maxDiameter);
+        int right = maxHeight(root.right, maxDiameter);
+        maxDiameter[0] = Math.max(maxDiameter[0], left + right);
 
         return 1+Math.max(left,right);
     }
