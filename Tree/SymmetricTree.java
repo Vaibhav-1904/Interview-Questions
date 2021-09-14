@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.Node;
 // https://leetcode.com/problems/symmetric-tree/submissions/
 // Is Tree Symmetric or not, mirror Images by taking root of tree as center should be same.
 public class SymmetricTree {

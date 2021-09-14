@@ -1,6 +1,6 @@
 package ImportantQ.Tree;
 
-public class TreeNode {
+public class Node {
     public static class Node{
         int data;
         Node left;

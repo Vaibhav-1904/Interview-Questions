@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.Node;
 
 // https://leetcode.com/problems/same-tree/
 public class SameTree {

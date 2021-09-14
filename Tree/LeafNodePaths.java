@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.Node;
 import java.util.*;
 // https://leetcode.com/problems/binary-tree-paths/submissions/
 // return all the Leaf node paths in form of String in a List of String.

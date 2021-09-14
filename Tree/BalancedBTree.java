@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.Node;
 // a binary tree in which the left and right subtrees of every node differ in height by no more than 1.
 // https://leetcode.com/problems/balanced-binary-tree/
 public class BalancedBTree {
