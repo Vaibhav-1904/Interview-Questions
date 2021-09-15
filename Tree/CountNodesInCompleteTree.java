@@ -1,6 +1,6 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.Node.Node;
-import java.util.*;
+import ImportantQ.Tree.TreeNode.Node;
+
 // https://leetcode.com/problems/count-complete-tree-nodes/submissions/
 // Complete Tree - every level, except possibly the last, is completely filled in a complete binary tree,
 // and all nodes in the last level are as far left as possible.

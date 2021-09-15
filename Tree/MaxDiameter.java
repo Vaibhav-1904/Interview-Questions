@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.Node.Node;
+import ImportantQ.Tree.TreeNode.Node;
 // https://leetcode.com/problems/diameter-of-binary-tree/submissions/
 
 public class MaxDiameter {

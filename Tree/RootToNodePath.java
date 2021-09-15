@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.Node.Node;
+import ImportantQ.Tree.TreeNode.Node;
 import java.util.ArrayList;
 // https://www.geeksforgeeks.org/print-path-root-given-node-binary-tree/
 

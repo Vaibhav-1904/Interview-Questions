@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.Node.Node;
+import ImportantQ.Tree.TreeNode.Node;
 import java.util.*;
 // width is number of nodes between 2 nodes at same level
 // return maximum number of nodes in a Level

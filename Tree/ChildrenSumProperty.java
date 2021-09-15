@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.Node.Node;
+import ImportantQ.Tree.TreeNode.Node;
 // https://www.geeksforgeeks.org/check-for-children-sum-property-in-a-binary-tree/
 
 public class ChildrenSumProperty {

@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.Node.Node;
+import ImportantQ.Tree.TreeNode.Node;
 import java.util.*;
 // https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/submissions/
 // Construct a Binary Tree from PreOrder and InOrder traversals

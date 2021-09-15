@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.Node.Node;
+import ImportantQ.Tree.TreeNode.Node;
 import java.util.*;
 // You have been given a binary tree of 'N' unique nodes and a Start node from where the tree will start to burn.
 // Given that the Start node will always exist in the tree, your task is to print the time (in minutes)

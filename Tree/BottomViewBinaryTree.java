@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.Node.Node;
+import ImportantQ.Tree.TreeNode.Node;
 import java.util.*;
 // https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1
 

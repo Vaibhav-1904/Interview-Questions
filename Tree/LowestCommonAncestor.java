@@ -1,6 +1,6 @@
 package ImportantQ.Tree;
 
-import ImportantQ.Tree.Node.Node;
+import ImportantQ.Tree.TreeNode.Node;
 // https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 
 public class LowestCommonAncestor {

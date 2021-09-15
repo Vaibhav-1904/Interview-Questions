@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.Node.Node;
+import ImportantQ.Tree.TreeNode.Node;
 // https://leetcode.com/problems/binary-tree-maximum-path-sum/
 
 public class MaxPathSum {

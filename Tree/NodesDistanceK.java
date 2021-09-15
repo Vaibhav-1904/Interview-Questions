@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.Node.Node;
+import ImportantQ.Tree.TreeNode.Node;
 import java.util.*;
 // Given a Binary tree, a target node and distance k, you need to find all nodes at distance k from target Node
 // https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/

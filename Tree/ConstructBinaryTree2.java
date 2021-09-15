@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.Node.Node;
+import ImportantQ.Tree.TreeNode.Node;
 import java.util.*;
 // https://www.youtube.com/watch?v=LgLRTaEMRVc&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=36
 
@@ -27,7 +27,7 @@ public class ConstructBinaryTree2 {
 
         Node root = new Node(postOrder[postEnd]);
 
-        int rootPosition = map.get(postOrder[postEnd]);
+        int rootPosition = map.get(root.data);
         int leftNumbers = rootPosition - inStart;
 
         root.left = buildTree(postOrder, postStart, postStart + leftNumbers - 1, inOrder, inStart, rootPosition - 1, map);
