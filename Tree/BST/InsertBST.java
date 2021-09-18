@@ -1,5 +1,7 @@
 package ImportantQ.Tree.BST;
 import ImportantQ.Tree.TreeNode.Node;
+// https://leetcode.com/problems/insert-into-a-binary-search-tree/
+
 public class InsertBST {
 //    // Recursive
 //    public Node insertIntoBST(Node root, int val) {

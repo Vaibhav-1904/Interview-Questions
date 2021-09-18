@@ -1,5 +1,6 @@
 package ImportantQ.Tree.BST;
 import ImportantQ.Tree.TreeNode.Node;
+// https://leetcode.com/problems/delete-node-in-a-bst/
 
 public class DeleteNodeBST {
     public Node deleteNode(Node root, int key) {
@@ -15,7 +16,7 @@ public class DeleteNodeBST {
                     root.left = helper(root.left);
                     break;
                 }else{
-                    root = root.left;
+                    root = root.left;// when the given key is not present
                 }
             }else{
                 if(root.right != null && root.right.data == key){
