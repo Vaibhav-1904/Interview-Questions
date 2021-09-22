@@ -19,9 +19,8 @@ public class BuySellStock {
         //Optimal Approach
         int min = prices[0];
         int profit = 0;
-        int i = 0;
 
-        for(i=0;i<prices.length;i++){
+        for(int i = 0; i < prices.length; i++){
             if(min < prices[i]){
                 if((prices[i] - min) > profit)
                     profit = prices[i] - min;

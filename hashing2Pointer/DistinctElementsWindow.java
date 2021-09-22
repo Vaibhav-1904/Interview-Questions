@@ -37,7 +37,7 @@ public class DistinctElementsWindow {
             map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
 
         result.add(map.size());
-        for(int i = k; i < arr.length; i++){
+        for(int i = k; i < n; i++){
 
             if(map.get(arr[i - k]) == 1)
                 map.remove(arr[i - k]);

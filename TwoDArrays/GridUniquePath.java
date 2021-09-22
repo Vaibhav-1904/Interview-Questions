@@ -2,14 +2,14 @@ package ImportantQ.TwoDArrays;
 
 import java.util.Arrays;
 
-//A robot is located at the top-left corner of  m x n grid (marked 'Start' in the diagram below).
+//A robot is located in the top-left corner of  m x n grid (marked 'Start' in the diagram below).
 //
 //The robot can only move either down or right at any point in time. The robot is trying to reach the
 // bottom-right corner of the grid (marked 'Finish' in the diagram below).
 //
 //How many possible unique paths are there?
 public class GridUniquePath {
-    //BruteForce
+    //BruteForce -> recursive
     public static int countPaths1(int i, int j, int m, int n){
 
         if(i == m || j == n)
@@ -52,11 +52,10 @@ public class GridUniquePath {
         double ans = 1;
 
         for(int i = 1; i <= totalRights; i++){
-            ans = ans * (totalSteps + 1 - i) / i;
+            ans = ans * (totalSteps - totalRights + i) / i;
         }
         return (int)ans;
     }
-
 
     public static void main(String[] args) {
         int[][] a = new int[3][7];

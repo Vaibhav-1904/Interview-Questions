@@ -8,6 +8,7 @@ import java.util.Scanner;
 //The first integer of each row is greater than the last integer of the previous row.
 public class Search2DMatrix {
 
+    // Optimal Method T->O(n+m)
     public boolean searchMatrix(int[][] matrix, int target) {
 
         if(matrix.length == 0)
@@ -20,7 +21,7 @@ public class Search2DMatrix {
         int r = m*n - 1;
 
         while(l <= r){
-            int mid = (l+r)/2;
+            int mid = (l+r) >> 1;
 
             if(matrix[mid/m][mid%m] == target)
                 return true;
@@ -50,21 +51,18 @@ public class Search2DMatrix {
     }
 
     public static void main(String[] args){
-
         Scanner scan  = new Scanner(System.in);
 
         int[][] matrix = {{1,3,5,7},{10,11,16,20},{23,30,34,60}};
         boolean found = false;
         int target = 23;
 
+        // Better Method
         for (int[] i : matrix) {
             found = binary(i, 0, i.length - 1, target);
             if(found)
                 break;
         }
-
         System.out.println("Target Number is found " + found);
-
     }
-
 }

@@ -47,14 +47,14 @@ public class KadaneAlgorithm {
         int max_so_far = arr[0];
         int max_ending_here = 0;
 
-        for(int i = 0; i < arr.length; i++){
-            max_ending_here += arr[i];
+        for (int i : arr) {
+            max_ending_here += i;
 
-            if(max_so_far < max_ending_here){
+            if (max_so_far < max_ending_here) {
                 max_so_far = max_ending_here;
             }
 
-            if(max_ending_here < 0){
+            if (max_ending_here < 0) {
                 max_ending_here = 0;
             }
         }

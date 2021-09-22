@@ -13,7 +13,7 @@ public class MergeSortedArrays {
 //        int p2 = 0;
 //        int i = 0;
 //
-//        while(p1<n && p2<m){
+//        while(p1 < n && p2 < m){
 //            if(arr1[p1] <= arr2[p2]){
 //                temp[i] = arr1[p1];
 //            }else{
@@ -64,30 +64,31 @@ public class MergeSortedArrays {
 
 
     public static int nextGap(int gap){
-        if(gap == 1){
+        if(gap <= 1){
             return 0;
         }
         else {
-            return gap/2 + gap%2;
+            return gap/2 + gap % 2;
         }
     }
     public static void main(String[] args){
 
-        int[] arr1 = {10 ,27 ,38 ,43,82};
-        int[] arr2 = {2,3,8,9,50,100};
+        int[] arr1 = {10 ,27 ,38 , 43, 82};
+        int[] arr2 = {2, 3, 8, 9, 50, 100};
 
-        //Optimal method
+        //Optimal method  T->O(n + m)
         int gap = arr1.length + arr2.length;
         for(gap = nextGap(gap); gap > 0; gap = nextGap(gap)){
 
             int i;
             int j;
             //Comparing elements in First array
-            for(i = 0; i+gap < arr1.length;i++){
-                if(arr1[i] > arr1[i+gap]){
+            for(i = 0; i + gap < arr1.length; i++){
+
+                if(arr1[i] > arr1[i + gap]){
                     int temp = arr1[i];
-                    arr1[i] = arr1[i+gap];
-                    arr1[gap+i] = temp;
+                    arr1[i] = arr1[i + gap];
+                    arr1[gap + i] = temp;
                 }
             }
 

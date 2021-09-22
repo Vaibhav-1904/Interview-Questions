@@ -2,7 +2,9 @@ package ImportantQ.TwoDArrays;
 //You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise)
 public class RotateMatrix {
 
+    // Optimal Method, T-> O(n^2)
     static void rotateMatrix(int[][] arr,int n){
+        // Transpose
         for(int i = 0; i < n; i++){
             for(int j = i; j < n; j++){
                 int temp = arr[i][j];
@@ -10,7 +12,7 @@ public class RotateMatrix {
                 arr[j][i] = temp;
             }
         }
-
+        //Reverse Rows
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n/2; j++){
                 int temp = arr[i][j];
@@ -39,9 +41,7 @@ public class RotateMatrix {
 //            }
 //        }
 
-
         rotateMatrix(matrix,n);
-
         for (int[] ints : matrix) {
             for (int j = 0; j < n; j++) {
                 System.out.print(ints[j] + " ");

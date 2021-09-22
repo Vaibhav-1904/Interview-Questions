@@ -8,7 +8,7 @@ public class MergeOverlappingIntervals {
 
     public int[][] merge(int[][] intervals) {
 
-        Arrays.sort(intervals,(a,b) -> a[0]-b[0]);
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]); // Sorting based on initial interval value
 //        Arrays.sort(intervals,new Comparator<Interval>(){
 //            public int compare(Interval i1,Interval i2)
 //            {
@@ -17,29 +17,24 @@ public class MergeOverlappingIntervals {
 //        });
 
         List<int[]> arr = new ArrayList<>();
-
-        if(intervals.length == 0 || intervals == null){
+        if(intervals.length == 0){
             return arr.toArray(new int[0][]);
         }
 
         int start = intervals[0][0];
         int end = intervals[0][1];
+        for(int[] current:intervals){
 
-        for(int[] i:intervals){
-            if(i[0] <= end){
-                end = Math.max(end,i[1]);
+            if(current[0] <= end){
+                end = Math.max(end,current[1]);
             }
             else{
                 arr.add(new int[]{start,end});
-                start = i[0];
-                end = i[1];
+                start = current[0];
+                end = current[1];
             }
         }
-
         arr.add(new int[]{start,end});
-
         return arr.toArray(new int[0][]);
-
     }
-
 }
