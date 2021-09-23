@@ -41,7 +41,7 @@ public class DAG {
         distance[src] = 0; // distance from source -> source is 0
         while(!stack.isEmpty()){
             int current = stack.pop();
-            // If current has not been reached previously,
+            // If current has been reached previously,
             if(distance[current] != Integer.MAX_VALUE){ // So that it always starts from source node
                 for(Pair p : graph.get(current)){
                     if(p.getWeight() + distance[current] < distance[p.getVertex()]){
