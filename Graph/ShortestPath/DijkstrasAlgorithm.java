@@ -1,8 +1,8 @@
 package ImportantQ.Graph.ShortestPath;
 import java.util.*;
-
 // Shortest Path in UnDirected weighted Graph
 // It helps us find the shortest path between source and every other vertex.
+// It will not work if there are -ve weights in Graph
 public class DijkstrasAlgorithm {
     static class Node{
         int vertex, weight;
