@@ -3,6 +3,9 @@ import java.util.*;
 // Shortest Path in UnDirected weighted Graph
 // It helps us find the shortest path between source and every other vertex.
 // It will not work if there are -ve weights in Graph
+
+// DFS is not used to find the shortest distance in graph, but is used in Trees instead coz we have unique paths
+// between nodes in Trees, but we can have exponential number of unique paths between 2 nodes in a graph.
 public class DijkstrasAlgorithm {
     static class Node{
         int vertex, weight;

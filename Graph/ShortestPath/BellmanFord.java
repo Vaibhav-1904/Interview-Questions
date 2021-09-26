@@ -3,6 +3,9 @@ import java.util.ArrayList;
 // https://www.youtube.com/watch?v=75yC1vbS8S8&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=28
 // It helps us find the shortest path from any given source node to all other nodes in the graph
 // Dijkstra's Algorithm does not work for -ve edges of a graph.
+
+// DFS is not used to find the shortest distance in graph, but is used in Trees instead coz we have unique paths
+// between nodes in Trees, but we can have exponential number of unique paths between 2 nodes in a graph.
 public class BellmanFord {
     static class Node{
         int u,v;

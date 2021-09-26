@@ -1,6 +1,6 @@
 package ImportantQ.Graph;
 // https://leetcode.com/problems/word-search/submissions/
-public class WordBoggle {
+public class WordSearch {
     // T = O(N^2 + len(word)) auxiliary S = O(len(word))
     public boolean exist(char[][] board, String word) {
 
