@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class MinimumPlatform {
 
     //Optimal
-    static int findPlatform(int arr[], int dep[], int n)
+    static int findPlatform(int[] arr, int[] dep, int n)
     {
         Arrays.sort(arr);
         Arrays.sort(dep);
