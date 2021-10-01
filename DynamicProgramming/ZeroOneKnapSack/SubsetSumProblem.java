@@ -21,7 +21,12 @@ public class SubsetSumProblem {
 //    // Memoization DP T -> O(N*sum)
 //    static Boolean isSubsetSum(int N, int[] arr, int sum){
 //        Boolean[][] dp = new Boolean[N + 1][sum + 1];
-//
+//        for(int i = 0; i <= n; i++){
+//           dp[i][0] = true;
+//        }
+//        for(int i = 1; i <= sum; i++){
+//            dp[0][i] = false;
+//        }
 //        return memo(N, arr, sum, dp);
 //    }
 //

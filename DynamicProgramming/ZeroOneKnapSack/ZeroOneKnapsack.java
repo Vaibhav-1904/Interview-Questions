@@ -61,14 +61,13 @@ public class ZeroOneKnapsack {
                 if(i == 0 || w == 0)
                     dp[i][w] = 0;
                 else if(weight[i - 1] <= w){ // You have 2 options, either to include or not include
-                    dp[i][w] = Math.max(values[i - 1] + dp[i - 1][w - weight[i - 1]], dp[i - 1][w]);
+                    dp[i][w] = Math.max(values[i - 1] + dp[i - 1][w - weight[i - 1]], dp[i - 1][w]); //(i - 1) stands for not include
                     // we need to subtract weight[i-1] coz already include weight + current weight[i-1] might cross w ( w < )
                 }else
                     dp[i][w] = dp[i - 1][w];
 
             }
         }
-
         return dp[n][W];
     }
 

@@ -1,7 +1,7 @@
 package ImportantQ.DynamicProgramming.ZeroOneKnapSack;
-
 import java.util.ArrayList;
-
+// Given an array arr, you need to divide array into 2 subsets such that difference of
+// sum of 2 subsets should be minimum. -> Minimize(sum1-sum2)
 // https://www.youtube.com/watch?v=-GtpxG6l_Mc&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=10
 public class MinSumPartition {
     // T-> O(2^n)
