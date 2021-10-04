@@ -1,6 +1,6 @@
 package ImportantQ.DynamicProgramming.UnBoundedKnapSack;
 // https://leetcode.com/problems/coin-change/
-// Find minimum number of coins needed to complete the amount
+// Find minimum number of coins needed to complete the amount should be completely completed.
 public class CoinChange {
 
 //    // Recursive Approach
