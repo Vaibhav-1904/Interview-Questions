@@ -49,15 +49,14 @@ public class MergeSortedArrays {
 //                long temp = arr1[i];
 //                arr1[i] = arr2[j];
 //                arr2[j] = temp;
-//
-//                for(j = 1; j < arr2.length; j++){
-//                    if(arr2[j] < arr2[j-1]){
+//                // After swapping, the arr2 might not be in sorted form, so we sort it using Insertion sort
+//                for(j = 1; j < arr2.length; j++) { // Insertion Sort
+//                    if(arr2[j] < arr2[j - 1]){
 //                        temp = arr2[j];
-//                        arr2[j] = arr2[j-1];
-//                        arr2[j-1] = temp;
+//                        arr2[j] = arr2[j - 1];
+//                        arr2[j - 1] = temp;
 //                    }
 //                }
-//                j=0;
 //            }
 //        }
 //    }
@@ -71,11 +70,8 @@ public class MergeSortedArrays {
             return gap/2 + gap % 2;
         }
     }
-    public static void main(String[] args){
 
-        int[] arr1 = {10 ,27 ,38 , 43, 82};
-        int[] arr2 = {2, 3, 8, 9, 50, 100};
-
+    public void mergeSortedArrays(int[] arr1, int[] arr2){
         //Optimal method  T->O(n + m)
         int gap = arr1.length + arr2.length;
         for(gap = nextGap(gap); gap > 0; gap = nextGap(gap)){
@@ -93,7 +89,7 @@ public class MergeSortedArrays {
             }
 
             //Comparing elements in both arrays
-            for(j = 0; j < arr2.length && i < arr1.length;j++){
+            for(j = 0; j < arr2.length && i < arr1.length; j++){
                 if(arr1[i] > arr2[j]){
                     int temp = arr1[i];
                     arr1[i] = arr2[j];
@@ -112,6 +108,14 @@ public class MergeSortedArrays {
                 j++;
             }
         }
+    }
+
+    public static void main(String[] args){
+
+        int[] arr1 = {10 ,27 ,38 , 43, 82};
+        int[] arr2 = {2, 3, 8, 9, 50, 100};
+
+
 
         for(long e:arr1){
             System.out.print(e + " ");

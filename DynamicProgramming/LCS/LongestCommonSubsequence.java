@@ -60,7 +60,7 @@ public class LongestCommonSubsequence {
         int i = l1;
         int j = l2;
         while(i > 0 && j > 0){
-            if(dp[i - 1][j] == dp[i][j - 1]){
+            if(s1.charAt(i - 1) == s2.charAt(j - 1)){
                 System.out.print(s1.charAt(i - 1));
                 i--;
                 j--;

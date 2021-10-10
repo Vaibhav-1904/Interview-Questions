@@ -4,7 +4,6 @@ import java.util.*;
 public class UnDirectedDFS {
     // T = O(N + E)  ,   S = O(N + N)
     public boolean isCycle(int V, ArrayList<ArrayList<Integer>> graph) {
-        // Code here
 
         boolean[] visited = new boolean[V + 1];
         // 1- Based Indexing

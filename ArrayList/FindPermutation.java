@@ -4,7 +4,7 @@ import java.util.Stack;
 // Given a positive integer n and a string s consisting only of letters D or I,
 // you have to find any permutation of first n positive integer that satisfy the given input string.
 //
-//D means the next number is smaller, while I mean the next number is greater.
+// D means the next number is smaller, while I mean the next number is greater.
 // Length of given string s will always equal to n - 1
 
 // Eg Input 1:
@@ -14,6 +14,7 @@ import java.util.Stack;
 //s = ID
 //
 //Return: [1, 3, 2]
+//https://www.interviewbit.com/problems/find-permutation/
 
 public class FindPermutation {
 //     Better Solution t -> O(N + N), S->O(N)

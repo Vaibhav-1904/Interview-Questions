@@ -1,9 +1,7 @@
 package ImportantQ.ArrayList;
 // Given an array of positive integers of size n. Find the maximum sum of triplet( ai + aj + ak ) such that
 // 0 <= i < j < k < n and ai < aj < ak.
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.TreeSet;
+import java.util.*;
 
 public class MaxSumTriplet {
     // Brute Approach is to Run 3 for loops and calculate each Triplet Sum.

@@ -4,20 +4,20 @@ import java.util.List;
 
 public class MaxDistance {
 //    // Naive Approach -> O(n^2)
-//    public int maximumGap(final List<Integer> A) {
+//    public int maximumGap( List<Integer> A) {
 //        int n = A.size();
 //        int ans = 0;
 //        for(int i = 0; i < n - 1; i++){
-//            for(int j = i+1; j < n; j++){
+//            for(int j = i + 1; j < n; j++){
 //                if(A.get(i) <= A.get(j)){
-//                    ans = Math.max(ans, j- i);
+//                    ans = Math.max(ans, j - i);
 //                }
 //            }
 //        }
 //        return ans;
 //    }
 
-    // Optimal Approach
+    // Optimal Approach T->O(n) S -> O(n)
     public int maximumGap(final List<Integer> A) {
         int n = A.size();
         int[] rightMax = new int[n];

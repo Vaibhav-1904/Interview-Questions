@@ -5,7 +5,7 @@ import java.util.*;
 // and nums[i] + nums[j] + nums[k] == 0.
 public class ThreeSum {
 
-    // Bruter Force
+    // Naive Approach T-> O(n^2)   S->O(n)
 //    public List<List<Integer>> threeSum(int[] arr) {
 //
 //        List<List<Integer>> ans = new ArrayList<>();
@@ -29,10 +29,9 @@ public class ThreeSum {
 //        return ans;
 //    }
 
-    // Optimal
+    // Optimal    S->O(1)
     public List<List<Integer>> threeSum(int[] nums) {
         int n = nums.length;
-
         Arrays.sort(nums);
         List<List<Integer>> ans = new ArrayList<>();
         int sum = 0;
@@ -62,7 +61,6 @@ public class ThreeSum {
                 }
             }
         }
-
         return ans;
     }
 

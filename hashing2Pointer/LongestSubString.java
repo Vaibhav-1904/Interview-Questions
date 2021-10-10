@@ -1,10 +1,11 @@
 package ImportantQ.hashing2Pointer;
 import java.util.*;
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/
+// https://www.geeksforgeeks.org/length-of-the-longest-substring-without-repeating-characters/
 //Given a string s, find the length of the longest substring without repeating characters.
 public class LongestSubString {
 
     public static void main(String[] args){
-
 
         String s = "abcabcdbb";
         int n = s.length();
@@ -41,14 +42,11 @@ public class LongestSubString {
                     set.remove(s.charAt(left));
                     left++;
                 }
-                set.add(s.charAt(right));
-            }else{
-                set.add(s.charAt(right));
             }
-
-            count = right-left+1;
-            if(count>max)
-                max=count;
+            set.add(s.charAt(right));
+            count = right - left + 1;
+            if(count > max)
+                max = count;
         }
 
         System.out.println("Max is " + max);

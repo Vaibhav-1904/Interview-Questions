@@ -7,69 +7,19 @@ import java.util.*;
 // nums[a] + nums[b] + nums[c] + nums[d] == target
 public class FourSum {
 
-    //Optimal Approach
-    public List<List<Integer>> fourSum(int[] nums, int target) {
-
-        List<List<Integer>> ans = new ArrayList<>();
-        if(nums.length == 0 || nums == null){
-            return ans;
-        }
-
-        Arrays.sort(nums);
-        int n = nums.length;
-
-        for(int i = 0;i < n - 3; i++){
-            for(int j = i + 1; j < n - 2; j++){
-                int left = j + 1;
-                int right = n - 1;
-                int target2 = target - (nums[i] + nums[j]);
-                while(left < right){
-
-                    if(nums[left] + nums[right] < target2)
-                        left++;
-                    else if(nums[left] + nums[right] > target2)
-                        right--;
-                    else{
-                        List<Integer> quad = new ArrayList<>();
-                        quad.add(nums[i]); // First
-                        quad.add(nums[j]); // Second
-                        quad.add(nums[left]); // Third
-                        quad.add(nums[right]); //Fourth
-
-                        if(!ans.contains(quad))
-                            ans.add(quad);
-
-                        while(left < right && nums[left] == quad.get(2)) // To get rid of Duplicates in Array
-                            left++;
-
-                        while(left < right && nums[right] == quad.get(3)) // To get rid of Duplicates in Array
-                            right--;
-                    }
-                }
-                while(i < n - 1 && nums[i] == nums[i+1]) // To get rid of Duplicates in Array
-                    i++;
-
-                while(j < n - 1 && nums[j] == nums[j+1]) // To get rid of Duplicates in Array
-                    j++;
-            }
-        }
-        return ans;
-    }
-
-    public static void main(String[] args){
-
-        int[] arr ={-3,-2,-1,0,0,1,2,3};
-        int target = 0;
-
-        // Brute Force
+//    // Brute-Force T->O(nlogn + n^3)
+//    public static List<List<Integer>> fourSum(int[] arr, int target){
 //        List<List<Integer>> ans = new ArrayList<>();
+//        int n = arr.length;
+//        Arrays.sort(arr);
 //
-//        for(int i = 0; i < arr.length - 3; i++){
-//            for(int j = i+1; j < arr.length - 2; j++){
-//                int t = target - (arr[i]+arr[j]);
+//        for(int i = 0; i < n - 3; i++){
+//            for(int j = i + 1; j < n - 2; j++){
+//
+//                int t = target - (arr[i] + arr[j]);
 //                Map<Integer,Integer> m = new HashMap<>();
 //
-//                for(int k = j+1; k < arr.length; k++){
+//                for(int k = j + 1; k < n; k++){
 //                    if(m.containsKey(t - arr[k]) ){
 //                        List<Integer> a = new ArrayList<>();
 //                        a.add(arr[i]); // First element
@@ -86,6 +36,62 @@ public class FourSum {
 //                }
 //            }
 //        }
-//        System.out.println(ans);
+//        return ans;
+//    }
+
+    //Optimal Approach T-> O(nlogn + n^2)
+    public static List<List<Integer>> fourSum(int[] arr, int target) {
+
+        List<List<Integer>> ans = new ArrayList<>();
+        if(arr.length == 0)
+            return ans;
+
+        Arrays.sort(arr);
+        int n = arr.length;
+
+        for(int i = 0; i < n - 3; i++){
+            for(int j = i + 1; j < n - 2; j++){
+                int left = j + 1;
+                int right = n - 1;
+                int target2 = target - (arr[i] + arr[j]);
+                while(left < right){
+
+                    if(arr[left] + arr[right] < target2)
+                        left++;
+                    else if(arr[left] + arr[right] > target2)
+                        right--;
+                    else{
+                        List<Integer> quad = new ArrayList<>();
+                        quad.add(arr[i]); // First
+                        quad.add(arr[j]); // Second
+                        quad.add(arr[left]); // Third
+                        quad.add(arr[right]); //Fourth
+
+                        if(!ans.contains(quad))
+                            ans.add(quad);
+
+                        while(left < right && arr[left] == quad.get(2)) // To get rid of Duplicates in Array
+                            left++;
+
+                        while(left < right && arr[right] == quad.get(3)) // To get rid of Duplicates in Array
+                            right--;
+                    }
+                }
+                while(i < n - 1 && arr[i] == arr[i + 1]) // To get rid of Duplicates in Array
+                    i++;
+
+                while(j < n - 1 && arr[j] == arr[j + 1]) // To get rid of Duplicates in Array
+                    j++;
+            }
+        }
+        return ans;
+    }
+
+    public static void main(String[] args){
+
+        int[] arr ={-3,-2,-1,0,0,1,2,3};
+        int target = 0;
+
+        System.out.println(fourSum(arr, 1));
     }
 }

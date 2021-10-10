@@ -1,5 +1,6 @@
 package ImportantQ.Arrays;
 import java.util.*;
+//https://leetcode.com/problems/merge-intervals/
 // Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array
 // of the non-overlapping intervals that cover all the intervals in the input.
 // Intervals may not be in Sorted form
@@ -26,7 +27,7 @@ public class MergeOverlappingIntervals {
         for(int[] current:intervals){
 
             if(current[0] <= end){
-                end = Math.max(end,current[1]);
+                end = Math.max(end, current[1]);
             }
             else{
                 arr.add(new int[]{start,end});

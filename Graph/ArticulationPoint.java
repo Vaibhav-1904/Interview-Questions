@@ -13,7 +13,6 @@ public class ArticulationPoint {
 
             }
         }
-
     }
 
     List<Integer> dfs(int node, int parent, boolean[] visited, int[] time, int[] low, ArrayList<ArrayList<Integer>> graph, HashSet<Integer> result, int timer){
