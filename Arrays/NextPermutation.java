@@ -12,26 +12,26 @@ public class NextPermutation {
     // reverses array from ith index to j
     public static void reverse(int[] arr,int i,int j){
         while(i < j)
-            swap(arr,i++,j--);
+            swap(arr, i++, j--);
     }
 
     public static void nextPermutation(int[] arr) {
         if(arr == null || arr.length <= 1)
             return;
 
-        int i = arr.length-2;
+        int i = arr.length - 2;
         // Traverse from back and find an element at i such that arr[i] <= arr[i+1]
-        while( i >= 0 && arr[i] >= arr[i+1] )
+        while( i >= 0 && arr[i] >= arr[i + 1] )
             i--;
 
-        if(i>=0){
-            int j = arr.length-1;
+        if(i >= 0){
+            int j = arr.length - 1;
             // Traverse from back and find an element which is greater than arr[i]
             while(arr[j] <= arr[i])
                 j--;
-            swap(arr,i,j);
+            swap(arr, i, j);
         }
         // reverse everything after ith position to get the ANS
-        reverse(arr,i+1,arr.length-1);
+        reverse(arr,i + 1,arr.length - 1);
     }
 }

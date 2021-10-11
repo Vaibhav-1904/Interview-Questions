@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 //Find the Number of contiguous arithmetic array elements in a given array :
 // Eg in 1,2,3,4,90,100,7,8  -> Ans is 4 as there are four continuous elements
-// Eg 2, 4, 6, 8
+// Eg 1,2,3,4
 
 public class ArithmeticSubArray {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        int[] arr = {2,4,6,8,10,90,100,7,8};
+        int[] arr = {2, 4, 6, 8, 10, 90, 100, 7, 8};
         int n = arr.length;
 
         //Main Code

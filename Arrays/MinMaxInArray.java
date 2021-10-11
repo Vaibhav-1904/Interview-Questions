@@ -10,7 +10,7 @@ public class MinMaxInArray {
     public static Pair MinMax(Pair p, int[] arr, int n){
 
         int i;
-        if(n%2 == 0){
+        if(n % 2 == 0){
             if(arr[0] > arr[1]){
                 p.min = arr[1];
                 p.max = arr[0];
@@ -25,9 +25,9 @@ public class MinMaxInArray {
             i = 1;
         }
 
-        while(i < (n-1)){
+        while(i < n - 1){
 
-            if(arr[i] > arr[i+1]){
+            if(arr[i] > arr[i + 1]){
                 p.max = Math.max(p.max, arr[i]);
                 p.min = Math.min(p.min, arr[i+1]);
             }else{

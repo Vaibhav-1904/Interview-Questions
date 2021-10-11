@@ -2,8 +2,22 @@ package ImportantQ.Arrays;
 import java.util.*;
 // https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/
 public class KlargestElements {
+    //Given an array of N positive integers, print k the largest elements from array in decreasing order.
 
-    //Given an array of N positive integers, print k largest elements from array in decreasing order.
+    public static ArrayList<Integer> kLargest(int arr[], int n, int k)
+    {
+        PriorityQueue<Integer> pq = new PriorityQueue<>(k);
+
+        for(int i : arr){
+            if(pq.size() < k){
+                pq.add(i);
+            }else if(pq.peek() < i){
+                pq.remove();
+                pq.add(i);
+            }
+        }
+        return new ArrayList<>(pq);
+    }
 
     public static void main(String[] args){
 

@@ -1,6 +1,6 @@
 package ImportantQ.Arrays;
 import java.util.Arrays;
-
+// https://leetcode.com/problems/3sum-closest/
 public class ThreeSumClosest {
     public int threeSumClosest(int[] nums, int target) {
 
@@ -9,6 +9,7 @@ public class ThreeSumClosest {
         // And we need to find Math.min(closest_sum, Math.abs(sum - key))
 
         // Optimal Approach using 2 Pointer Algo
+        // T-> O(n^2)
         int n = nums.length;
         Arrays.sort(nums);
         long ans = Integer.MAX_VALUE;

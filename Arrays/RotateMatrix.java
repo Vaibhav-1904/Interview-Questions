@@ -49,9 +49,5 @@ public class RotateMatrix {
             }
             System.out.println();
         }
-
-
-
-
     }
 }

@@ -3,7 +3,7 @@ import java.util.*;
 public class MissingNumber {
 
     //Input: arr[] = {4, 3, 5, 2, 5, 1}
-    //Output: Missing = 5, Repeating = 1
+    //Output: Missing = 6, Repeating = 5
 
     //First
     public int missingNumber(int[] nums) {
@@ -22,12 +22,11 @@ public class MissingNumber {
         }
 
         for(i = 0; i < nums.length; i++){
-            if(nums[i] != i+1){
-                missing = i+1;
+            if(nums[i] !=  i + 1 ){
+                missing = i + 1;
                 break;
             }
         }
-
         return missing;
     }
     //Second approach using HashSets or incrementing temp[arr[i]] values from 0->1
