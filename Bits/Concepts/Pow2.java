@@ -1,6 +1,9 @@
 package ImportantQ.Bits.Concepts;
 // If number is in power of 2 or not
 public class Pow2 {
+
+
+
     public static void main(String[] args) {
         int n = 15;
 

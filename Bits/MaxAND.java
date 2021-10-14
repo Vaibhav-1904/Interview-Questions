@@ -19,23 +19,22 @@ public class MaxAND {
         int ans = 0, count = 0;
 
         for(int bit = 31; bit >= 0; bit--){
-            // it counts number of elements have 1 at position 'bit' or not.
-            count = checkBit(ans | 1<<bit, arr, n);
+            // it counts number of elements which have 1 at position 'bit' or not.
+            count = checkBit(ans | 1 << bit, arr, n);
             // find the count of element having set  msb at 'bit' position
 
             if(count >= 2){ // if count >= 2, then set that bit at 'bit' position
                 ans = ans | (1<<bit);
             }
         }
-        return count;
+        return ans;
     }
 
     public static void main(String[] args) {
         // A naive approach is to iterate for all the pairs using two for loops and check for the maximum '&' value of any pair.
 
         int[] arr = {4, 8, 12, 16};
-        int ans = 1;
-        int count = 0;
+        System.out.println(maxAndPair(arr, 4));
 
     }
 }
