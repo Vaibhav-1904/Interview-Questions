@@ -1,8 +1,13 @@
 package ImportantQ.TwoDArrays;
-
+// https://leetcode.com/problems/set-matrix-zeroes/
 public class SetMatrixZero {
     public static void main(String[] args){
-        int[][] arr = {{1,1,1},{1,0,1},{1,1,1},{1,1,1}};;
+        int[][] arr = {
+                {1,1,1},
+                {1,0,1},
+                {1,1,1},
+                {1,1,1}
+        };;
 
         // Brute Force Approach
 //        int count = 0;
@@ -27,7 +32,6 @@ public class SetMatrixZero {
 //        for(int i = 0; i< arr.length; i++){
 //            for(int j = 0; j < arr[i].length; j++){
 //                if(arr[i][j] == -1 && count != 0){
-//
 //                    arr[i][j] = 0;
 //                }
 //                System.out.print(arr[i][j]);
@@ -58,14 +62,12 @@ public class SetMatrixZero {
 //                }
 //            }
 //
-//            for(int j = 0; j < arr[i].length; j++){
-//                System.out.print(arr[i][j]);
-//            }
+//
 //
 //        }
 
 
-        int col = 1; // True
+        int col = 1; // True, variable used for denoting 0th column zeros
         int row = arr.length;
         int column = arr[0].length;
 

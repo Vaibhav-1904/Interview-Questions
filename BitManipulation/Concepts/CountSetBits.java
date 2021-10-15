@@ -1,4 +1,4 @@
-package ImportantQ.Bits.Concepts;
+package ImportantQ.BitManipulation.Concepts;
 
 public class CountSetBits {
 //    // Naive

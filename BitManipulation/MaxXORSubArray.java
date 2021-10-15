@@ -1,4 +1,4 @@
-package ImportantQ.Bits;
+package ImportantQ.BitManipulation;
 // Given an array of integers. find the maximum XOR subarray value in given array. Expected time complexity O(n).
 // https://www.geeksforgeeks.org/find-the-maximum-subarray-xor-in-a-given-array/
 
@@ -19,7 +19,7 @@ public class MaxXORSubArray {
         return max;
     }
 
-    // Optimal T-> O(n)
+
     static class TrieNode{
         int value;
         TrieNode[] arr = new TrieNode[2];
@@ -31,7 +31,7 @@ public class MaxXORSubArray {
     }
 
     // Optimal T ->O(n) using Kadane Algorithm
-    static int maxSubarrayXOR(int N, int arr[]){
+    static int maxSubarrayXOR(int N, int[] arr){
 
         int max_end_here = 1;
         int max_so_far = Integer.MIN_VALUE;

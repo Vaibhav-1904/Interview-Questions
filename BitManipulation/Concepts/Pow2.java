@@ -1,4 +1,4 @@
-package ImportantQ.Bits.Concepts;
+package ImportantQ.BitManipulation.Concepts;
 // If number is in power of 2 or not
 public class Pow2 {
 

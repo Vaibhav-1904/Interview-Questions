@@ -1,18 +1,17 @@
 package ImportantQ.BinarySearch;
-import ImportantQ.BinarySearch.binarySearch;
 
 public class InfiniteSearch {
 
-    public static int binarySearch(int[] arr, int l,int r,int target){
+    public static int binarySearch(int[] arr, int l, int r, int target) {
 
-        int mid = (l+r)/2;
+        int mid = (l+r) / 2;
 
         if(target == arr[mid])
             return target;
         else if(target < arr[mid])
-            return binarySearch(arr,l,mid,target);
+            return binarySearch(arr, l, mid, target);
         else if(target > arr[mid] && l != r)
-            return binarySearch(arr,mid+1,r,target);
+            return binarySearch(arr,mid + 1, r, target);
 
         return -1;
     }

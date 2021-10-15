@@ -1,5 +1,5 @@
-package ImportantQ.Bits;
-
+package ImportantQ.BitManipulation;
+// https://leetcode.com/problems/divide-two-integers/
 public class DivideIntegers {
 
     // Optimal T-> O(log(n))

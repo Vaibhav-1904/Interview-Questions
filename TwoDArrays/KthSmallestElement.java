@@ -18,8 +18,8 @@ public class KthSmallestElement {
             int mid = (low + high) / 2;
 
             int count = 0;
-            for(int[] i:arr)
-                count += getCount(i, mid);
+            for(int[] i: arr)
+                count += getCount(i, mid); // log(n)
 
 
             if(count < k)
@@ -45,7 +45,7 @@ public class KthSmallestElement {
     }
 
     public static void main(String[] args) {
-        int[][] arr = {{1,4,8},{5,9,11},{7,16,20}};
+        int[][] arr = {{1, 4, 8},{5, 9, 11},{7, 16, 20}};
         int k = 5;
 
         System.out.println("Kth Smallest Element is : " + kthSmallestElement(arr, k));

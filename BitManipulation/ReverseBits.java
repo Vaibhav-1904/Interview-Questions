@@ -1,6 +1,5 @@
-package ImportantQ.Bits;
+package ImportantQ.BitManipulation;
 
-import java.util.ArrayList;
 // Reverse the bits of an 32 bit unsigned integer A.
 
 public class ReverseBits {

@@ -8,7 +8,7 @@ package ImportantQ.BinarySearch;
 import java.util.Arrays;
 public class AggressiveCows {
 
-    public static boolean canPlace(int[] arr, int cows, int d){
+    public static boolean canPlace(int[] arr, int cows, int d) {
 
         int n = arr.length;
         int position = arr[0];
@@ -25,12 +25,14 @@ public class AggressiveCows {
         return false;
     }
 
+
+    // T->O(nlogn)
     public static int minDistance(int[] arr, int cows){
 
         Arrays.sort(arr);
 
         int low = 1; // Minimum distance between any 2 cows
-        int high = arr[arr.length - 1] - 1;
+        int high = arr[arr.length - 1] - 1; // maximum distance answer possible
         while (low <= high){
             int distance = (low + high) / 2;
             if(canPlace(arr, cows, distance))

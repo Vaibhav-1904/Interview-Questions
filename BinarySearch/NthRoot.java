@@ -5,24 +5,25 @@ import java.util.*;
 
 public class NthRoot {
 
-    public static double multiply(double m, int n)
+    public static double multiply(double mid, int power)
     {
         double ans = 1;
-        for(int i = 0; i < n; i++){
-            ans *= m;
+        for(int i = 0; i < power; i++){
+            ans *= mid;
         }
         return ans;
     }
 
-    public static double getNthRoot(int m, int n){
-
+    public static double getNthRoot(int num, int power){ // (m)^(1/n)
+        // answer will lie between 1 -> m, because if n is infinity, ans will be m^0 = 1
+        // and if n == 1, then ans = m,   as m^1 = m
         double low = 1;
-        double high = m;
+        double high = num;
         double eps = 1e-6; // It means 10 to the power -6, whatever number of decimal places you want the ans to be
         while((high-low) > eps){
-            double mid = (high+low)/2;
+            double mid = (high+low) / 2;
 
-            if(multiply(mid,n) > m)
+            if(multiply(mid, power) > num)
                 high = mid;
             else
                 low = mid;

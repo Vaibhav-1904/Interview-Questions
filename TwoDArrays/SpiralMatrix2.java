@@ -1,4 +1,5 @@
 package ImportantQ.TwoDArrays;
+// https://leetcode.com/problems/spiral-matrix-ii/
 // Given an Integer N, you need to return NxN matrix in a spiral form matrix
 // Eg - for n = 3
 //[1  2  3]
@@ -6,12 +7,13 @@ package ImportantQ.TwoDArrays;
 //[7  6  5]
 public class SpiralMatrix2 {
 
-    public int[][] generateMatrix(int n) {
+    public static int[][] generateMatrix(int n) {
 
         int[][] ans = new int[n][n];
 
         int rowStart = 0, rowEnd = n - 1;
         int colStart = 0, colEnd = n - 1;
+
         int count = 1;
         while(rowStart <= rowEnd && colStart <= colEnd){
 
@@ -40,8 +42,12 @@ public class SpiralMatrix2 {
             colStart++;
         }
 
-        // For ArrayList<ArrayList<Integer>> return create new and add elements using 2 for-looops
+        // For ArrayList<ArrayList<Integer>> return, create new and add elements using 2 for-looops
 
         return ans;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(generateMatrix(3));
     }
 }

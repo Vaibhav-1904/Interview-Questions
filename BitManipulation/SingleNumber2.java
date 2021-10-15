@@ -1,4 +1,4 @@
-package ImportantQ.Bits;
+package ImportantQ.BitManipulation;
 // Given an array in which all numbers twice except two numbers are repeated once.
 // Find those two numbers in the most efficient way.
 // https://www.geeksforgeeks.org/find-two-non-repeating-elements-in-an-array-of-repeating-elements/

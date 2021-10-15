@@ -1,4 +1,4 @@
-package ImportantQ.Bits.Concepts;
+package ImportantQ.BitManipulation.Concepts;
 // Given a number N, find the most significant set bit in the given number,
 // Leftmost set bit and then calculate its decimal value.
 public class SignificantBit {

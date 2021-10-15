@@ -1,4 +1,4 @@
-package ImportantQ.Bits;
+package ImportantQ.BitManipulation;
 import java.util.List;
 // Given an array of integers, every element appears thrice except for one which occurs once.
 // Find that element which does not appear thrice.

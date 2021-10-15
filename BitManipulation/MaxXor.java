@@ -1,5 +1,5 @@
-package ImportantQ.Bits;
-import java.util.HashSet;
+package ImportantQ.BitManipulation;
+
 // Given an integer array nums, return the maximum result of nums[i] XOR nums[j], where 0 <= i <= j < n.
 // Find max XOR of any Pair in given array
 // https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/

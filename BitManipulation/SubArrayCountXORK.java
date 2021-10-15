@@ -1,8 +1,6 @@
-package ImportantQ.Bits;
-
-import java.util.HashMap;
-import java.util.Map;
-//
+package ImportantQ.BitManipulation;
+import java.util.*;
+// https://www.geeksforgeeks.org/count-number-subarrays-given-xor/
 //Given an Array arr and a number 'm', count the number of subArrays have XOR of their elements as 'm'
 public class SubArrayCountXORK {
     public static void main(String[] args){
@@ -25,21 +23,21 @@ public class SubArrayCountXORK {
 //            }
 //        }
 
-        //Optimal Approach
+        //Optimal Approach T->O(n) S->O(n)
         Map<Integer, Integer> map = new HashMap<>();
-        for(int i = 0; i < n; i++){
-            xor = xor ^ arr[i];
-
-            if(map.get(xor ^ m) != null)
-                count += map.get(xor ^ m);
+        for(int num : arr){
+            xor = xor ^ num;
 
             if(xor == m)
                 count++;
 
-            if (map.get(xor) != null)
-                map.put(xor, map.get(xor)+1);
+            if(map.get(xor ^ m) != null)
+                count += map.get(xor ^ m);
+
+            if(map.get(xor) != null)
+                map.put(xor, map.get(xor) + 1);
             else
-                map.put(xor,1);
+                map.put(xor, 1);
         }
 
         System.out.println("Count : " + count);

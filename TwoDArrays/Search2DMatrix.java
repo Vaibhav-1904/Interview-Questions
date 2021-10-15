@@ -1,10 +1,10 @@
 package ImportantQ.TwoDArrays;
 
 import java.util.Scanner;
-
+// https://leetcode.com/problems/search-a-2d-matrix/
 //Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
 //
-//Integers in each row are sorted from left to right.
+//Integers in each row/column are sorted from left to right.
 //The first integer of each row is greater than the last integer of the previous row.
 public class Search2DMatrix {
 
@@ -23,12 +23,12 @@ public class Search2DMatrix {
         while(l <= r){
             int mid = (l+r) >> 1;
 
-            if(matrix[mid/m][mid%m] == target)
+            if(matrix[mid / m][mid % m] == target)
                 return true;
-            else if(matrix[mid/m][mid%m] < target)
-                l = mid+1;
+            else if(matrix[mid / m][mid % m] < target)
+                l = mid + 1;
             else{
-                r = mid-1;
+                r = mid - 1;
             }
         }
 

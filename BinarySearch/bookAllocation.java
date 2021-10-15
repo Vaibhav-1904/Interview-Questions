@@ -15,31 +15,27 @@ import java.util.*;
 //
 //NOTE: Return -1 if a valid assignment is not possible.
 public class bookAllocation {
-    public static boolean isPossible(ArrayList<Integer> A, int n, int pages){
+    public static boolean isPossible(ArrayList<Integer> book, int n, int pages){
 
         int sum = 0;
         int student = 1;
 
-        for(int i = 0; i < A.size(); i++){
-            if(sum + A.get(i) > pages){
+        for(int i = 0; i < book.size(); i++){
+            if(sum + book.get(i) > pages){ // if number of pages allocated to a student increases the middle value(page),
+                // allocate current book to new student. Since we don't want our answer > pages
                 student++;
-                sum = A.get(i);
+                sum = book.get(i);
             }else{
-                sum += A.get(i);
+                sum += book.get(i);
             }
         }
-
-        return (student <= n);
-
+        return student <= n; // if total pages are allocated to students <= given value in question
     }
 
     public static int maxOf(ArrayList<Integer> A){
         int max = A.get(0);
-        for(int i = 1; i < A.size(); i++){
-            if(A.get(i) > max){
-                max = A.get(i);
-            }
-        }
+        for(int i = 1; i < A.size(); i++)
+            max = Math.max(max, A.get(i));
         return max;
     }
     public static int sumOf(ArrayList<Integer> A){
@@ -47,20 +43,22 @@ public class bookAllocation {
         for (Integer i : A) {
             sum += i;
         }
-
         return sum;
     }
 
-    public static int books(ArrayList<Integer> A, int n) {
+    // T->O(nlogn)
+    public static int books(ArrayList<Integer> book, int student) {
         int res = 0;
-        int min = maxOf(A);
-        int max = sumOf(A);
+        // Our Answer will lie between min and max
+        int min = maxOf(book);
+        int max = sumOf(book);
 
         while(min <= max){
-            int pages = (min+max)/2;
-            if(isPossible(A, n, pages)){
+            int pages = (min+max) / 2;
+            if(isPossible(book, student, pages)){
                 res = pages;
-                max = pages-1;
+                max = pages - 1; // if it's possible and since we want to minimize our answer, we can reduce our search
+                // space
             }
             else{
                 min = pages + 1;

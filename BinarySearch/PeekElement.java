@@ -3,17 +3,17 @@ package ImportantQ.BinarySearch;
 //Given an array arr[] of size N, find the index of any one of its peak elements.
 //Note: The generated output will always be 1 if the index that you return is correct. Otherwise output will be 0.
 public class PeekElement {
-    //  Naive
+    //  Naive T->(n)
 //    public int peakElement(int[] arr,int n)
 //    {
 //        if( n == 1){
 //            return 0;
 //        }
 //        if(arr[0] > arr[1]){
-//            return 0;
+//            return arr[0];
 //        }
 //        if(arr[n - 1] > arr[n - 2]){
-//            return n - 1;
+//            return arr[n - 1];
 //        }
 //
 //        for(int i = 1; i < n - 1; i++)
@@ -25,7 +25,7 @@ public class PeekElement {
 //        return 0;
 //    }
 
-    //Optimal
+    //Optimal logn
     public int peakElement(int[] arr, int low, int high, int n)
     {
         int mid = (low + high) / 2;
