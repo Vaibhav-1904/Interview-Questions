@@ -3,66 +3,55 @@ package ImportantQ.Strings;
 import java.util.Scanner;
 
 public class Anagram {
-    public static void main(String[] args)
-    {
-        Scanner scan = new Scanner(System.in);
-
-        String a = "cat321*@a";
-        String b = "act123@*a";
-
-        if(a.length() != b.length()){
-            System.out.println("Strings are NOT Anagram .. ");
-            return;
-        }
-
-        boolean isAnagram = true;
-
-//        //Naive Approach
-//        boolean[] visited = new boolean[a.length()];
+//    //        //Naive Approach T->O(n^2)
+//    static boolean isAnagram(String a, String b) {
+//        if(a.length() != b.length())
+//            return false;
 //
-//        for(int i = 0; i < a.length();i++)
+//        boolean[] visited = new boolean[a.length()];
+//        for(int i = 0; i < a.length(); i++)
 //        {
 //            char c = a.charAt(i);
-//            isAnagram = false;
+//            boolean flag = false;
 //            for (int j = 0; j < a.length(); j++)
 //            {
 //                if(b.charAt(j) == c && !visited[j])
 //                {
 //                    visited[j] = true;
-//                    isAnagram = true;
+//                    flag = true;
 //                }
 //            }
-//            if(!isAnagram)
-//                break;
+//            if(!flag)
+//                return false;
 //        }
+//        return true;
+//    }
 
-        //Optimal Way
-        int[] ar = new int[256];
+    // T->O(n)
+    static boolean isAnagram(String a, String b){
+        if(a.length() != b.length())
+            return false;
 
-        for(char c:a.toCharArray())
-        {
-            ar[(int)c]++;
+        int[] arr = new int[256];
+
+        for(char c : a.toCharArray())
+            arr[c]++;
+
+        for(char c : b.toCharArray())
+            arr[c]--;
+
+        for(int i : arr){
+            if(i != 0)
+                return false;
         }
+        return true;
+    }
 
-        for(char c:b.toCharArray())
-        {
-            ar[(int)c]--;
-        }
-        for(int i = 0; i < 256; i++)
-        {
-            if(ar[i] != 0)
-            {
-                isAnagram = false;
-                break;
-            }
-        }
 
-        if(isAnagram)
-        {
-            System.out.print("Strings are Anagram ... ");
-        }
-        else
-            System.out.print("Strings are NOT Anagram .. ");
+    public static void main(String[] args) {
 
+        String a = "cat321*@a";
+        String b = "act123@*a";
+        System.out.println(isAnagram(a, b));
     }
 }

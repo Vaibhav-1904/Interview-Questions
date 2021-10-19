@@ -3,6 +3,7 @@ import  java.lang.Math;
 
 public class RobinKarp {
 
+    // T-> O(m * (n - m))
     public static int rabinKarp(String str, String pattern){
         int n = str.length();
         int m = pattern.length();
@@ -22,7 +23,7 @@ public class RobinKarp {
         for(int i = 1; i <= a.length(); i++)
         {
             char ch = a.charAt(i - 1);
-            sum += (int)ch * (Math.pow(10,a.length() - i)); // 10^(n - i)
+            sum += (int)ch * (Math.pow(10, a.length() - i)); // 10^(n - i)
         }
         return sum;
     }

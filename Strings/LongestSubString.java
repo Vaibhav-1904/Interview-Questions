@@ -4,7 +4,7 @@ import java.util.HashSet;
 // Given a string s, find the length of the longest substring without repeating characters.
 
 public class LongestSubString {
-//    //Naive
+//    //Naive T->O(n^2)
 //    public int lengthOfLongestSubstring(String s) {
 //        int count = 0, max = 0;
 //        for(int i = 0; i < s.length(); i++){
@@ -24,7 +24,7 @@ public class LongestSubString {
 //        return max;
 //    }
 
-    // Optimal
+    // Optimal T->O(n)
     public int lengthOfLongestSubstring(String s) {
         int n = s.length();
         int max = 0;

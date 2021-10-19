@@ -50,13 +50,9 @@ public class KadaneAlgorithm {
         for (int i : arr) {
             max_ending_here += i;
 
-            if (max_so_far < max_ending_here) {
-                max_so_far = max_ending_here;
-            }
+            max_so_far = Math.max(max_so_far, max_ending_here);
 
-            if (max_ending_here < 0) {
-                max_ending_here = 0;
-            }
+            max_ending_here = Math.max(max_ending_here, 0);
         }
 
         //The simple idea of Kadane’s algorithm is to look for all positive contiguous segments of the array (max_ending_here is used for this).

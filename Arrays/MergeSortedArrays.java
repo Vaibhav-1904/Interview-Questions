@@ -2,7 +2,7 @@ package ImportantQ.Arrays;
 //Given two sorted arrays arr1[] and arr2[] of sizes n and m in non-decreasing order.
 // Merge them in sorted order without using any extra space. Modify arr1 so that it
 // contains the first N elements and modify arr2 so that it contains the last M elements.
-
+// https://leetcode.com/problems/merge-sorted-array/
 public class MergeSortedArrays {
 
     //Brute
@@ -107,6 +107,24 @@ public class MergeSortedArrays {
                 }
                 j++;
             }
+        }
+    }
+
+    // T->On+m)
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int index = m + n - 1;
+        m--; n--;
+
+        while(m >= 0 && n >= 0){
+            if(nums1[m] >= nums2[n]){
+                nums1[index--] = nums1[m--];
+            }
+            else{
+                nums1[index--] = nums2[n--];
+            }
+        }
+        while(n >= 0){
+            nums1[index--] = nums2[n--];
         }
     }
 

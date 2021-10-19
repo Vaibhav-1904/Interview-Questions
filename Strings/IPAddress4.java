@@ -24,14 +24,12 @@ public class IPAddress4 {
         count = 0;
         for(int i = 0; i < n; i++){
             if(s.charAt(i) == '.'){
-                if(set.contains(ans.toString())){
+                if(set.contains(ans.toString()))
                     count++;
-                }
-                ans.delete(0, ans.length());
 
-            }else{
+                ans.delete(0, ans.length());
+            }else
                 ans.append(s.charAt(i));
-            }
         }
         if(set.contains(ans.toString())){
             count++;

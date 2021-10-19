@@ -1,6 +1,6 @@
 package ImportantQ.Strings.DynamicStrings;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class StringBuilderClass {
     public static void main(String[] args) {
@@ -21,8 +21,21 @@ public class StringBuilderClass {
 //        sb.append("0");
 //        System.out.println(sb.charAt(0));
 
-        StringBuilder s = new StringBuilder("Vaibhav");
-        s.insert(1, "Patel");
-        System.out.println(s);
+//        StringBuilder s = new StringBuilder("Vaibhav");
+//        s.insert(1, "Patel");
+//        System.out.println(s);
+
+        String c = "85";
+        String a = "9";
+        String b = "30";
+        ArrayList<String> arr = new ArrayList<>();
+        arr.add(c);
+        arr.add(a);
+        arr.add(b);
+        Collections.sort(arr, (s1, s2) -> (s2 + s1).compareTo(s1 + s2));
+
+        System.out.println(arr);
+
+
     }
 }

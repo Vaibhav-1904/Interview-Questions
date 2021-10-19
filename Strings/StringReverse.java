@@ -1,8 +1,10 @@
 package ImportantQ.Strings;
 import java.util.Scanner;
+// https://leetcode.com/problems/reverse-words-in-a-string/
 // Return a string of the words in reverse order concatenated by a single space between each word.
 public class StringReverse {
 
+    // T->O(n)
     public static String rev(String s){
 
         String ans = "";
@@ -17,7 +19,7 @@ public class StringReverse {
             while(i >= 0 && s.charAt(i) != ' ')
                 i--;
 
-            ans = ans.concat(s.substring(i+1,j+1));
+            ans = ans.concat(s.substring(i + 1, j + 1));
             ans = ans.concat(" ");
         }
         ans = ans.trim();

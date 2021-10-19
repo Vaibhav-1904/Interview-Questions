@@ -1,30 +1,44 @@
 package ImportantQ.sorting;
-
+// https://leetcode.com/problems/reverse-pairs/
 public class ReversePairs {
+    //    //Brute-Force
+//    public static int reversePairs(int[] nums) {
+//        int count = 0;
+//        for(int i = 0; i < nums.length -1; i++){
+//            for(int j = i+1; j < nums.length; j++){
+//                if(nums[i] > 2 * nums[j]){
+//                    count++;
+//                }
+//            }
+//        }
+//
+//        return count;
+//    }
+
     //Optimal approach
-    public static int merge(int[] arr, int l, int mid, int r){
+    public static int merge(int[] arr, int left, int mid, int right){
         int rev_count = 0;
         int j = mid + 1;
         // Count elements which satisfy the condition.
-        for(int i = l; i <= mid; i++){
-            while(j <= r && arr[i] > arr[j] * 2L){
+        for(int i = left; i <= mid; i++){
+            while(j <= right && arr[i] > arr[j] * 2)
                 j++;
-            }
+
             rev_count += (j - (mid + 1));
         }
-        int n1 = mid - l + 1;
-        int n2 = r - mid;
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
 
         int[] L = new int[n1];
         int[] R = new int[n2];
 
         for (int i = 0; i < n1; ++i)
-            L[i] = arr[l + i];
+            L[i] = arr[left + i];
 
         for (j = 0; j < n2; ++j)
             R[j] = arr[mid + 1 + j];
 
-        int i = 0, k = l;
+        int i = 0, k = left;
         j = 0;
         while (i < n1 && j < n2) {
             if (L[i] <= R[j])
@@ -52,19 +66,6 @@ public class ReversePairs {
         return rev_count;
     }
 
-    //    //Brute-Force
-//    public static int reversePairs(int[] nums) {
-//        int count = 0;
-//        for(int i = 0; i < nums.length -1; i++){
-//            for(int j = i+1; j < nums.length; j++){
-//                if(nums[i] > 2*nums[j]){
-//                    count++;
-//                }
-//            }
-//        }
-//
-//        return count;
-//    }
     public static void main(String[] args){
 
         int[] arr = {1,3,2,3,1};

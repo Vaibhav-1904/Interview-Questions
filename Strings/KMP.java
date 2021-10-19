@@ -1,5 +1,8 @@
 package ImportantQ.Strings;
 import java.util.*;
+// drawback in naive pattern matching -> we are repeatedly checking characters in main string
+// T->O(n*m)
+
 public class KMP {
     public static int kmp(String str, String pattern){
         if(str.length() == 0 && pattern.length() == 0)
@@ -28,16 +31,16 @@ public class KMP {
         return -1;
     }
 
-    static void calcSuffix(int[] arr, int n, String s){
+    static void calcSuffix(int[] arr, int n, String pattern){
         arr[0] = 0; // By definition
 
         for(int i = 1; i < n; i++){
             int j = arr[i - 1];
 
-            while(j > 0 && s.charAt(i) != s.charAt(j))
+            while(j > 0 && pattern.charAt(i) != pattern.charAt(j))
                 j = arr[j - 1];
 
-            if(s.charAt(i) == s.charAt(j))
+            if(pattern.charAt(i) == pattern.charAt(j))
                 j++;
             arr[i] = j;
         }

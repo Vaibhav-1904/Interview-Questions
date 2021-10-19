@@ -14,24 +14,15 @@ public class LargestNumber {
             arr[i] = String.valueOf(nums[i]);
         }
 
-//        Arrays.sort(arr, new Comparator<String>(){
-//            @Override
-//            public int compare(String a, String b){
-//                return (b + a).compareTo(a + b);
-//            }
-//        });
-
-
         Arrays.sort(arr, (a, b) -> (b + a).compareTo(a + b)); // here a and b are two numbers
 
         if(arr[0].equals("0"))
             return "0";
 
         StringBuilder ans = new StringBuilder();
-        for(String s:arr)
+        for(String s: arr)
             ans.append(s);
 
         return ans.toString();
     }
-
 }
