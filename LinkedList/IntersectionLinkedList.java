@@ -1,8 +1,9 @@
 package ImportantQ.LinkedList;
 import ImportantQ.LinkedList.ReverseLinkedList.Node;
 //Given the heads of two singly linked-lists headA and headB,
-// return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null.
-
+// return the node at which the two lists intersect. If the two linked lists have no intersection at all, 
+// return null.
+// https://leetcode.com/problems/intersection-of-two-linked-lists/
 public class IntersectionLinkedList {
 
     public Node getIntersectionNode(Node h1, Node h2) {

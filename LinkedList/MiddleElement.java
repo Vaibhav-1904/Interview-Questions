@@ -1,9 +1,11 @@
 package ImportantQ.LinkedList;
 import ImportantQ.LinkedList.ReverseLinkedList.Node;
 //Find middle element of LinkedList and print from Middle to end
+// If there are two middle nodes, return the second middle node.
+// https://leetcode.com/problems/middle-of-the-linked-list/
 public class MiddleElement {
 
-//    //Naive
+//    //Naive T->O(n + n/2)
 //    public ListNode middleNode(ListNode head) {
 //
 //        ListNode temp = head;
@@ -12,7 +14,7 @@ public class MiddleElement {
 //            temp = temp.next;
 //            n++;
 //        }
-//        n = n>>1;
+//        n = n >> 1;
 //        while(n > 0){
 //            head = head.next;
 //            n--;

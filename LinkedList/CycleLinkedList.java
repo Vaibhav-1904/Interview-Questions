@@ -1,7 +1,7 @@
 package ImportantQ.LinkedList;
 import ImportantQ.LinkedList.ReverseLinkedList.Node;
 //Given head, the head of a linked list, determine if the linked list has a cycle in it.
-//
+// https://leetcode.com/problems/linked-list-cycle/
 //There is a cycle in a linked list if there is some node in the list that can be reached again by continuously
 // following the next pointer.
 // Internally, pos is used to denote the index of the node that tail's next pointer

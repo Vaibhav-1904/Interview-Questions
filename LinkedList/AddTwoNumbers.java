@@ -1,7 +1,9 @@
 package ImportantQ.LinkedList;
 import ImportantQ.LinkedList.ReverseLinkedList.Node;
-//You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
-//
+//You are given two non-empty linked lists representing two non-negative integers. 
+// The digits are stored in reverse order, and each of their nodes contains a single digit. 
+// Add the two numbers and return the sum as a linked list.
+// https://leetcode.com/problems/add-two-numbers/
 //You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
 //Input: l1 = [2,4,3], l2 = [5,6,4]
@@ -11,18 +13,18 @@ public class AddTwoNumbers {
 
     public Node addTwoNumbers(Node l1, Node l2) {
 
-        Node temp = new Node(0);
+        Node ans = new Node(0);
         Node h1 = l1, h2 = l2;
-        Node cur = temp;
+        Node cur = ans;
 
         int carry = 0;
         int sum;
 
         while(h1 != null || h2 != null){
-            int x = (h1 == null)?0:h1.val;
-            int y = (h2 == null)?0: h2.val;
+            int x = (h1 == null) ? 0 : h1.val;
+            int y = (h2 == null) ? 0 : h2.val;
 
-            sum = carry + x+y;
+            sum = carry + x + y;
 
             if(sum > 9){
                 carry = 1;
@@ -44,7 +46,7 @@ public class AddTwoNumbers {
         if(carry != 0)
             cur.next = new Node(carry);
 
-        return temp.next;
+        return ans.next;
     }
 
     public static void main(String[] args){

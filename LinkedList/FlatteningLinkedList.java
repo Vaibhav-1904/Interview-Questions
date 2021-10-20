@@ -37,7 +37,7 @@ public class FlatteningLinkedList {
 
         return result.bottom;
     }
-    // Optimal T -> O(number of nodes)
+    //  T -> O(number of nodes)
     public static Node flatten(Node root)
     {
         if(root == null || root.next == null){
