@@ -13,58 +13,57 @@ package ImportantQ.RecursionBacktracking;
 import java.util.*;
 
 public class KthPermutationSequence {
-    public void printPermutations(List<List<Integer>> ans, ArrayList<Integer> nums, int index){
-        if(index == nums.size() - 1){
-            ans.add(nums);
-        }
 
-        for(int i = index; i < nums.size(); i++){
-            nums = swap(new ArrayList<>(nums), index, i);
-            printPermutations(ans, nums, index + 1);
+    // Naive Approach
+    // public void printPermutations(List<List<Integer>> ans, ArrayList<Integer> nums, int index){
+    //     if(index == nums.size() - 1){
+    //         ans.add(nums);
+    //     }
 
-            //Backtrack
-            nums = swap(new ArrayList<>(nums), index, i);
-        }
-    }
+    //     for(int i = index; i < nums.size(); i++){
+    //         nums = swap(new ArrayList<>(nums), index, i);
+    //         printPermutations(ans, nums, index + 1);
 
-    public ArrayList<Integer> swap(ArrayList<Integer> arr, int i, int j){
+    //         //Backtrack
+    //         nums = swap(new ArrayList<>(nums), index, i);
+    //     }
+    // }
 
-        int temp = arr.get(i);
-        arr.set(i, arr.get(j));
-        arr.set(j, temp);
+    // public ArrayList<Integer> swap(ArrayList<Integer> arr, int i, int j){
 
-        return arr;
-    }
+    //     int temp = arr.get(i);
+    //     arr.set(i, arr.get(j));
+    //     arr.set(j, temp);
 
-//    public String getPermutation(int n, int k) {
-//
-//        List<List<Integer>> ans = new ArrayList<>();
-//        ArrayList<Integer> arr = new ArrayList<>();
-//        for(int i = 1; i <= n; i++){
-//            arr.add(i);
-//        }
-//
-//        if(n == 1){
-//            return "1";
-//        }
-//
-//        printPermutations(ans, arr, 0);
-//        Collections.sort(ans, (o1, o2) -> {
-//            for(int i = 0; i < o1.size(); i++) {
-//                if (o1.get(i) == o2.get(i))
-//                    continue;
-//                else
-//                    return o1.get(i) - o2.get(i);
-//            }
-//            return 1;
-//        });
-//
-//        String result = "";
-//        for(int i = 0; i < n; i++){
-//            result += String.valueOf(ans.get(k - 1).get(i));
-//        }
-//        return result;
-//    }
+    //     return arr;
+    // }
+
+    // public String getPermutation(int n, int k) {
+
+    //     if(n == 1){
+    //         return "1";
+    //     }
+
+    //     List<List<Integer>> ans = new ArrayList<>();
+    //     ArrayList<Integer> arr = new ArrayList<>();
+    //     for(int i = 1; i <= n; i++){
+    //         arr.add(i);
+    //     }
+
+    //     printPermutations(ans, arr, 0);
+    //     Collections.sort(ans, (o1, o2) -> {
+    //         for(int i = 0; i < o1.size(); i++) {
+    //             if (o1.get(i) == o2.get(i))
+    //                 continue;
+    //             else
+    //                 return o1.get(i) - o2.get(i);
+    //         }
+    //         return 1;
+    //     });
+
+    //     String result = String.valueOf(ans.get(k - 1));
+    //     return result;
+    // }
 
     // Optimal T -> O(n^2), S -> O(N)
     public String getPermutation(int n, int k) {
@@ -72,7 +71,7 @@ public class KthPermutationSequence {
         List<Integer> numbers = new ArrayList<>();
         for(int i  = 1; i < n; i++){
             numbers.add(i);
-            factorial *= i;
+            factorial *= i; // (n - 1)! is calculated
         }
         numbers.add(n);
         String result = "";

@@ -15,7 +15,7 @@ public class RatMaze {
         }
 
         //Down
-        if(row + 1 < n && maze[row+1][col] != 0 && !isVisited[row+1][col]){
+        if(row + 1 < n && maze[row + 1][col] != 0 && !isVisited[row + 1][col]){
             isVisited[row][col] = true;
             findPath(row + 1, col, maze, n, result, isVisited, path + "D");
             isVisited[row][col] = false;
@@ -55,5 +55,7 @@ public class RatMaze {
         if(result.size() == 0){
             result.add("-1");
         }
+
+        System.out.println(result);
     }
 }

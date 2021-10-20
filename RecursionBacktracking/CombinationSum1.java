@@ -5,6 +5,7 @@ package ImportantQ.RecursionBacktracking;
 //The same number may be chosen from arr, an unlimited number of times. Two combinations are unique
 // if the frequency of at least one of the chosen numbers is different.
 import java.util.*;
+// https://leetcode.com/problems/combination-sum/
 
 public class CombinationSum1 {
     //  T -> O(2^n * k) k is  we can take one element more than one time, and therefore for each
@@ -18,11 +19,11 @@ public class CombinationSum1 {
         if(index == nums.length || sum < 0){
             return;
         }
-        combinationSum(index + 1, sum, nums, arr, result);
+        combinationSum(index + 1, sum, nums, arr, result); // not taking current index
 
-        if(nums[index] <= sum){
+        if(nums[index] <= sum){// taking current index but after checking.
             arr.add(nums[index]);
-            combinationSum(index, sum - nums[index], nums, arr, result);
+            combinationSum(index, sum - nums[index], nums, arr, result); // taking same index again. 
             arr.remove(arr.size() - 1);
         }
     }

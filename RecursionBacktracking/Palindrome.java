@@ -11,6 +11,6 @@ public class Palindrome {
     }
     public static void main(String[] args) {
         String s = "vasav";
-        System.out.println(checkPalindrome(s,0, s.length() - 1));
+        System.out.println(checkPalindrome(s, 0, s.length() - 1));
     }
 }

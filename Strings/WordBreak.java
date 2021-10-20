@@ -16,6 +16,8 @@ public class WordBreak {
 //        return false;
 //    }
 
+
+    // optimal T->O(n^2)
     public boolean wordBreak(String s, List<String> dictionary) {
         boolean[] dp = new boolean[s.length() + 1];
         dp[0] = true;

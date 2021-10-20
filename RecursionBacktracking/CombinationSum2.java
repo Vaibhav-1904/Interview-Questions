@@ -1,6 +1,6 @@
 package ImportantQ.RecursionBacktracking;
 import java.util.*;
-
+// https://leetcode.com/problems/combination-sum-ii/
 // Given a collection of arr numbers  and a target number (target), find all unique combinations
 // in candidates where the candidate numbers sum to target.
 //
@@ -26,7 +26,7 @@ public class CombinationSum2 {
     }
 
     // Optimal T-> O(2^n * k)
-    public void combinationSum2(List<List<Integer>> result, List<Integer> arr, int[] nums, int target, int index){
+    public static void combinationSum2(List<List<Integer>> result, List<Integer> arr, int[] nums, int target, int index){
         if(target < 0)
             return;
         else if(target == 0){
@@ -35,12 +35,23 @@ public class CombinationSum2 {
         }
         else{
             for(int i = index; i < nums.length; i++){
-                if(i > index && nums[i] == nums[i - 1]) continue;
+                if(i > index && nums[i] == nums[i - 1])
+                    continue;
 
                 arr.add(nums[i]);
                 combinationSum2(result, arr, nums, target - nums[i], i + 1);
                 arr.remove(arr.size() - 1);
             }
         }
+    }
+
+    public static void main(String[] args){
+        int[] arr = {1, 2, 3, 4, 5};
+        int target = 7;
+
+        List<List<Integer>> result = new ArrayList<>();
+        combinationSum2(result, new ArrayList<>(), arr, target, 0);
+
+        System.out.println(result);
     }
 }
