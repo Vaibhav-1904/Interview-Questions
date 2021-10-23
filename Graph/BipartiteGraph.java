@@ -42,7 +42,7 @@ public class BipartiteGraph {
     // 2 -> Green     T = O(N + E)  S = O(N+E  + N +  N)
     boolean dfsCheck(int i, ArrayList<ArrayList<Integer>> graph, int[] color){
 
-        if(color[i] == -1){
+        if(color[i] == -1){// For first Node visit
             color[i] = 1;
         }
 

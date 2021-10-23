@@ -6,7 +6,7 @@ public class PostfixEvaluation {
     static int evaluate(String str){
         Stack<Integer> stack = new Stack<>();
         for(char c:str.toCharArray()){
-            if(Character.isLetterOrDigit(c)){
+            if(Character.isDigit(c)){
                 stack.push(c - '0'); // Character to int
             }else{
                 int val1 = stack.pop();

@@ -1,15 +1,15 @@
 package ImportantQ.Graph.ShortestPath;
 import java.util.*;
 // https://www.geeksforgeeks.org/shortest-path-for-directed-acyclic-graphs/
-// Given a Directed ACyclic Path
-// find distance form source node to a Target Node or each vertex of graph
+// Given a Directed ACyclic weighted graph
+// find distance from source node to a Target Node or each vertex of graph
 
 // DFS is not used to find the shortest distance in graph, but is used in Trees instead coz we have unique paths
 // between nodes in Trees, but we can have exponential number of unique paths between 2 nodes in a graph.
 public class DAG {
     static class Pair{
         // IF a class is declared final, then no other class can implement that class,
-        // it cannot have child classes
+        // it cannot have child classes.
 
         // If a method is declared final, then we cannot Override that method
         // A final variable cannot be changed

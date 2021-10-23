@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 //  https://leetcode.com/problems/lru-cache/
 public class LRUCache {
+    // Doubly LinkedList
     public static class Node{
         int key, value;
         Node pre, next;

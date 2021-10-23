@@ -18,7 +18,7 @@ public class PrimsAlgorithm {
         }
     }
 
-        // Naive Approach
+////         Naive Approach
 //    // T = O(V^2) n^2    S = O(3N)
 //    int[] primsAlgo(ArrayList<ArrayList<Node>>graph, int V){
 //        boolean[] visited = new boolean[V];
@@ -55,7 +55,7 @@ public class PrimsAlgorithm {
 //    }
 
     // Optimal  T = O((N+E) * log N) -> NLogN
-    int[] primsAlgo(ArrayList<ArrayList<Node>>graph, int V){
+    int[] primsAlgo(ArrayList<ArrayList<Node>>graph, int V) {
         boolean[] visited = new boolean[V];
         int[] distance = new int[V];
         int[] parent = new int[V];

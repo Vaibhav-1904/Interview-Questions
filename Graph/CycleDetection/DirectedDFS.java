@@ -4,7 +4,6 @@ import java.util.*;
 public class DirectedDFS {
     // Function to detect cycle in a directed graph.
     public boolean isCyclic(int V, ArrayList<ArrayList<Integer>> graph) {
-        // code here
         int[] visited = new int[V];
         int[] dfsVisited = new int[V];
 

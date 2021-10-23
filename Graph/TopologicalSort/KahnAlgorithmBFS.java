@@ -6,7 +6,7 @@ import java.util.*;
 // then u appears before v in ordering
 // Kahn Algo is used to find Topological order using BFS
 
-public class KahnAlgorithm {
+public class KahnAlgorithmBFS {
     //Function to return list containing vertices in Topological order.
     static int[] topoSort(int V, ArrayList<ArrayList<Integer>> graph)
     {
@@ -21,6 +21,7 @@ public class KahnAlgorithm {
 
         Queue<Integer> q = new LinkedList<>();
         for(int i = 0; i < V; i++){
+            // Atleast one vertex will have indegree 0 as it is a DAG
             if(inDegree[i] == 0)
                 q.add(i);
         }

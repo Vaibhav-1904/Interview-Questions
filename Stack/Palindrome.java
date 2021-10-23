@@ -1,5 +1,4 @@
 package ImportantQ.Stack;
-
 import java.util.Stack;
 
 // Check whether the given string is Palindrome using Stack

@@ -23,13 +23,13 @@ public class TopologicalSortDFS {
     }
 
     // Using DFS  T = O(N+E) S = O(N + N + N)
-    static void findTopoSort(int i, ArrayList<ArrayList<Integer>> graph, boolean[] visited, Stack<Integer> stack ){
-        visited[i] = true;
+    static void findTopoSort(int vertex, ArrayList<ArrayList<Integer>> graph, boolean[] visited, Stack<Integer> stack ){
+        visited[vertex] = true;
 
-        for(Integer j : graph.get(i)){
-            if(!visited[j])
-                findTopoSort(j, graph, visited, stack);
+        for(Integer v : graph.get(vertex)){
+            if(!visited[v])
+                findTopoSort(v, graph, visited, stack);
         }
-        stack.push(i);
+        stack.push(vertex);
     }
 }

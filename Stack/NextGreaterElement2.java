@@ -1,5 +1,4 @@
 package ImportantQ.Stack;
-
 import java.util.Stack;
 
 // https://leetcode.com/problems/next-greater-element-ii/
@@ -13,9 +12,9 @@ public class NextGreaterElement2 {
 //        boolean flag = false;
 //        for(int i = 0; i < n; i++){
 //            flag = false;
-//            for(int j = i+1; j < i + n; j++){
+//            for(int j = i + 1; j < i + n; j++){
 //                if(nums[j % n] > nums[i]){
-//                    result[i] = nums[j%n];
+//                    result[i] = nums[j % n];
 //                    flag = true;
 //                    break;
 //                }

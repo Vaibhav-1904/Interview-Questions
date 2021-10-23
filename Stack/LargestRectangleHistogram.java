@@ -29,7 +29,7 @@ public class LargestRectangleHistogram {
 //        return max;
 //    }
 
-    // Better Approach --> Two Pass -> O(n)
+    // // Better Approach --> Two Pass -> O(n)
     public int largestRectangleArea(int[] heights) {
         int n = heights.length;
         int[] left = new int[n];
@@ -62,20 +62,20 @@ public class LargestRectangleHistogram {
         return max;
     }
 
-    //Optimal
-//    public int largestRectangleArea(int[] heights) {
-//        Stack<Integer> stack = new Stack<>();
-//        int n = heights.length;
-//        int area = 0;
-//
-//        for(int i = 0; i < n + 1; i++){
-//            while(!stack.isEmpty() && (i == n || heights[i] <= heights[stack.peek()])){
-//                int l = heights[stack.pop()];
-//                int b = (stack.isEmpty()) ? i : (i - stack.peek() - 1);
-//                area = Math.max(area, l*b);
-//            }
-//            stack.push(i);
-//        }
-//        return area;
-//    }
+    // Optimal T->O(n) 
+    // public int largestRectangleArea(int[] heights) {
+    //     Stack<Integer> stack = new Stack<>();
+    //     int n = heights.length;
+    //     int area = 0;
+
+    //     for(int i = 0; i < n + 1; i++){
+    //         while(!stack.isEmpty() && (i == n || heights[i] <= heights[stack.peek()])){
+    //             int l = heights[stack.pop()];
+    //             int b = stack.isEmpty() ? i : (i - stack.peek() - 1);
+    //             area = Math.max(area, l*b);
+    //         }
+    //         stack.push(i);
+    //     }
+    //     return area;
+    // }
 }

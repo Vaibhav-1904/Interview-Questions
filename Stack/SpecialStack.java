@@ -61,7 +61,7 @@ public class SpecialStack {
     }
 
     public void pop() {
-        if(stack.peek() < min){
+        if(stack.peek() < min){  // it means topmost element is the minimum element in stack
             min = 2*min - stack.peek();
         }
         stack.pop();
@@ -69,7 +69,7 @@ public class SpecialStack {
 
     public int top() {
         long val = stack.peek();
-        if(val < min)
+        if(val < min) // It means that topmost element is the minimum element in stack
             return (int)min;
         return (int)val;
     }
@@ -78,4 +78,12 @@ public class SpecialStack {
         return (int)min;
     }
 
- }
+    public static void main(String[] args){
+
+        SpecialStack s = new SpecialStack();
+
+        s.push(5);
+        System.out.println(s.top());
+    }
+
+}

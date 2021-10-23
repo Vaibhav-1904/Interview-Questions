@@ -10,7 +10,7 @@ public class MaxDiameter {
 //
 //        int l = maxDepth(root.left);
 //        int r = maxDepth(root.right);
-//        int max = l+r;
+//        int max = l + r;
 //
 //        int left = diameterOfBinaryTree(root.left);
 //        int right = diameterOfBinaryTree(root.right);
@@ -25,12 +25,13 @@ public class MaxDiameter {
 //        int left = maxDepth(root.left);
 //        int right = maxDepth(root.right);
 //
-//        return 1+Math.max(left, right);
+//        return 1 + Math.max(left, right);
 //    }
 
     // Optimal T->O(n)
     public int diameterOfBinaryTree(Node root) {
-        int[] maxDiameter = new int[1];
+        int[] maxDiameter = new int[1]; //  Since java is a reference type language
+        maxDiameter[0]  = Integer.MIN_VALUE;
         maxHeight(root, maxDiameter);
         return maxDiameter[0];
     }
@@ -43,6 +44,6 @@ public class MaxDiameter {
         int right = maxHeight(root.right, maxDiameter);
         maxDiameter[0] = Math.max(maxDiameter[0], left + right);
 
-        return 1+Math.max(left,right);
+        return 1 + Math.max(left,right);
     }
 }

@@ -20,7 +20,7 @@ public class InfixPostfix {
         String ans = "";
         Stack<Character> stack = new Stack<>();
 
-        for(char i:str.toCharArray()){
+        for(char i : str.toCharArray()){
             if(Character.isLetterOrDigit(i))
                 ans += i;
             else if(i == '('){
@@ -29,7 +29,7 @@ public class InfixPostfix {
                 while(!stack.isEmpty() && stack.peek() != '('){
                     ans += stack.pop();
                 }
-                stack.pop();
+                stack.pop(); // remove (
             }else{
                 while(!stack.isEmpty() && precedence(i) < precedence(stack.peek()))
                     ans += stack.pop();

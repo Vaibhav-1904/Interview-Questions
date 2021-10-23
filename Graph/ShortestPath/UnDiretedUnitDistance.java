@@ -10,7 +10,8 @@ import java.util.Queue;
 // between nodes in Trees, but we can have exponential number of unique paths between 2 nodes in a graph.
 
 public class UnDiretedUnitDistance {
-    int[] shortestPath(ArrayList<ArrayList<Integer>> graph, int V, int src){
+    // shortest distance form src node to every other node in graph
+    static int[] shortestPath(ArrayList<ArrayList<Integer>> graph, int V, int src){
         int[] distance  = new int[V];
         Queue<Integer> q = new LinkedList<>();
         // Initialising distance of every vertex from source node to that vertex to Infinity

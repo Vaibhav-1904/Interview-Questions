@@ -27,6 +27,7 @@ public class DijkstrasAlgorithm {
         int[] distance = new int[V];
         for(int i = 0; i < V; i++)
             distance[i] = Integer.MAX_VALUE;
+        distance[source] = 0;
 
         PriorityQueue<Node> pq = new PriorityQueue<>((v1, v2) -> v1.getWeight() - v2.getWeight());
         pq.add(new Node(source, 0));

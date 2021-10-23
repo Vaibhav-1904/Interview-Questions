@@ -1,6 +1,6 @@
 package ImportantQ.Queue;
 import java.util.*;
-
+// https://leetcode.com/problems/sliding-window-maximum/
 public class SlidingWindowMaximum {
 
 //    // Naive T  -> O(n*k)
@@ -20,6 +20,7 @@ public class SlidingWindowMaximum {
     // Optimal T -> O(2n)
     public int[] maxSlidingWindow(int[] nums, int k) {
         int[] result = new int[nums.length - k + 1];
+        // we will try to store max elements in front of dq
         Deque<Integer> dq = new ArrayDeque<>();
         int j = 0;
 
@@ -37,9 +38,5 @@ public class SlidingWindowMaximum {
                 result[j++] = nums[dq.getFirst()];
         }
         return result;
-    }
-
-    public static void main(String[] args){
-
     }
 }

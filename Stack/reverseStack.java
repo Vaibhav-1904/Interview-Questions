@@ -1,10 +1,11 @@
 package ImportantQ.Stack;
-
 import java.util.Stack;
+// https://www.geeksforgeeks.org/reverse-a-stack-using-recursion/
 
 public class reverseStack {
 
     private static void reverse(Stack<Integer> stack) {
+
         if(!stack.isEmpty()) {
             int data = stack.pop();
             reverse(stack);
@@ -14,12 +15,12 @@ public class reverseStack {
     }
 
     static void insertAtBottom(Stack<Integer> stack, int data){
-        if(stack.isEmpty())
-            stack.push(data);
-        else{
+        if(!stack.isEmpty()){
             int val = stack.pop();
             insertAtBottom(stack, data);
             stack.push(val);
+        }else{
+            stack.push(data);
         }
     }
 
