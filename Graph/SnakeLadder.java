@@ -1,6 +1,6 @@
 package ImportantQ.Graph;
 import java.util.*;
-// https://leetcode.com/problems/snakes-and-ladders/submissions/
+// https://leetcode.com/problems/snakes-and-ladders/
 public class SnakeLadder {
     // T = O(N) as every cell is added and removed only once from queue
     public int snakesAndLadders(int[][] board) {
@@ -11,11 +11,10 @@ public class SnakeLadder {
         Queue<Integer> queue = new LinkedList<>();
         queue.add(1);
 
-        //
         while (!queue.isEmpty()) {
             int vertex = queue.poll();
 
-            for (int i = vertex+1; i <= vertex+6; i++) { // if i=14 for n=6
+            for (int i = vertex+1; i <= vertex+6; i++) {
                 int row = (i - 1) / n; // row = 2, 0 based indexing
                 int col = (i - 1) % n; // col = 1
 
@@ -23,7 +22,7 @@ public class SnakeLadder {
                     col = n - 1 - col;
 
                 int newVal = i;
-                // in board matrix, values are stored upside down, therefore n- 1 - r
+                // in board matrix, values are stored upside down, therefore n - 1 - r
                 if (board[n - 1 - row][col] > 0) { // If there is a snake or ladder
                     newVal = board[n - 1 - row][col];
                 }

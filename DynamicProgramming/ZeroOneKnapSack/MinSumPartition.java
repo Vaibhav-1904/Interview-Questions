@@ -45,7 +45,7 @@ public class MinSumPartition {
         // Then we calculate the minimum value possible
         int min = Integer.MAX_VALUE;
         for(int i : list){// i is sum1
-            min = Math.min(min, (sum - i) - i);
+            min = Math.min(min, (sum - i) - i); // sum2 - sum1
         }
 
         return min;

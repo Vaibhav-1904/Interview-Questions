@@ -1,5 +1,5 @@
 package ImportantQ.Graph;
-// https://leetcode.com/problems/number-of-islands/submissions/
+// https://leetcode.com/problems/number-of-islands/
 public class NumberOfIslands {
     public int numIslands(char[][] grid) {
 

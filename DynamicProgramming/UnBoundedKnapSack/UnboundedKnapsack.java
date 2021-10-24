@@ -18,21 +18,20 @@ public class UnboundedKnapsack {
 //        }
 //    }
 
-    static int knapSack(int n, int W, int[] val, int[] wt)
+    static int unBoundedKnapSack(int n, int W, int[] values, int[] weight)
     {
-        // code here
         if(W == 0 || n == 0)
             return 0;
 
         int[][] dp = new int[n + 1][W + 1];
 
-        for(int i = 0;i <= n; i++){
+        for(int i = 0; i <= n; i++){
             for(int w = 0; w <= W; w++){
 
                 if(i == 0 || w == 0)
                     dp[i][w] = 0;
-                else if(wt[i - 1] <= w) // (i-1) is for not include
-                    dp[i][w] = Math.max(dp[i - 1][w], val[i - 1] + dp[i][w - wt[i - 1]] );
+                else if(weight[i - 1] <= w) // (i-1) is for not include
+                    dp[i][w] = Math.max(values[i - 1] + dp[i][w - weight[i - 1]], dp[i - 1][w]);
                 // but if we include, we can again include it back, so dp[i][w]  and not i-1
                 else
                     dp[i][w] = dp[i - 1][w];
@@ -40,5 +39,4 @@ public class UnboundedKnapsack {
         }
         return dp[n][W];
     }
-
 }

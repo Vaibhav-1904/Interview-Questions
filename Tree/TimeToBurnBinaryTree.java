@@ -79,7 +79,6 @@ public class TimeToBurnBinaryTree {
 
             if(node.right != null)
                 q.add(node.right);
-
         }
         return q.peek();
     }

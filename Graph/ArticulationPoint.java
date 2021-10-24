@@ -38,6 +38,6 @@ public class ArticulationPoint {
         if(parent == -1 && child > 1)
             result.add(node);
 
-        return new ArrayList<Integer>(result);
+        return new ArrayList<>(result);
     }
 }

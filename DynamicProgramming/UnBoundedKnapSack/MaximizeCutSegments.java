@@ -11,7 +11,6 @@ public class MaximizeCutSegments {
 //    // Recursive
 //    public int maximizeCuts(int n, int x, int y, int z)
 //    {
-//        //Your code here
 //        if(n == 0) return 0;
 //
 //        int one = Integer.MIN_VALUE;

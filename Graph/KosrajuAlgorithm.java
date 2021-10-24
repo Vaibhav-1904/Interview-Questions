@@ -29,9 +29,8 @@ public class KosrajuAlgorithm {
         }
         // Transpose of Graph, reversing all the edges
         for(int i = 0; i < V; i++){
-            for(Integer j: graph.get(i)){
-                transpose.get(j).add(i);
-            }
+            for(Integer v : graph.get(i))
+                transpose.get(v).add(i);
         }
 
         ArrayList<ArrayList<Integer>> SCC = new ArrayList<>(); // for storing Strongly Connected Components
@@ -50,7 +49,7 @@ public class KosrajuAlgorithm {
     static void dfs(int node, ArrayList<ArrayList<Integer>> graph, boolean[] visited, ArrayList<Integer> arr){
         visited[node] = true;
         arr.add(node);
-        for(Integer j : graph.get(node)){
+        for(Integer j : graph.get(node)) {
             if(!visited[j]){
                 dfs(j, graph, visited, arr);
             }

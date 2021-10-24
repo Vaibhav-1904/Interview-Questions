@@ -29,6 +29,7 @@ public class NodesDistanceK {
     public List<Integer> distanceK(Node root, Node target, int k) {
         Map<Node, Node> parents = new HashMap<>();
         markParents(root, parents); // used for upwards traversal
+
         Map<Node, Boolean> visited = new HashMap<>(); // not to visit same node again
         Queue<Node> q = new LinkedList<>();
 

@@ -13,7 +13,7 @@ public class WordSearch {
         return false;
     }
 
-    boolean dfs(char[][] board, int i, int j, int len, String word){
+    boolean dfs(char[][] board, int i, int j, int len, String word) {
         if(len == word.length()){
             return true;
         }
@@ -22,7 +22,7 @@ public class WordSearch {
             return false;
 
         char temp = board[i][j];
-        board[i][j] = ' ';
+        board[i][j] = ' '; //  because you cannot use same character twice
 
         boolean found = dfs(board, i + 1, j, len + 1, word)
                 || dfs(board, i, j + 1, len + 1, word)

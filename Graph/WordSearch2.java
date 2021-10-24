@@ -54,6 +54,20 @@ public class WordSearch2 {
         }
     }
 
+    void addWord(TrieNode root, String word){
+        TrieNode current = root;
+        int i = 0;
+        while(i < word.length()){
+            if(current.trieNodes[word.charAt(i) - 'a'] == null)
+                current.trieNodes[word.charAt(i) - 'a'] = new TrieNode();
+
+            current.childs++;
+            current = current.trieNodes[word.charAt(i) - 'a'];
+            i++;
+        }
+        current.word = word;
+    }
+
     public List<String> findWords(char[][] board, String[] words) {
         TrieNode root = new TrieNode();
 
@@ -90,19 +104,5 @@ public class WordSearch2 {
         dfs(i, j - 1, board, child, result);
 
         board[i][j] = temp;
-    }
-
-    void addWord(TrieNode root, String word){
-        TrieNode current = root;
-        int i = 0;
-        while(i < word.length()){
-            if(current.trieNodes[word.charAt(i) - 'a'] == null)
-                current.trieNodes[word.charAt(i) - 'a'] = new TrieNode();
-
-            current.childs++;
-            current = current.trieNodes[word.charAt(i) - 'a'];
-            i++;
-        }
-        current.word = word;
     }
 }

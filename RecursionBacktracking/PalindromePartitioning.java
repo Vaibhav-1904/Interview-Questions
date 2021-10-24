@@ -8,7 +8,7 @@ import java.util.*;
 public class PalindromePartitioning {
 
     // Recusrive Approach T -> O(2^n * n)
-    public List<List<String>> partition(String s) {
+    public static List<List<String>> partition(String s) {
         List<List<String>> result = new ArrayList<>();
         List<String> path = new ArrayList<>();
         Partition(0, s, path, result);
@@ -16,7 +16,7 @@ public class PalindromePartitioning {
         return result;
     }
     
-    public void Partition(int index, String str, List<String> path, List<List<String>> result){
+    public static void Partition(int index, String str, List<String> path, List<List<String>> result){
         if(index == str.length()){
             result.add(new ArrayList<>(path));
             return;
@@ -32,7 +32,7 @@ public class PalindromePartitioning {
         }
     }
     
-    public boolean isPalindrome(String s, int start, int end){
+    public static boolean isPalindrome(String s, int start, int end){
         while(start <= end){
             if(s.charAt(start++) != s.charAt(end--))
                 return false;
@@ -61,8 +61,6 @@ public class PalindromePartitioning {
     //             }
     //         }
     //     }
-        
-        
     //     Partition(0, s, path, result, dp);
         
     //     return result;
@@ -83,4 +81,8 @@ public class PalindromePartitioning {
     //         }
     //     }
     // }
+
+    public static void main(String[] args) {
+        System.out.println(partition("abbaa"));
+    }
 }

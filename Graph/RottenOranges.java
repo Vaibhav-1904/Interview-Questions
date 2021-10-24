@@ -1,9 +1,9 @@
 package ImportantQ.Graph;
 import java.util.*;
-
+// https://leetcode.com/problems/rotting-oranges/
 public class RottenOranges {
-    // My Solution
-    class Pair{
+    // Optimal
+    static class Pair{
         int i, j;
         Pair(int i, int j){
             this.i = i;

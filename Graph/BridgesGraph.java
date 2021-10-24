@@ -30,7 +30,7 @@ public class BridgesGraph {
         }
     }
 
-    void findBridges(int V, ArrayList<ArrayList<Integer>> graph){
+    void findBridges(int V, ArrayList<ArrayList<Integer>> graph) {
         boolean[] visited = new boolean[V];
         int[] low = new int[V]; // lowest insertion time among all adjacent
         int[] time = new int[V]; // Discovery time

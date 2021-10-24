@@ -12,7 +12,7 @@ public class ChildrenSumProperty {
         if(root.right != null)
             child += root.right.data;
 
-        if(child >= root.data)
+        if(child > root.data)
             root.data = child;
         else{
             if(root.left != null)
