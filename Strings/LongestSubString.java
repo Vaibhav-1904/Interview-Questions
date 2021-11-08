@@ -38,10 +38,8 @@ public class LongestSubString {
                    set.remove(s.charAt(left));
                    left++;
                }
-               set.add(s.charAt(right));
-            }else{
-                set.add(s.charAt(right));
             }
+            set.add(s.charAt(right));
             max = Math.max(max, (right - left) + 1);
         }
         return max;

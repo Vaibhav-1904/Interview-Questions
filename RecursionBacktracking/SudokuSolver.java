@@ -3,6 +3,7 @@ package ImportantQ.RecursionBacktracking;
 //Each of the digits 1-9 must occur exactly once in each column.
 //Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
 //T -> O(n^4)
+// https://leetcode.com/problems/valid-sudoku/
 public class SudokuSolver {
 
     public static boolean validate(char[][] board, int row, int col, char c){
