@@ -1,7 +1,7 @@
 package ImportantQ.Arrays;
 
 import java.util.Scanner;
-
+// https://leetcode.com/problems/maximum-subarray/
 // Given an integer array arr, find the contiguous subarray (containing at least one number)
 // which has the largest sum and return its sum.
 
@@ -55,7 +55,8 @@ public class KadaneAlgorithm {
             max_ending_here = Math.max(max_ending_here, 0);
         }
 
-        //The simple idea of Kadane’s algorithm is to look for all positive contiguous segments of the array (max_ending_here is used for this).
+        //The simple idea of Kadane’s algorithm is to look for all positive contiguous segments of the array
+        // (max_ending_here is used for this).
         // And keep track of maximum sum contiguous segment among all positive segments (max_so_far is used for this).
         // Each time we get a positive-sum compare it with max_so_far and update max_so_far if it is greater than max_so_far
 

@@ -4,15 +4,19 @@ package ImportantQ.RecursionBacktracking;
 //Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
 //T -> O(n^4)
 // https://leetcode.com/problems/valid-sudoku/
+// https://leetcode.com/problems/sudoku-solver/
 public class SudokuSolver {
 
     public static boolean validate(char[][] board, int row, int col, char c){
         for(int i = 0; i < 9; i++) {
-            if(board[i][col] != '.' && board[i][col] == c)
+            if(i != row && board[i][col] != '.' && board[i][col] == c)
                 return false; //check rows
-            if(board[row][i] != '.' && board[row][i] == c)
+            if(i != col && board[row][i] != '.' && board[row][i] == c)
                 return false; //check columns
-            if(board[3 * (row / 3) + i / 3][ 3 * (col / 3) + i % 3] != '.' && board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == c)
+
+            int x = 3 * (row / 3) + i / 3;
+            int y = 3 * (col / 3) + i % 3;
+            if(x != row && y != col && board[x][y] != '.' && board[x][y] == c)
                 return false; //check 3*3 block
         }
         return true;
