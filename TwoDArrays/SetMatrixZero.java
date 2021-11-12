@@ -41,15 +41,15 @@ public class SetMatrixZero {
 
 
         // Better Approach
-//        int[] row = new int[arr.length];
+//        int[] rows = new int[arr.length];
 //        int[] column = new int[arr[0].length];
-//        Arrays.fill(row,1);
+//        Arrays.fill(rows,1);
 //        Arrays.fill(column,1);
 //
 //        for(int i = 0; i < arr.length; i++){
 //            for(int j = 0; j < arr[i].length; j++){
 //                if(arr[i][j] == 0){
-//                    row[i] = 0;
+//                    rows[i] = 0;
 //                    column[j] = 0;
 //                }
 //            }
@@ -57,7 +57,7 @@ public class SetMatrixZero {
 //
 //        for(int i = 0; i < arr.length; i++){
 //            for(int j = 0; j <arr[i].length; j++){
-//                if(row[i] == 0 || column[j] == 0){
+//                if(rows[i] == 0 || column[j] == 0){
 //                    arr[i][j] = 0;
 //                }
 //            }
@@ -67,13 +67,13 @@ public class SetMatrixZero {
 //        }
 
 
-        int col = 1; // True, variable used for denoting 0th column zeros
-        int row = arr.length;
+        int cols = 1; // True, variable used for denoting 0th column zeros
+        int rows = arr.length;
         int column = arr[0].length;
 
-        for(int i = 0; i < row; i++){
+        for(int i = 0; i < rows; i++){
             if(arr[i][0] == 0){
-                col = 0;
+                cols = 0;
             }
             for(int j = 1; j < column; j++){
                 if(arr[i][j] == 0){
@@ -83,13 +83,13 @@ public class SetMatrixZero {
             }
         }
 
-        for(int i = row - 1; i >= 0; i--){
+        for(int i = rows - 1; i >= 0; i--){
             for(int j = column - 1; j >= 1; j--){
                 if(arr[i][0] == 0 || arr[0][j] == 0){
                     arr[i][j] = 0;
                 }
             }
-            if(col == 0){
+            if(cols == 0){
                 arr[i][0] = 0;
             }
         }

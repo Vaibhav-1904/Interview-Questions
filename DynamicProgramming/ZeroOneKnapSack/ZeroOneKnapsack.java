@@ -3,7 +3,7 @@ package ImportantQ.DynamicProgramming.ZeroOneKnapSack;
 public class ZeroOneKnapsack {
 
     // 0-1 KnapSack
-    // Recursive Approach T -> O2^n)
+    // Recursive Approach T -> O2^n), maximize Profit
 //    public int knapSack(int[] weight, int[] values, int W, int n) {
 //        if(W == 0 || n == 0)
 //            return 0;
@@ -65,7 +65,6 @@ public class ZeroOneKnapsack {
                     // we need to subtract weight[i-1] coz already include weight + current weight[i-1] might cross w ( w < )
                 }else
                     dp[i][w] = dp[i - 1][w];
-
             }
         }
         return dp[n][W];

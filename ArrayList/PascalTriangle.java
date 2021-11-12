@@ -6,7 +6,7 @@ import java.util.List;
 //In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
 // If you want to print a particular row formula is
 // (row-1) C (column-1) , where C = Combination
-
+//https://leetcode.com/problems/pascals-triangle/
 public class PascalTriangle {
     public static List<List<Integer>> generate(int n) {
         // n = Number of Rows in Triangle

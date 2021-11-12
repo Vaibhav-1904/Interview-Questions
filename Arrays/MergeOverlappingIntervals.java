@@ -10,12 +10,6 @@ public class MergeOverlappingIntervals {
     public int[][] merge(int[][] intervals) {
 
         Arrays.sort(intervals, (a, b) -> a[0] - b[0]); // Sorting based on initial interval value
-//        Arrays.sort(intervals,new Comparator<Interval>(){
-//            public int compare(Interval i1,Interval i2)
-//            {
-//                return i1.start-i2.start;
-//            }
-//        });
 
         List<int[]> arr = new ArrayList<>();
         if(intervals.length == 0){
@@ -24,7 +18,7 @@ public class MergeOverlappingIntervals {
 
         int start = intervals[0][0];
         int end = intervals[0][1];
-        for(int[] current:intervals){
+        for(int[] current : intervals){
 
             if(current[0] <= end){
                 end = Math.max(end, current[1]);

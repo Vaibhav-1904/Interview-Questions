@@ -2,6 +2,7 @@ package ImportantQ.RecursionBacktracking;
 // Count ways to reach the nth stair using step 1, 2 or 3.
 // A child is running up a staircase with n steps and can hop either 1 step, 2 steps, or 3 steps at a time.
 // Implement a method to count how many possible ways the child can run up the stairs.
+//https://leetcode.com/problems/climbing-stairs/
 public class ClimbingStairs {
     static int count = 0;
 //    T -> 3^n, Naive Approach

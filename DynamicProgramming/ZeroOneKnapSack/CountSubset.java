@@ -5,6 +5,8 @@ package ImportantQ.DynamicProgramming.ZeroOneKnapSack;
 // 1) {1,3} - {2,1}
 // 2) {1,3} - {2,1} (since there two 1s)
 // 3) {1,1,2} - {3}
+// https://leetcode.com/problems/target-sum/
+// same as Target Sum
 
 public class CountSubset {
     // DP

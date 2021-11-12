@@ -2,21 +2,20 @@ package ImportantQ.RecursionBacktracking;
 import java.util.*;
 // Given an array nums of distinct integers, return all the possible permutations.
 // You can return the answer in any order.
-
+// https://leetcode.com/problems/permutations/
 public class PermutationIntegers {
 
     public static ArrayList<Integer> swap(ArrayList<Integer> arr, int i, int j){
-
         int temp = arr.get(i);
         arr.set(i, arr.get(j));
         arr.set(j, temp);
-
         return arr;
     }
 
     static void printPermutations(List<List<Integer>> ans, ArrayList<Integer> nums, int index){
         if(index == nums.size() - 1){
             ans.add(nums);
+            return;
         }
 
         for(int i = index; i < nums.size(); i++){
