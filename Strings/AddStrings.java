@@ -20,9 +20,10 @@ public class AddStrings {
             ans.append(sum % 10);
             carry = sum / 10;
         }
-        if(carry != 0){
+
+        if(carry != 0)
             ans.append(carry);
-        }
+
         return ans.reverse().toString();
     }
 }

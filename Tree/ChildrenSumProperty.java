@@ -6,14 +6,14 @@ public class ChildrenSumProperty {
     public static void changeTree(Node root) {
         if(root == null)
             return;
-        int child = 0;
+        int childSum = 0;
         if(root.left != null)
-            child += root.left.data;
+            childSum += root.left.data;
         if(root.right != null)
-            child += root.right.data;
+            childSum += root.right.data;
 
-        if(child > root.data)
-            root.data = child;
+        if(childSum > root.data)
+            root.data = childSum;
         else{
             if(root.left != null)
                 root.left.data = root.data;

@@ -37,9 +37,9 @@ public class SubArrayXOR {
                 count++;
 
             if (map.get(xor) != null)
-                map.put(xor, map.get(xor)+1);
+                map.put(xor, map.get(xor) + 1);
             else
-                map.put(xor,1);
+                map.put(xor, 1);
         }
 
         System.out.println("Count : " + count);

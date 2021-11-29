@@ -5,14 +5,14 @@ import java.util.*;
 
 public class BoundaryOfTree {
     // T -> O(n)  S -> O(n)
-    ArrayList <Integer> printBoundary(Node node)
+    ArrayList <Integer> printBoundary(Node root)
     {
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        if(!isLeaf(node))
-            result.add(node.data);
-        addLeftBoundary(node, result);
-        addLeafNodes(node, result);
-        addRightBoundary(node, result);
+        ArrayList<Integer> result = new ArrayList<>();
+        if(!isLeaf(root))
+            result.add(root.data);
+        addLeftBoundary(root, result);
+        addLeafNodes(root, result);
+        addRightBoundary(root, result);
         return result;
     }
 

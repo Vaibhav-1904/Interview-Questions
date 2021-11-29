@@ -5,7 +5,7 @@ package ImportantQ.Strings;
 //Note: The alphabets are all in uppercase.
 public class ExcelSheet1 {
 //    T -> O(longn)
-    public String excelColumn(int N){
+    public static String excelColumn(int N){
         StringBuilder ans = new StringBuilder();
         while(N > 0){
             int rem = N % 26;
@@ -13,10 +13,14 @@ public class ExcelSheet1 {
                 ans.append("Z");
                 N = (N / 26) - 1; // Because Floor value increases by 1 when rem is 0
             }else{
-                ans.append((char)( (rem - 1) + 'A') );
-                N /= 26;
+                ans.append( (char)( (rem - 1) + 'A') );
+                N = N / 26;
             }
         }
         return ans.reverse().toString();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(excelColumn(53));
     }
 }

@@ -48,7 +48,6 @@ public class LowestCommonAncestor {
 
     // Optimal Approach S->O(n)
     public Node lowestCommonAncestor(Node root, Node p, Node q) {
-        // base case
         if(root == null || root == p || root == q)
             return root;
 

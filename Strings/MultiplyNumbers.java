@@ -27,7 +27,7 @@ public class MultiplyNumbers {
         int i = n2 - 1;
         int x = 0;
 
-        while(i >= 0){
+        while(i >= 0) {
             int ival = num2.charAt(i) - '0';
             i--;
 

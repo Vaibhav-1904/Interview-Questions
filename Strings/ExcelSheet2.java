@@ -5,7 +5,6 @@ public class ExcelSheet2 {
     public int titleToNumber(String str) {
 
         int ans = 0;
-
         int i = str.length() - 1;
         int x = 0;
         while(i >= 0){
@@ -13,7 +12,6 @@ public class ExcelSheet2 {
             i--;
             x++;
         }
-
         return ans;
     }
 }

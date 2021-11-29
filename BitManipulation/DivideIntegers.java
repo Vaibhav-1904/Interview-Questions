@@ -20,7 +20,7 @@ public class DivideIntegers {
             quotient =- quotient;
 
         if(quotient >= Integer.MAX_VALUE || quotient < Integer.MIN_VALUE)
-            return Integer.MAX_VALUE;
+            return Integer.MAX_VALUE;// edge case
 
         return (int)quotient;
     }

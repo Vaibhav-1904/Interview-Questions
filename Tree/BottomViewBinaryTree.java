@@ -25,18 +25,18 @@ public class BottomViewBinaryTree {
         q.add(new Pair(root, 0));
         while(!q.isEmpty()){
             Pair current = q.remove();
-            Node temp = current.node;
+            Node node = current.node;
             int line = current.line;
             if(map.containsKey(line))
-                map.replace(line, temp.data);
+                map.replace(line, node.data);
             else
-                map.put(line, temp.data);
+                map.put(line, node.data);
 
-            if(temp.left != null)
-                q.add(new Pair(temp.left, line - 1));
+            if(node.left != null)
+                q.add(new Pair(node.left, line - 1));
 
-            if(temp.right != null)
-                q.add(new Pair(temp.right, line + 1));
+            if(node.right != null)
+                q.add(new Pair(node.right, line + 1));
         }
 
         for(Map.Entry<Integer, Integer> entry : map.entrySet()){

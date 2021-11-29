@@ -13,14 +13,15 @@ public class IPAddress4 {
                 count++;
             }
         }
-        if(count != 3) return false;
+        if(count != 3)
+            return false;
 
         HashSet<String> set = new HashSet<>();
         for(int i = 0; i < 256; i++){
             set.add(String.valueOf(i));
         }
-        StringBuilder ans = new StringBuilder();
 
+        StringBuilder ans = new StringBuilder();
         count = 0;
         for(int i = 0; i < n; i++){
             if(s.charAt(i) == '.'){

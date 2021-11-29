@@ -2,32 +2,28 @@ package ImportantQ.BinarySearch;
 // https://leetcode.com/problems/search-in-rotated-sorted-array/
 public class searchRotatedArray {
 
-    public static int rotatedBinary(int[] arr, int key){
+    public int search(int[] arr, int target) {
+        int l = 0;
+        int r = arr.length - 1;
 
-        int low = 0;
-        int high = arr.length - 1;
-        while(low <= high){
-            int mid = (low+high) / 2;
-            if(arr[mid] == key)
-                return key;
+        while(l <= r){
+            int mid = (l + r) >> 1;
 
-            if(arr[mid] > arr[low]){
-                //left part is Sorted.
-                if(key >= arr[low] && key < arr[high])
-                    high = mid - 1;
+            if(arr[mid] == target)
+                return mid;
+
+            if(arr[l] <= arr[mid]){
+                if(target >= arr[l] && target < arr[mid])
+                    r = mid - 1;
                 else
-                    low = mid + 1;
-            }
-            else{
-                //Right Part is Sorted
-                if(key > arr[mid] && key <= arr[high])
-                    low = mid + 1;
+                    l = mid + 1;
+            }else{
+                if(target > arr[mid] && target <= arr[r])
+                    l = mid + 1;
                 else
-                    high = mid - 1;
+                    r = mid - 1;
             }
         }
-
         return -1;
     }
-
 }
