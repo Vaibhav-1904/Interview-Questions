@@ -1,4 +1,4 @@
-package ImportantQ.TwoDArrays;
+package ImportantQ.Arrays.TwoDArrays;
 // https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
 // You are given a row-column wise sorted Matrix, you need to find Kth Smallest Element in that Matrix
 // mat[][] =     {{16, 28, 60, 64},

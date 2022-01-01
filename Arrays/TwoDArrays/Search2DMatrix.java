@@ -1,4 +1,4 @@
-package ImportantQ.TwoDArrays;
+package ImportantQ.Arrays.TwoDArrays;
 
 import java.util.Scanner;
 // https://leetcode.com/problems/search-a-2d-matrix/

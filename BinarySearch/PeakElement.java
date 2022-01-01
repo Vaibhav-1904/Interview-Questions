@@ -3,7 +3,7 @@ package ImportantQ.BinarySearch;
 //Given an array arr[] of size N, find the index of any one of its peak elements.
 //Note: The generated output will always be 1 if the index that you return is correct. Otherwise output will be 0.
 // https://leetcode.com/problems/find-peak-element/
-public class PeekElement {
+public class PeakElement {
     //  Naive T->(n)
 //    public int peakElement(int[] arr,int n)
 //    {

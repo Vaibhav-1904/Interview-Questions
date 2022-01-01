@@ -1,4 +1,4 @@
-package ImportantQ.TwoDArrays;
+package ImportantQ.Arrays.TwoDArrays;
 
 import java.util.Arrays;
 //https://leetcode.com/problems/unique-paths/

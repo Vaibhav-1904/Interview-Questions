@@ -1,4 +1,4 @@
-package ImportantQ.TwoDArrays;
+package ImportantQ.Arrays.TwoDArrays;
 // https://leetcode.com/problems/spiral-matrix-ii/
 // Given an Integer N, you need to return NxN matrix in a spiral form matrix
 // Eg - for n = 3

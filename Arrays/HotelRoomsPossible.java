@@ -11,6 +11,7 @@ import java.util.*;
 // C = 1
 // Output = False
 public class HotelRoomsPossible {
+    // T-> O(n*log n)
     public boolean hotel(ArrayList<Integer> arrive, ArrayList<Integer> depart, int K) {
 
         Collections.sort(arrive);

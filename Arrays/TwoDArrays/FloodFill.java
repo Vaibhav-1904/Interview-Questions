@@ -1,4 +1,4 @@
-package ImportantQ.TwoDArrays;
+package ImportantQ.Arrays.TwoDArrays;
 // https://leetcode.com/problems/flood-fill/
 import java.util.*;
 public class FloodFill {

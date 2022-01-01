@@ -1,4 +1,4 @@
-package ImportantQ.TwoDArrays;
+package ImportantQ.Arrays.TwoDArrays;
 // https://leetcode.com/problems/01-matrix/
 public class Matrix {
     public int[][] updateMatrix(int[][] mat) {

@@ -1,7 +1,8 @@
-package ImportantQ.Arrays;
+package ImportantQ.Heap;
+
 import java.util.*;
 // https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/
-public class KlargestElements {
+public class KLargestElements {
     //Given an array of N positive integers, print k the largest elements from array in decreasing order.
 
     public static ArrayList<Integer> kLargest(int arr[], int n, int k)
@@ -26,7 +27,7 @@ public class KlargestElements {
         int n = scan.nextInt();
         int k = scan.nextInt();
         int[] arr = new int[n];
-        
+
 
         for (int i = 0; i < n; i++){
             arr[i] = scan.nextInt();

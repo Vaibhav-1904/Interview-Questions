@@ -7,7 +7,7 @@ public class UnDirectedDFS {
 
         boolean[] visited = new boolean[V + 1];
         // 1- Based Indexing
-        for(int i = 1; i <= V; i++){
+        for(int i = 1; i <= V; i++) {
             if(!visited[i])
                 if(checkForCycle(i, -1, graph, visited))
                     return true;

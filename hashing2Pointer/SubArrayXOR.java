@@ -30,16 +30,13 @@ public class SubArrayXOR {
         for(int i = 0; i < n; i++){
             xor = xor ^ arr[i];
 
-            if(map.get(xor ^ m) != null)
-                count += map.get(xor ^ m);
-
             if(xor == m)
                 count++;
 
-            if (map.get(xor) != null)
-                map.put(xor, map.get(xor) + 1);
-            else
-                map.put(xor, 1);
+            if(map.get(xor ^ m) != null)
+                count += map.get(xor ^ m);
+
+            map.put(xor, map.getOrDefault(xor, 0) + 1);
         }
 
         System.out.println("Count : " + count);

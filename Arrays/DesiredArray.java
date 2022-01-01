@@ -7,10 +7,10 @@ package ImportantQ.Arrays;
 //We are given desired array target[] containing n elements.
 // Compute and return the smallest possible number of the operations/steps needed to change the array from all zeros to desired array.
 
-public class desiredArray {
+public class DesiredArray {
     int countMinOperations(int[] target, int n) {
         int count = 0;
-        int max = target[0];
+        int max = Integer.MIN_VALUE;
         for(int i = 0; i < target.length; i++){
 
             if((target[i] % 2) != 0){
@@ -23,7 +23,7 @@ public class desiredArray {
         }
         while(max != 1){
             count++;
-            max = max/2;
+            max = max >> 1;
         }
         count += target.length;
         return count;

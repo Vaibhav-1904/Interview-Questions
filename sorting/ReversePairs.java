@@ -1,7 +1,7 @@
 package ImportantQ.sorting;
 // https://leetcode.com/problems/reverse-pairs/
 public class ReversePairs {
-    //    //Brute-Force
+    //    //Brute-Force T->O(n^2)
 //    public static int reversePairs(int[] nums) {
 //        int count = 0;
 //        for(int i = 0; i < nums.length -1; i++){
@@ -55,16 +55,16 @@ public class ReversePairs {
         return rev_count;
     }
 
-    public static int MergeSort(int[] arr, int l, int r){
-        int rev_count = 0;
-        if(l < r){
-            int mid = (l + r)>>1;
-            rev_count += MergeSort(arr, l, mid);
-            rev_count += MergeSort(arr, mid + 1, r);
-            rev_count += merge(arr, l, mid, r);
+        public static int MergeSort(int[] arr, int l, int r){
+            int rev_count = 0;
+            if(l < r){
+                int mid = (l + r)>>1;
+                rev_count += MergeSort(arr, l, mid);
+                rev_count += MergeSort(arr, mid + 1, r);
+                rev_count += merge(arr, l, mid, r);
+            }
+            return rev_count;
         }
-        return rev_count;
-    }
 
     public static void main(String[] args){
 
