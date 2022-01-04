@@ -7,7 +7,6 @@ public class UnionSortedArrays {
 //    // Naive T-> O(nlogn)
 //    public static ArrayList<Integer> findUnion(int[] arr1, int[] arr2, int n, int m)
 //    {
-//        // add your code here
 //        Set<Integer> arr = new HashSet<>();
 //
 //        for(int i:arr1)

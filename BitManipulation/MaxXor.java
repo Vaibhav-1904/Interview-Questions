@@ -1,5 +1,5 @@
 package ImportantQ.BitManipulation;
-
+import java.util.*;
 // Given an integer array nums, return the maximum result of nums[i] XOR nums[j], where 0 <= i <= j < n.
 // Find max XOR of any Pair in given array
 // https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/
@@ -17,19 +17,19 @@ public class MaxXor {
 //        return max;
 //    }
 
-    // Better T->O(nlogn)
+    // Better T->O(n logn)
 //    public int findMaximumXOR(int[] nums) {
 //
 //        int mask = 0, max = 0;
 //        for(int i = 31; i >= 0; i--){
 //            mask = mask | (1<<i);
-//            HashSet<Integer> h = new HashSet<>();
-//            for(int num:nums)
-//                h.add(mask & num);
+//            HashSet<Integer> set = new HashSet<>();
+//            for(int num : nums)
+//                set.add(mask & num);
 //
 //            int temp = max | (1<<i);
-//            for(int prefix:h){
-//                if(h.contains(temp ^ prefix)){
+//            for(int prefix:set){
+//                if(set.contains(temp ^ prefix)){
 //                    max = temp;
 //                    break;
 //                }
@@ -44,20 +44,6 @@ public class MaxXor {
         TrieNode(){
             trieNodes[0] = trieNodes[1] = null;
         }
-    }
-
-    static TrieNode buildTrie(int[] arr){
-        TrieNode root = new TrieNode();
-        for(int num : arr){
-            TrieNode cur = root;
-            for(int i = 31; i >= 0; i--){
-                int bit = (num >> i) & 1;
-                if(cur.trieNodes[bit] == null)
-                    cur.trieNodes[bit] = new TrieNode();
-                cur = cur.trieNodes[bit];
-            }
-        }
-        return root;
     }
     // Optimal T->O(32 * n)
     public static int findMaximumXOR(int[] nums) {
@@ -83,6 +69,17 @@ public class MaxXor {
         }
         return ans;
     }
-
-
+    public static TrieNode buildTrie(int[] arr){
+        TrieNode root = new TrieNode();
+        for(int num : arr){
+            TrieNode cur = root;
+            for(int i = 31; i >= 0; i--){
+                int bit = (num >> i) & 1;
+                if(cur.trieNodes[bit] == null)
+                    cur.trieNodes[bit] = new TrieNode();
+                cur = cur.trieNodes[bit];
+            }
+        }
+        return root;
+    }
 }

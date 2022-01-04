@@ -15,7 +15,7 @@ public class sqrt {
         long ans = 0;
 
         while(low <= high){
-            long mid = (low+high) / 2;
+            long mid = (low + high) / 2;
             if(mid*mid == x)
                 return (int)mid;
 

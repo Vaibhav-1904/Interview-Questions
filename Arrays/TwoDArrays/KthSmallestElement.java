@@ -9,7 +9,7 @@ package ImportantQ.Arrays.TwoDArrays;
 //Output: 27
 public class KthSmallestElement {
 
-    public static int kthSmallestElement(int[][] arr, int k){
+    public static int kthSmallestElement(int[][] arr, int k) {
         int r = arr.length;
         int low  = arr[0][0];
         int high = arr[r - 1][r - 1];

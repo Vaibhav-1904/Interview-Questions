@@ -2,9 +2,10 @@ package ImportantQ.BinarySearch;
 //Given two sorted arrays arr1 and arr2 of size N and M respectively and an element K. 
 //The task is to find the element that would be at the k’th position of the final sorted array.
 // https://practice.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1
+// https://www.youtube.com/watch?v=nv7F4PiLUzo&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=67
 public class KthElementSortedArrays{
 
-    // // Brute Force
+    // // Brute Force T-> O(n + m)
     // public static int KthElement(int[] arr1, int[] arr2, int k){
 
     //     int n = arr1.length; int m = arr2.length;
@@ -54,11 +55,11 @@ public class KthElementSortedArrays{
             return KthElement(arr2, arr1, k);
 
         int low = 0;
-        int high = arr1.length;
+        int high = arr1.length; // max elements which can be picked
 
         while(low <= high){
-            int cut1 = (low + high) / 2;
-            int cut2 = k - cut1;
+            int cut1 = (low + high) / 2; //  partitioning arr1 into left array and right array
+            int cut2 = k - cut1; //  partitioning arr2 into left array and right array, remaining elements after taking some elements from arr1
 
             int left1 = (cut1 == 0) ? Integer.MIN_VALUE : arr1[cut1 - 1];
             int left2 = (cut2 == 0) ? Integer.MIN_VALUE : arr2[cut2 - 1];

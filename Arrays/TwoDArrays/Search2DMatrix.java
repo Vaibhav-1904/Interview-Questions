@@ -27,13 +27,10 @@ public class Search2DMatrix {
                 return true;
             else if(matrix[mid / m][mid % m] < target)
                 l = mid + 1;
-            else{
+            else
                 r = mid - 1;
-            }
         }
-
         return false;
-
     }
 
     public static Boolean binary(int[] arr, int l,int r,int target){

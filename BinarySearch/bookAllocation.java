@@ -1,11 +1,11 @@
 package ImportantQ.BinarySearch;
 import java.util.*;
-
+// https://www.geeksforgeeks.org/allocate-minimum-number-pages/
 //Given an array of integers A of size N and an integer B.
 //
-//College library has N bags,the ith book has A[i] number of pages.
+//College library has N books,and the ith book has A[i] number of pages.
 //
-//You have to allocate books to B number of students so that maximum number of pages alloted to a student is minimum.
+//You have to allocate books to B number of students so that maximum number of pages allotted to a student is minimum.
 
 //A book will be allocated to exactly one student.
 //Each student has to be allocated at least one book.
@@ -15,38 +15,7 @@ import java.util.*;
 //
 //NOTE: Return -1 if a valid assignment is not possible.
 public class bookAllocation {
-    public static boolean isPossible(ArrayList<Integer> book, int n, int pages){
-
-        int sum = 0;
-        int student = 1;
-
-        for(int i = 0; i < book.size(); i++){
-            if(sum + book.get(i) > pages){ // if number of pages allocated to a student increases the middle value(page),
-                // allocate current book to new student. Since we don't want our answer > pages
-                student++;
-                sum = book.get(i);
-            }else{
-                sum += book.get(i);
-            }
-        }
-        return student <= n; // if total pages are allocated to students <= given value in question
-    }
-
-    public static int maxOf(ArrayList<Integer> A){
-        int max = A.get(0);
-        for(int i = 1; i < A.size(); i++)
-            max = Math.max(max, A.get(i));
-        return max;
-    }
-    public static int sumOf(ArrayList<Integer> A){
-        int sum = 0;
-        for (Integer i : A) {
-            sum += i;
-        }
-        return sum;
-    }
-
-    // T->O(nlogn)
+    // T->O(n log n)
     public static int books(ArrayList<Integer> book, int student) {
         int res = 0;
         // Our Answer will lie between min and max
@@ -66,6 +35,36 @@ public class bookAllocation {
         }
 
         return res;
+    }
+    public static boolean isPossible(ArrayList<Integer> book, int n, int pages) {
+
+        int sum = 0;
+        int student = 1;
+
+        for(int i = 0; i < book.size(); i++) {
+            if(sum + book.get(i) > pages){ // if number of pages allocated to a student increases the middle value(page),
+                // allocate current book to new student. Since we don't want our answer > pages
+                student++;
+                sum = book.get(i);
+            }else{
+                sum += book.get(i);
+            }
+        }
+        return student <= n; // if total pages are allocated to students <= given value in question
+    }
+
+    public static int maxOf(ArrayList<Integer> A){
+        int max = A.get(0);
+        for(int i = 1; i < A.size(); i++)
+            max = Math.max(max, A.get(i));
+        return max;
+    }
+    public static int sumOf(ArrayList<Integer> A) {
+        int sum = 0;
+        for (Integer i : A) {
+            sum += i;
+        }
+        return sum;
     }
 
     public static void main(String[] args) {

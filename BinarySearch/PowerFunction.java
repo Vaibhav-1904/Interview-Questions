@@ -16,23 +16,23 @@ public class PowerFunction {
     }
 
     //Iterative Approach
-    static double power(double x, int n){
+    static double power(double a, int b) {
         double ans = 1.0;
-        long m = n;
-        if(m < 0)
+        long m = b;
+        if(m < 0) // if power is -ve
             m = -1 * m;
 
         while(m > 0){
             if(m % 2 == 1){
-                ans = ans * x;
+                ans = ans * a;
                 m--;
             }
             else{
-                x = x * x;
+                a = a * a;
                 m = m / 2;
             }
         }
-        if(n < 0)
+        if(b < 0) // if power is -ve
             ans = (1.0) / (ans);
 
         return ans;

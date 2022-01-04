@@ -8,7 +8,7 @@ public class NthRoot {
     public static double multiply(double mid, int power)
     {
         double ans = 1;
-        for(int i = 0; i < power; i++){
+        for(int i = 0; i < power; i++) {
             ans *= mid;
         }
         return ans;
@@ -20,10 +20,10 @@ public class NthRoot {
         double low = 1;
         double high = num;
         double eps = 1e-6; // It means 10 to the power -6, whatever number of decimal places you want the ans to be
-        while((high-low) > eps){
-            double mid = (high+low) / 2;
+        while((high - low) > eps){
+            double mid = (high + low) / 2;
 
-            if(multiply(mid, power) > num)
+            if(Math.pow(mid, power) > num)
                 high = mid;
             else
                 low = mid;
@@ -32,7 +32,7 @@ public class NthRoot {
     }
 
     public static void main(String[] args) {
-        double d = getNthRoot(27,3);
+        double d = getNthRoot(40,4);
 
         System.out.println(d);
     }

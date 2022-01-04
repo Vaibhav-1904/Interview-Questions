@@ -15,5 +15,4 @@ public class BinarySearch {
         else
             return -1;
     }
-
 }

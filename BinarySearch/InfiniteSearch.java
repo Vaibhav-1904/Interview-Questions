@@ -9,7 +9,7 @@ public class InfiniteSearch {
         if(target == arr[mid])
             return target;
         else if(target < arr[mid])
-            return binarySearch(arr, l, mid, target);
+            return binarySearch(arr, l, mid - 1, target);
         else if(target > arr[mid] && l != r)
             return binarySearch(arr,mid + 1, r, target);
 
@@ -17,7 +17,7 @@ public class InfiniteSearch {
     }
 
     public static int searchInfinite(int[] arr, int key){
-
+        // arr is an infinite sorted array
         int low = 0;
         int high = 1;
         while(arr[high] < key){

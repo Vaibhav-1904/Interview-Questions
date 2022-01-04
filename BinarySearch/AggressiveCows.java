@@ -8,25 +8,7 @@ package ImportantQ.BinarySearch;
 import java.util.Arrays;
 public class AggressiveCows {
 
-    public static boolean canPlace(int[] arr, int cows, int d) {
-
-        int n = arr.length;
-        int position = arr[0];
-        int count = 1;
-
-        for(int i = 1; i < n; i++){
-            if((arr[i] - position) >= d){
-                count++;
-                position = arr[i] - position;
-            }
-            if(count == cows)
-                return true;
-        }
-        return false;
-    }
-
-
-    // T->O(nlogn)
+    // T->O(n logn)
     public static int minDistance(int[] arr, int cows){
 
         Arrays.sort(arr);
@@ -41,6 +23,23 @@ public class AggressiveCows {
                 high = distance - 1;
         }
         return high;
+    }
+
+    public static boolean canPlace(int[] arr, int cows, int d) {
+
+        int n = arr.length;
+        int position = arr[0];
+        int count = 1;
+
+        for(int i = 1; i < n; i++){
+            if((arr[i] - position) >= d){
+                count++;
+                position = arr[i];
+            }
+            if(count == cows)
+                return true;
+        }
+        return false;
     }
 
     public static void main(String[] args) {

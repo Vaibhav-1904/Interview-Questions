@@ -21,6 +21,7 @@ public class matrixMedian {
     // r*c will always be odd, number of elements in matrix is always odd
     // T->O(32 * r * log(c) ), 32 because max value can go upto 10^9 which is == 2^32
     public static int findMedian(int[][] arr, int r, int c){
+        // find min and max in the matrix
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
         for(int i = 0; i < r; i++){
@@ -33,8 +34,8 @@ public class matrixMedian {
             int mid = (min+max) >> 1;
             int count = 0;
 
-            for(int[] i : arr)
-                count += getCount(i, mid);// returns number of number less than equal to mid..
+            for(int[] row : arr)
+                count += getCount(row, mid);// returns number of number less than equal to mid..
 
             if(count <= (r*c / 2))
                 min = mid + 1;

@@ -34,15 +34,20 @@ public class MaxXORSubArray {
     static int maxSubarrayXOR(int N, int[] arr){
 
         int max_end_here = 1;
-        int max_so_far = Integer.MIN_VALUE;
+        int max_so_far = 0;
 
         for(int i = 0; i < N; i++){
             max_end_here = Math.max(arr[i], max_end_here ^ arr[i]);
 
-            if(max_end_here > max_so_far)
-                max_so_far = max_end_here;
+            max_so_far = Math.max(max_so_far, max_end_here);
         }
         return max_so_far;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {8, 1, 2, 12};
+
+        System.out.println(maxSubarrayXOR(arr.length, arr));
     }
 
 }

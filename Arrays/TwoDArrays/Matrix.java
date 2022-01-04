@@ -2,42 +2,37 @@ package ImportantQ.Arrays.TwoDArrays;
 // https://leetcode.com/problems/01-matrix/
 public class Matrix {
     public int[][] updateMatrix(int[][] mat) {
-        if (mat == null || mat.length == 0 || mat[0].length == 0) {
-            return mat;
-        }
 
-        int rows = mat.length;
-        int cols = mat[0].length;
-        if (rows == 1 && cols == 1)
-            return mat;
+        int r = mat.length;
+        int c = mat[0].length;
 
-        int[][] result = new int[rows][cols];
+        int[][] result = new int[r][c];
 
-        // max distance possible
-        int maxDistance = rows + cols;
+        int maxPossible = r + c;
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                if (mat[i][j] == 0)
+        for(int i = 0; i < r; i++) {
+            for(int j = 0; j < c; j++) {
+                if(mat[i][j] == 0)
                     continue;
-                result[i][j] = maxDistance;
-                if (i > 0)
+
+                result[i][j] = maxPossible;
+
+                if(i > 0)
                     result[i][j] = Math.min(result[i][j], result[i - 1][j] + 1);
 
-                if (j > 0)
+                if(j > 0)
                     result[i][j] = Math.min(result[i][j], result[i][j - 1] + 1);
             }
         }
-
-        for (int i = rows - 1; i >= 0; i--) {
-            for (int j = cols - 1; j >= 0; j--) {
-                if (mat[i][j] == 0)
+        for(int i = r-1; i >= 0; i--) {
+            for(int j = c-1; j >= 0; j--) {
+                if(mat[i][j] == 0)
                     continue;
 
-                if (i < rows - 1)
+                if(i < r-1)
                     result[i][j] = Math.min(result[i][j], result[i + 1][j] + 1);
 
-                if (j < cols - 1)
+                if(j < c-1)
                     result[i][j] = Math.min(result[i][j], result[i][j + 1] + 1);
             }
         }
