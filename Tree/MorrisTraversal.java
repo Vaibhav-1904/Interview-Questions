@@ -52,7 +52,7 @@ public class MorrisTraversal {
                     result.add(current.data);
                     current = current.left;
                 }
-                else{
+                else{ // if pre.right == current
                     pre.right = null;
                     current = current.right;
                 }

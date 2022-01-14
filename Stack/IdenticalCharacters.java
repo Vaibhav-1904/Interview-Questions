@@ -36,6 +36,7 @@ public class IdenticalCharacters {
                 stack.push(new Pair(s.charAt(i), 1));
             }
         }
+
         String ans = "";
         while(!stack.isEmpty()){
             Pair p = stack.pop();

@@ -22,8 +22,7 @@ public class SerializeDeserialize {
         q.add(root);
         while(!q.isEmpty()){
             Node node = q.remove();
-            if(node == null)
-            {
+            if(node == null) {
                 result.append("n ");
                 continue;
             }
@@ -34,7 +33,7 @@ public class SerializeDeserialize {
         return result.toString();
     }
 
-    // Decodes your encoded data to tree.
+    // Decodes your encoded data String to tree.
     public Node deserialize(String data) {
         if(data.length() == 0)
             return null;
@@ -44,13 +43,15 @@ public class SerializeDeserialize {
         Node root = new Node(Integer.parseInt(values[0]));
         q.add(root);
 
-        for(int i = 1; i < values.length; i++){
+        for(int i = 1; i < values.length; i++) {
             Node current = q.remove();
+            // Assigning Left Child
             if(!values[i].equals("n")){ // if string[i] is a number or Nan Value
                 Node temp = new Node(Integer.parseInt(values[i]));
                 q.add(temp);
                 current.left = temp;
             }
+            // Assigning Right Child
             if(!values[++i].equals("n")){
                 Node temp = new Node(Integer.parseInt(values[i]));
                 q.add(temp);

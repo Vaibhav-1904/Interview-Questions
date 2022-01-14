@@ -29,7 +29,7 @@ public class ChildrenSumProperty {
         if(root.right != null)
             temp += root.right.data;
 
-        if(root.left != null || root.right != null)
+        if(root.left != null || root.right != null) // for checking if it is a leaf node or not
             root.data = temp;
     }
 }

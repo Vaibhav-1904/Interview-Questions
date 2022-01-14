@@ -1,6 +1,6 @@
 package ImportantQ.RecursionBacktracking;
 import java.util.*;
-// Given a String, Print all the subsequence of given String
+// Given a String, Print all the subsequence(powerSet) of given String
 public class SubSequence {
     //   // Naive Approach , T->O( 2^n), S -> O(n)
 //    public static void printSubSequence(String str, StringBuilder s, int index){

@@ -22,6 +22,7 @@ public class RootToNodePath {
 
         if(root.left != null)
             left = path(root.left, result, b);
+
         if(root.right != null)
             right = path(root.right, result, b);
 

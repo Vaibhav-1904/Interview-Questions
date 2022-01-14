@@ -7,15 +7,16 @@ import java.util.*;
 //Each number in arr may only be used once in the combination.
 // The Answer should be in Lexicographical Order
 public class CombinationSum2 {
+    // k is for adding an arrayList element in the list
     //  Naive Approach //  T -> O(2^n * k * logk) k is  we can take one element more than one time, and therefore for each
-    // element ou can check at an average k times and logk for adding elements in a HashSet,
+    // element you can check at an average k times and logk for adding elements in a HashSet,
     // we need to remove this log k
     public void combinationSum2(int index, int sum, int[] nums, ArrayList<Integer> arr, HashSet<List<Integer>> result){
         if(sum == 0){
             result.add(new ArrayList<>(arr));
             return;
         }
-        if(index == nums.length || sum < 0){
+        if(index == nums.length || sum < 0) {
             return;
         }
         arr.add(nums[index]);

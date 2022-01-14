@@ -26,7 +26,7 @@ public class SingleElementSortedArray {
     // Optimal T-> O(logn)
     public int singleNonDuplicate(int[] nums){
         int low = 0;
-        int high = nums.length - 2;
+        int high = nums.length - 2; // high = n-2 for the edge case if the single element is at last index
 
         // xor of 1 with an even number n will give n + 1.
         // for Eg - 1^4 == 5

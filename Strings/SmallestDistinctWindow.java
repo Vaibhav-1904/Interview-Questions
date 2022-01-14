@@ -3,6 +3,7 @@ package ImportantQ.Strings;
 // https://www.geeksforgeeks.org/smallest-window-contains-characters-string/
 public class SmallestDistinctWindow {
 //    // Naive Approach
+    // T-> O(n^2)  S->O(n)
 //    public static String findSubString( String str) {
 //        HashMap<Character, Integer> map = new HashMap<>();
 //        int n = str.length();
@@ -47,7 +48,7 @@ public class SmallestDistinctWindow {
             }
         }
         int min = Integer.MAX_VALUE;
-        int start = 0, start_index = -1;
+        int start = 0, start_index = 0;
         int[] cur_count = new int[256];
         int count = 0;
 

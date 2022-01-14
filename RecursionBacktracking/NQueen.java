@@ -1,5 +1,5 @@
 package ImportantQ.RecursionBacktracking;
-
+// https://leetcode.com/problems/n-queens/
 import java.util.*;
 
 public class NQueen {

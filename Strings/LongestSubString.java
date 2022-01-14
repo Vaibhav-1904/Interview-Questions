@@ -10,7 +10,7 @@ public class LongestSubString {
 //        for(int i = 0; i < s.length(); i++){
 //            HashSet<Character> h = new HashSet<>();
 //            count = 0;
-//            for(int j = i; j < s.length(); j++){
+//            for(int j = i; j < s.length(); j++) {
 //                if(h.contains(s.charAt(j))){
 //                    break;
 //                }else{

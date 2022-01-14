@@ -24,7 +24,7 @@ public class ConsecutivePairs {
             }
             n--;
         }
-        if(!temp.isEmpty()){
+        if(!temp.isEmpty()){// last ele
             stack.push(temp.pop());
         }
         return flag;

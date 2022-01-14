@@ -12,7 +12,7 @@ public class CountNodesInCompleteTree {
 //        return 1 + countNodes(root.left) + countNodes(root.right);
 //    }
 
-    // Optimal
+    // OptimalT->O((logn)^2)
     public int countNodes(Node root) {
         int lh = 0;
         int rh = 0;
