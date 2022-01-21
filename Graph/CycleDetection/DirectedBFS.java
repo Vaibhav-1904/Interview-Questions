@@ -7,8 +7,8 @@ public class DirectedBFS {
 
         int[] result = new int[V];
         int[] inDegree = new int[V]; // Storing Inorder degrees for very Node i
-        // Count Indegree of every vertex
-        for(int i = 0; i < V; i++){
+        // Count InDegree of every vertex
+        for(int i = 0; i < V; i++) {
             for(Integer j : graph.get(i)){
                 inDegree[j]++;
             }
@@ -20,7 +20,6 @@ public class DirectedBFS {
                 q.add(i);
         }
         int count = 0;
-        int i = 0;
         while(!q.isEmpty()){
             Integer current = q.poll();
             // result[i++] = current;

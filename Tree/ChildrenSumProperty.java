@@ -1,35 +1,35 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.TreeNode;
 // https://www.geeksforgeeks.org/check-for-children-sum-property-in-a-binary-tree/
 
 public class ChildrenSumProperty {
-    public static void changeTree(Node root) {
+    public static void changeTree(TreeNode root) {
         if(root == null)
             return;
         int childSum = 0;
         if(root.left != null)
-            childSum += root.left.data;
+            childSum += root.left.val;
         if(root.right != null)
-            childSum += root.right.data;
+            childSum += root.right.val;
 
-        if(childSum > root.data)
-            root.data = childSum;
+        if(childSum > root.val)
+            root.val = childSum;
         else{
             if(root.left != null)
-                root.left.data = root.data;
+                root.left.val = root.val;
             if(root.right != null)
-                root.right.data = root.data;
+                root.right.val = root.val;
         }
         changeTree(root.left);
         changeTree(root.right);
 
         int temp = 0;
         if(root.left != null)
-            temp += root.left.data;
+            temp += root.left.val;
         if(root.right != null)
-            temp += root.right.data;
+            temp += root.right.val;
 
         if(root.left != null || root.right != null) // for checking if it is a leaf node or not
-            root.data = temp;
+            root.val = temp;
     }
 }

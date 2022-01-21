@@ -7,7 +7,7 @@ public class DirectedDFS {
         int[] visited = new int[V];
         int[] dfsVisited = new int[V];
 
-        for(int i = 0; i < V; i++){
+        for(int i = 0; i < V; i++) {
             if(visited[i] == 0)
                 if(checkCycleDFS(i, graph, visited, dfsVisited))
                     return true;

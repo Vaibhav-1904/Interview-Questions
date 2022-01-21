@@ -1,54 +1,54 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.TreeNode;
 import java.util.*;
 // You have been given a binary tree of 'N' unique nodes and a Start node from where the tree will start to burn.
 // Given that the Start node will always exist in the tree, your task is to print the time (in minutes)
 // that it will take to burn the whole tree.
 public class TimeToBurnBinaryTree {
 
-    public static void markParents(Node root, Map<Node, Node> parents){
-        Queue<Node> q = new LinkedList<>();
+    public static void markParents(TreeNode root, Map<TreeNode, TreeNode> parents){
+        Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
 
         while(!q.isEmpty()){
-            Node node = q.remove();
-            if(node.left != null){
-                q.add(node.left);
-                parents.put(node.left, node);
+            TreeNode treeNode = q.remove();
+            if(treeNode.left != null){
+                q.add(treeNode.left);
+                parents.put(treeNode.left, treeNode);
             }
-            if(node.right != null){
-                q.add(node.right);
-                parents.put(node.right, node);
+            if(treeNode.right != null){
+                q.add(treeNode.right);
+                parents.put(treeNode.right, treeNode);
             }
         }
     }
 
-    public static Node findTarget(Node root, int target){
+    public static TreeNode findTarget(TreeNode root, int target){
 
-        Queue<Node> q = new LinkedList<>();
+        Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         while(true){
-            if(q.peek().data == target)
+            if(q.peek().val == target)
                 break;
-            Node node = q.remove();
+            TreeNode treeNode = q.remove();
 
-            if(node.left != null)
-                q.add(node.left);
+            if(treeNode.left != null)
+                q.add(treeNode.left);
 
-            if(node.right != null)
-                q.add(node.right);
+            if(treeNode.right != null)
+                q.add(treeNode.right);
         }
         return q.peek();
     }
     // T-> O(2n),  S->O(3n)
-    public static int timeToBurnTree(Node root, int start) {
-        Map<Node, Node> parents = new HashMap<>();
+    public static int timeToBurnTree(TreeNode root, int start) {
+        Map<TreeNode, TreeNode> parents = new HashMap<>();
         markParents(root, parents);
 
-        Map<Node, Boolean> visited = new HashMap<>(); // not to visit same node again
-        Queue<Node> q = new LinkedList<>();
+        Map<TreeNode, Boolean> visited = new HashMap<>(); // not to visit same node again
+        Queue<TreeNode> q = new LinkedList<>();
 
-        Node target = findTarget(root, start);
+        TreeNode target = findTarget(root, start);
         visited.put(target, true);
         q.add(target);
         int time = 0;
@@ -57,7 +57,7 @@ public class TimeToBurnBinaryTree {
             int size = q.size();
             int f = 0; // to keep a check if any Node in tree is left to be burnt
             for(int i = 0; i < size; i++){
-                Node current = q.remove();
+                TreeNode current = q.remove();
                 // Downward Directions
                 if(current.left != null && visited.get(current.left) == null){
                     f = 1;

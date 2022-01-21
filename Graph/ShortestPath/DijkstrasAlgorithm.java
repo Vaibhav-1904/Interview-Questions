@@ -22,8 +22,8 @@ public class DijkstrasAlgorithm {
         }
     }
 
-    // T = O(N + E)*LogN    S = O(N+N)
-    static int[] dijkstra(int V, ArrayList<ArrayList<Node>> graph, int source){
+    // T = O((N + E)*LogN)    S = O(N+N)
+    static int[] dijkstra(int V, ArrayList<ArrayList<Node>> graph, int source) {
         int[] distance = new int[V];
         for(int i = 0; i < V; i++)
             distance[i] = Integer.MAX_VALUE;
@@ -35,10 +35,10 @@ public class DijkstrasAlgorithm {
         while(pq.size() > 0){
             Node current = pq.poll();
 
-            for(Node n : graph.get(current.getVertex())){
-                if(distance[current.getVertex()] + n.getWeight() < distance[n.getVertex()]){
-                    distance[n.getVertex()] = n.getWeight() + distance[current.getVertex()];
-                    pq.add(new Node(n.getVertex(), distance[n.getVertex()]));
+            for(Node node : graph.get(current.getVertex())){
+                if(distance[current.getVertex()] + node.getWeight() < distance[node.getVertex()]) {
+                    distance[node.getVertex()] = node.getWeight() + distance[current.getVertex()];
+                    pq.add(new Node(node.getVertex(), distance[node.getVertex()])); //logn
                 }
             }
         }

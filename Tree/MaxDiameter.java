@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.TreeNode;
 // https://leetcode.com/problems/diameter-of-binary-tree/submissions/
 
 public class MaxDiameter {
@@ -29,14 +29,14 @@ public class MaxDiameter {
 //    }
 
     // Optimal T->O(n)
-    public int diameterOfBinaryTree(Node root) {
+    public int diameterOfBinaryTree(TreeNode root) {
         int[] maxDiameter = new int[1]; //  Since java is a reference type language
         maxDiameter[0]  = Integer.MIN_VALUE;
         maxHeight(root, maxDiameter);
         return maxDiameter[0];
     }
 
-    int maxHeight(Node root, int[] maxDiameter){
+    int maxHeight(TreeNode root, int[] maxDiameter){
         if(root == null)
             return 0;
 

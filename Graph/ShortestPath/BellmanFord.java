@@ -8,7 +8,7 @@ import java.util.ArrayList;
 // between nodes in Trees, but we can have exponential number of unique paths between 2 nodes in a graph.
 public class BellmanFord {
     static class Node{
-        int u,v;
+        int u, v;
         int weight;
         Node(int u, int v, int w){
             this.u = u;
@@ -27,15 +27,15 @@ public class BellmanFord {
     }
     // Node -> u,v and distance between u&v
     // T = O((N-1) * E)
-    int[] bellmenFord(int V, ArrayList<Node> edges, int source){
+    int[] bellmenFord(int V, ArrayList<Node> Edges, int source){
         int[] distance = new int[V];
         for(int i = 0; i < V; i++)
             distance[i] = Integer.MAX_VALUE;
         distance[source] = 0;
 
         // Relaxation
-        for(int i = 0; i < V-1; i++){
-            for(Node n : edges){
+        for(int i = 0; i < V-1; i++) {
+            for(Node n : Edges){
                 // d(u)+d(u,v) < d(v)
                 if(distance[n.getU()] != Integer.MAX_VALUE && distance[n.getU()] + n.getWeight() < distance[n.getV()]){
                     distance[n.getV()] = distance[n.getU()] + n.getWeight();
@@ -43,11 +43,9 @@ public class BellmanFord {
             }
         }
         // -VE cycle detection
-        boolean flag = false;
-        for(Node n : edges){
+        for(Node n : Edges){
             if(distance[n.getU()] != Integer.MAX_VALUE && distance[n.getU()] + n.getWeight() < distance[n.getV()]){
                 System.out.println("Negative cycle in Graph");
-                flag = true;
                 break;
             }
         }

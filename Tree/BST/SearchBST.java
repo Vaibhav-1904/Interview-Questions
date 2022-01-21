@@ -1,5 +1,5 @@
 package ImportantQ.Tree.BST;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.TreeNode;
 // Binary Search Tree
 // Mostly the height of a BST is log n
 public class SearchBST {
@@ -17,9 +17,9 @@ public class SearchBST {
 //    }
 
     // Iterative Approach
-    public Node searchBST(Node root, int val){
-        while(root != null && root.data != val){
-            root = (val < root.data) ? root.left : root.right;
+    public TreeNode searchBST(TreeNode root, int val){
+        while(root != null && root.val != val){
+            root = (val < root.val) ? root.left : root.right;
         }
         return root;
     }

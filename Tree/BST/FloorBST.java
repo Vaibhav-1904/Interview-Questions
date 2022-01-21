@@ -1,19 +1,19 @@
 package ImportantQ.Tree.BST;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.TreeNode;
 //  return a number in BST which is just less than equal to than key
 public class FloorBST {
-    public static int floorInBST(Node node, int key) {
+    public static int floorInBST(TreeNode treeNode, int key) {
         int ans = -1;
-        while(node != null){
-            if(key == node.data){
-                ans = node.data;
+        while(treeNode != null){
+            if(key == treeNode.val){
+                ans = treeNode.val;
                 break;
             }
-            if(key < node.data){
-                node = node.left;
+            if(key < treeNode.val){
+                treeNode = treeNode.left;
             }else{
-                ans = node.data;
-                node = node.right;
+                ans = treeNode.val;
+                treeNode = treeNode.right;
             }
         }
         return ans;

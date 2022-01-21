@@ -1,6 +1,6 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
-import java.util.*;
+import ImportantQ.Tree.Node.TreeNode;
+
 // https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
 public class FlattenBinaryTree {
 
@@ -23,15 +23,15 @@ public class FlattenBinaryTree {
 
     // Optimal Approach using Morris Traversal
     // S -> O(1)
-    public void flatten(Node root) {
+    public void flatten(TreeNode root) {
         if(root == null)
             return;
-        Node current = root;
+        TreeNode current = root;
         while(current != null)
         {
             if(current.left != null){
 
-                Node pre = current.left;
+                TreeNode pre = current.left;
                 while(pre.right != null)
                     pre = pre.right;
 

@@ -1,5 +1,5 @@
 package ImportantQ.Tree.BST;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.TreeNode;
 // https://leetcode.com/problems/insert-into-a-binary-search-tree/
 
 public class InsertBST {
@@ -19,23 +19,23 @@ public class InsertBST {
 //    }
 
     // Iterative
-    public Node insertIntoBST(Node root, int val) {
+    public TreeNode insertIntoBST(TreeNode root, int val) {
         if(root == null)
-            return new Node(val);
-        Node current = root;
+            return new TreeNode(val);
+        TreeNode current = root;
         while(true){
-            if(val < current.data){
+            if(val < current.val){
                 if(current.left != null)
                     current = current.left;
                 else{
-                    current.left = new Node(val);
+                    current.left = new TreeNode(val);
                     break;
                 }
             }else{
                 if(current.right != null)
                     current = current.right;
                 else{
-                    current.right = new Node(val);
+                    current.right = new TreeNode(val);
                     break;
                 }
             }

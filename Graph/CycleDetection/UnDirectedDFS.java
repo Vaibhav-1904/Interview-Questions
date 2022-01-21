@@ -18,6 +18,7 @@ public class UnDirectedDFS {
     boolean checkForCycle(int current, int prev, ArrayList<ArrayList<Integer>> graph, boolean[] visited){
 
         visited[current] = true;
+
         for(Integer j : graph.get(current)){
             if(!visited[j]){
                 if(checkForCycle(j, current, graph, visited))

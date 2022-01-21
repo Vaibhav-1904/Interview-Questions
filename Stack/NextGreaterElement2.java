@@ -1,4 +1,5 @@
 package ImportantQ.Stack;
+import java.util.Arrays;
 import java.util.Stack;
 
 // https://leetcode.com/problems/next-greater-element-ii/
@@ -46,5 +47,12 @@ public class NextGreaterElement2 {
             stack.push(arr[i % n]);
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,5};
+        int[] result = nextGreaterElements(arr);
+
+        System.out.println(Arrays.toString(result));
     }
 }

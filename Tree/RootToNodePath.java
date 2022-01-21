@@ -1,21 +1,21 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.TreeNode;
 import java.util.ArrayList;
 // https://www.geeksforgeeks.org/print-path-root-given-node-binary-tree/
 
 public class RootToNodePath {
-    public ArrayList<Integer> solve(Node root, int b) {
+    public ArrayList<Integer> solve(TreeNode root, int b) {
         ArrayList<Integer> result = new ArrayList<>();
         path(root, result, b);
         return result;
     }
 
-    public boolean path(Node root, ArrayList<Integer> result, int b){
+    public boolean path(TreeNode root, ArrayList<Integer> result, int b){
         if(root == null)
             return false;
 
-        result.add(root.data);
-        if(root.data == b)
+        result.add(root.val);
+        if(root.val == b)
             return true;
 
         boolean left = false, right = false;

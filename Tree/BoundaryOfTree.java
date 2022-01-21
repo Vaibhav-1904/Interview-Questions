@@ -1,29 +1,30 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
 import java.util.*;
+import ImportantQ.Tree.Node.TreeNode;
+
 // https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1#
 
 public class BoundaryOfTree {
     // T -> O(n)  S -> O(n)
-    ArrayList <Integer> printBoundary(Node root)
+    ArrayList <Integer> printBoundary(TreeNode root)
     {
         ArrayList<Integer> result = new ArrayList<>();
         if(!isLeaf(root))
-            result.add(root.data);
+            result.add(root.val);
         addLeftBoundary(root, result);
         addLeafNodes(root, result);
         addRightBoundary(root, result);
         return result;
     }
 
-    boolean isLeaf(Node node){
+    boolean isLeaf(TreeNode node){
         return (node.left == null) && (node.right == null);
     }
-    void addLeftBoundary(Node node, ArrayList<Integer> result){
-        Node current = node.left;
+    void addLeftBoundary(TreeNode node, ArrayList<Integer> result){
+        TreeNode current = node.left;
         while(current != null){
             if(!isLeaf(current))
-                result.add(current.data);
+                result.add(current.val);
 
             if(current.left != null)
                 current = current.left;
@@ -32,9 +33,9 @@ public class BoundaryOfTree {
         }
     }
 
-    void addLeafNodes(Node node, ArrayList<Integer> result){
+    void addLeafNodes(TreeNode node, ArrayList<Integer> result){
         if(isLeaf(node)){
-            result.add(node.data);
+            result.add(node.val);
             return;
         }
         if(node.left != null){
@@ -45,12 +46,12 @@ public class BoundaryOfTree {
         }
     }
 
-    void addRightBoundary(Node node, ArrayList<Integer> result){
-        Node current = node.right;
+    void addRightBoundary(TreeNode node, ArrayList<Integer> result){
+        TreeNode current = node.right;
         Stack<Integer> stack = new Stack<>();
         while(current != null){
             if(!isLeaf(current))
-                stack.add(current.data);
+                stack.add(current.val);
 
             if(current.right != null)
                 current = current.right;

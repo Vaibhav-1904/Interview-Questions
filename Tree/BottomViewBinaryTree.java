@@ -1,19 +1,20 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.TreeNode;
+
 import java.util.*;
 // https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1
 
 public class BottomViewBinaryTree {
     static class Pair{
-        Node node;
+        TreeNode node;
         int line;
-        public Pair(Node node, int line){
+        public Pair(TreeNode node, int line){
             this.node = node;
             this.line = line;
         }
     }
     // T -> O(n) S-> O(2n)
-    static ArrayList<Integer> bottomView(Node root)
+    static ArrayList<Integer> bottomView(TreeNode root)
     {
         ArrayList<Integer> result = new ArrayList<>();
         if(root == null)
@@ -25,12 +26,12 @@ public class BottomViewBinaryTree {
         q.add(new Pair(root, 0));
         while(!q.isEmpty()){
             Pair current = q.remove();
-            Node node = current.node;
+            TreeNode node = current.node;
             int line = current.line;
             if(map.containsKey(line))
-                map.replace(line, node.data);
+                map.replace(line, node.val);
             else
-                map.put(line, node.data);
+                map.put(line, node.val);
 
             if(node.left != null)
                 q.add(new Pair(node.left, line - 1));

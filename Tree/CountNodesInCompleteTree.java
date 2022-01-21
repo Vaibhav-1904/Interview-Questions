@@ -1,5 +1,5 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.TreeNode;
 
 // https://leetcode.com/problems/count-complete-tree-nodes/submissions/
 // Complete Tree - every level, except possibly the last, is completely filled in a complete binary tree,
@@ -13,18 +13,18 @@ public class CountNodesInCompleteTree {
 //    }
 
     // OptimalT->O((logn)^2)
-    public int countNodes(Node root) {
+    public int countNodes(TreeNode root) {
         int lh = 0;
         int rh = 0;
-        Node node = root;
-        while(node != null){
+        TreeNode treeNode = root;
+        while(treeNode != null){
             lh++;
-            node = node.left;
+            treeNode = treeNode.left;
         }
-        node = root;
-        while(node != null){
+        treeNode = root;
+        while(treeNode != null){
             rh++;
-            node = node.right;
+            treeNode = treeNode.right;
         }
 
         if(lh == rh)

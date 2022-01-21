@@ -19,7 +19,6 @@ public class DAG {
             vertex = v;
             weight = w;
         }
-
         int getVertex(){
             return vertex;
         }
@@ -38,7 +37,7 @@ public class DAG {
         }
         // Update the Distance of every vertex form source to infinity
         for(int i = 0; i < V; i++){
-            distance[i] = Integer.MIN_VALUE;
+            distance[i] = Integer.MAX_VALUE;
         }
 
         distance[src] = 0; // distance from source -> source is 0

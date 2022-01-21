@@ -1,5 +1,6 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.TreeNode;
+
 // a binary tree in which the left and right subtrees of every node differ in height by no more than 1.
 // https://leetcode.com/problems/balanced-binary-tree/
 public class BalancedBTree {
@@ -34,11 +35,11 @@ public class BalancedBTree {
 //    }
 
     // Optimal T -> O(n)
-    public boolean isBalanced(Node root) {
+    public boolean isBalanced(TreeNode root) {
         return maxDepth(root) != -1;
     }
 
-    public int maxDepth(Node root){
+    public int maxDepth(TreeNode root){
         if(root == null)
             return 0;
 

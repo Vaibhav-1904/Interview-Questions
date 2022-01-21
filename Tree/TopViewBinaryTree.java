@@ -1,19 +1,19 @@
 package ImportantQ.Tree;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.TreeNode;
 import java.util.*;
 // https://www.geeksforgeeks.org/print-nodes-in-the-top-view-of-binary-tree-set-3/
 
 public class TopViewBinaryTree {
     static class Pair{
-        Node node;
+        TreeNode treeNode;
         int line;
-        public Pair(Node node, int line){
-            this.node = node;
+        public Pair(TreeNode treeNode, int line){
+            this.treeNode = treeNode;
             this.line = line;
         }
     }
     // T -> O(n) S-> O(2n)
-    static ArrayList<Integer> topView(Node root)
+    static ArrayList<Integer> topView(TreeNode root)
     {
         ArrayList<Integer> result = new ArrayList<>();
         if(root == null)
@@ -25,10 +25,10 @@ public class TopViewBinaryTree {
         q.add(new Pair(root, 0));
         while(!q.isEmpty()){
             Pair current = q.remove();
-            Node temp = current.node;
+            TreeNode temp = current.treeNode;
             int line = current.line;
             if(!map.containsKey(line))
-                map.put(line, temp.data);
+                map.put(line, temp.val);
 
             if(temp.left != null)
                 q.add(new Pair(temp.left, line - 1));

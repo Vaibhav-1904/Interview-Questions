@@ -55,14 +55,14 @@ public class UnDirectedBFS {
 
         for(int i = 1; i <= V; i++) {
             if(!visited[i]) {
-                if(checkForCycle(i, graph, V, visited))
+                if(checkForCycle(i, graph, visited))
                     return true;
             }
         }
         return false;
     }
 
-    static boolean checkForCycle(int index, List<List<Integer>> graph, int V, boolean[] visited) {
+    static boolean checkForCycle(int index, List<List<Integer>> graph, boolean[] visited) {
         Queue<Node> q = new LinkedList<>();
         q.add(new Node(index, -1));
         visited[index] = true;

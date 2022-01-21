@@ -1,6 +1,6 @@
 package ImportantQ.Tree;
 
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.TreeNode;
 // https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 
 public class LowestCommonAncestor {
@@ -47,12 +47,12 @@ public class LowestCommonAncestor {
 //    }
 
     // Optimal Approach S->O(n)
-    public Node lowestCommonAncestor(Node root, Node p, Node q) {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root == null || root == p || root == q)
             return root;
 
-        Node left = lowestCommonAncestor(root.left, p, q);
-        Node right = lowestCommonAncestor(root.right, p, q);
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
 
         if(left == null)
             return right;

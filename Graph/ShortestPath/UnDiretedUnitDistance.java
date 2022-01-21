@@ -21,13 +21,13 @@ public class UnDiretedUnitDistance {
 
         distance[src] = 0;
         q.add(src);
-        while(!q.isEmpty()){
-            int node = q.poll();
+        while(!q.isEmpty()) {
+            int cur = q.poll();
 
-            for(Integer j : graph.get(node)){
-                if(1 + distance[node] < distance[j]){
-                    distance[j] = distance[node] + 1;
-                    q.add(j);
+            for(Integer node : graph.get(cur)) {
+                if(1 + distance[cur] < distance[node]){
+                    distance[node] = distance[cur] + 1;
+                    q.add(node);
                 }
             }
         }

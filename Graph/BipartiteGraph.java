@@ -26,8 +26,8 @@ public class BipartiteGraph {
         color[i] = 1;
         while(!q.isEmpty()){
             Integer current = q.poll();
-            for(Integer j : graph.get(current)){
-                if(color[j] == -1){
+            for(Integer j : graph.get(current)) {
+                if(color[j] == -1){ // if the Node is not visited
                     color[j] = (color[current] == 1) ? 2 : 1;
                     q.add(j);
                 }else if(color[j] == color[current]){ // If adjacent node have same color which are already visited

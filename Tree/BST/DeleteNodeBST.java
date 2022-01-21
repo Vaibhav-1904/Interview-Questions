@@ -1,25 +1,25 @@
 package ImportantQ.Tree.BST;
-import ImportantQ.Tree.TreeNode.Node;
+import ImportantQ.Tree.Node.TreeNode;
 // https://leetcode.com/problems/delete-node-in-a-bst/
 
 public class DeleteNodeBST {
-    public Node deleteNode(Node root, int key) {
+    public TreeNode deleteNode(TreeNode root, int key) {
         if(root == null)
             return null;
-        if(root.data == key)
+        if(root.val == key)
             return helper(root);
 
-        Node temp = root;
+        TreeNode temp = root;
         while(root != null){
-            if(root.data > key){
-                if(root.left != null && root.left.data == key){
+            if(root.val > key){
+                if(root.left != null && root.left.val == key){
                     root.left = helper(root.left);
                     break;
                 }else{
                     root = root.left;// when the given key is not present
                 }
             }else{
-                if(root.right != null && root.right.data == key){
+                if(root.right != null && root.right.val == key){
                     root.right = helper(root.right);
                     break;
                 }else{
@@ -30,19 +30,19 @@ public class DeleteNodeBST {
         return temp;
     }
 
-    public Node helper(Node root){
+    public TreeNode helper(TreeNode root){
         if(root.left == null)
             return root.right;
         else if(root.right == null)
             return root.left;
 
-        Node rightChild = root.right;
-        Node lastRight = findLastRight(root.left);
+        TreeNode rightChild = root.right;
+        TreeNode lastRight = findLastRight(root.left);
         lastRight.right = rightChild;
         return root.left;
     }
 
-    public Node findLastRight(Node root){
+    public TreeNode findLastRight(TreeNode root){
         while(root.right != null)
             root = root.right;
         return root;
