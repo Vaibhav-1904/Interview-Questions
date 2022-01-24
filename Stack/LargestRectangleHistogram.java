@@ -32,7 +32,7 @@ public class LargestRectangleHistogram {
     // // Better Approach --> Two Pass -> O(n)
     // We will initially find left boundary for every height h in height array
     // Then we will find right boundary for every height h
-    // Then we got the width possible for every heigh h(through right and left boundary), and we got the height,
+    // Then we got the width possible for every height h(through right and left boundary), and we got the height,
     // from it we can calculate the max area possible
 //    public int largestRectangleArea(int[] heights) {
 //        int n = heights.length;
@@ -73,7 +73,7 @@ public class LargestRectangleHistogram {
          int area = 0;
 
          for(int i = 0; i <= n; i++){
-             while(!stack.isEmpty() && (i == n || heights[i] <= heights[stack.peek()])){
+             while(!stack.isEmpty() && (i == n || heights[stack.peek()] >= heights[i])) {
                  int l = heights[stack.pop()];
                  int b = stack.isEmpty() ? i : (i - stack.peek() - 1);
                  area = Math.max(area, l*b);

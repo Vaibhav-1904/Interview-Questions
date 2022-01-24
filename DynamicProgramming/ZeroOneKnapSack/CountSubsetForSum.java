@@ -36,7 +36,7 @@ public class CountSubsetForSum {
 //    }
 
     // DP T->O(sum)
-    static int countSubset(int[] arr, int sum, int n){
+    static int countSubset(int[] arr, int sum, int n) {
         int[] dp = new int[sum + 1];
 
         Arrays.fill(dp, 0);

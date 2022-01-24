@@ -51,9 +51,9 @@ public class SpecialStack {
         min = Long.MAX_VALUE;
     }
 
-    public void push(int value){
+    public void push(int value) {
         long val = (long) value;
-        if(val < min){
+        if(val < min) {
             stack.push(2*val - min);
             min = val;
         }else

@@ -2,6 +2,11 @@ package ImportantQ.DynamicProgramming.UnBoundedKnapSack;
 // https://leetcode.com/problems/min-cost-climbing-stairs/
 public class MinCostClimbingStairs {
     public int minCostClimbingStairs(int[] cost) {
+
+//        int n = cost.length - 1;
+//        int[] dp = new int[n + 1];
+//        return Math.min(solve(cost, 0, n, dp), solve(cost, 1, n, dp));
+
         int n = cost.length;
 
         if(n == 2){

@@ -5,7 +5,7 @@ public class LongestCommonSubString {
     // max substring length till now in recursive function.
 
     // Top-Down
-    int longestCommonSubstr(String s1, String s2, int l1, int l2){
+    static int longestCommonSubstr(String s1, String s2, int l1, int l2){
         int[][] dp = new int[l1 + 1][l2 + 1];
 
         int max = 0;
@@ -21,5 +21,9 @@ public class LongestCommonSubString {
             }
         }
         return max;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(longestCommonSubstr("GeeksforGeeks", "GeeksQuiz", 13, 9));
     }
 }

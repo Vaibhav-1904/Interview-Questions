@@ -41,7 +41,6 @@ public class LRUCache {
         if(map.size() == capacity){
             remove(tail.pre);
         }
-
         insert(new Node(key, value));
     }
 

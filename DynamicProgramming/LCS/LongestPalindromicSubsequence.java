@@ -4,7 +4,7 @@ public class LongestPalindromicSubsequence {
     // Naive Approach -> Recursion
 
     // topDown Optimal
-    public static int longestPalindromeSubseq(String s) {
+    public static int longestPalindromeSubSeq(String s) {
         StringBuilder s1 = new StringBuilder(s);
         String s2 = s1.reverse().toString();
         int l = s.length();
@@ -25,6 +25,6 @@ public class LongestPalindromicSubsequence {
 
     public static void main(String[] args) {
         String a = "bbbab";
-        System.out.println(longestPalindromeSubseq(a));
+        System.out.println(longestPalindromeSubSeq(a));
     }
 }

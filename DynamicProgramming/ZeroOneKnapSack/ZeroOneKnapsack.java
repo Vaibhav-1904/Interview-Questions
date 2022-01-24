@@ -2,23 +2,22 @@ package ImportantQ.DynamicProgramming.ZeroOneKnapSack;
 // KnapSack is Standard Parent Problem
 public class ZeroOneKnapsack {
 
-    // 0-1 KnapSack
-    // Recursive Approach T -> O2^n), maximize Profit
+//    // 0-1 KnapSack
+//    // Recursive Approach T -> O2^n), maximize Profit
+//    // W is the total weight we can carry.
 //    public int knapSack(int[] weight, int[] values, int W, int n) {
 //        if(W == 0 || n == 0)
 //            return 0;
 //
-//        if(weight[n - 1] <= W){ // Include and Not Include
+//        if(weight[n - 1] <= W) // Include and Not Include
 //            return Math.max(values[n - 1] + knapSack(weight, values, W - weight[n-1], n-1), knapSack(weight, values, W, n-1));
-//        }
 //        else
 //            return knapSack(weight, values, W, n - 1);
 //    }
 
-//    // Memoization T -> O(n*W)  S -> O(n*W)
+//    // Dynamic Programming Memoization T -> O(n*W)  S -> O(n*W)
 //    // In memoization we create matrix for those variables which change recursively
-//    static int[][] dp = new int[101][1001];
-//    static int knapSack(int W, int[] weight, int[] values, int n)
+//    static int knapSack(int[] weight, int[] values, int W, int n)
 //    {
 //        if(W == 0 || n == 0)
 //            return 0;
@@ -42,22 +41,19 @@ public class ZeroOneKnapsack {
 //
 //        if(weight[n - 1] <= W) // Include and Not Include
 //            return dp[n][W] = Math.max(values[n - 1] + memoization(weight, values, W - weight[n-1], n-1, dp), memoization(weight, values, W, n-1, dp));
-//
 //        else
 //            return dp[n][W] = memoization(weight, values, W, n - 1, dp);
-//
 //    }
 
-    // Top-Down Approach
+    // Top-Down Approach Dynamic Programming
     public static int knapSack(int[] weight, int[] values, int W, int n) {
         if(W == 0 || n == 0)
             return 0;
 
         int[][] dp = new int[n + 1][W + 1];
 
-        for(int i = 0; i <= n; i++){
+        for(int i = 0; i <= n; i++) {
             for(int w = 0; w <= W; w++){
-
                 if(i == 0 || w == 0)
                     dp[i][w] = 0;
                 else if(weight[i - 1] <= w){ // You have 2 options, either to include or not include

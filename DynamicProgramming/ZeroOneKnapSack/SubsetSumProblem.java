@@ -30,7 +30,7 @@ public class SubsetSumProblem {
 //        return memo(N, arr, sum, dp);
 //    }
 //
-//    static Boolean memo(int N, int[] arr, int sum, Boolean[][] dp){
+//    static Boolean memo(int N, int[] arr, int sum, Boolean[][] dp) {
 //
 //        if(sum == 0)
 //            return dp[N][sum] = true;
@@ -65,7 +65,7 @@ public class SubsetSumProblem {
 //    }
 
     // Most Optimal
-    static Boolean isSubsetSum(int N, int[] nums, int sum){
+    static Boolean isSubsetSum(int N, int[] nums, int sum) {
 
         boolean[] dp = new boolean[sum + 1];
 
@@ -77,4 +77,5 @@ public class SubsetSumProblem {
         }
         return dp[sum];
     }
+
 }

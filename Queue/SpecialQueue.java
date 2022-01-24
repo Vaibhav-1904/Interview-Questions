@@ -2,24 +2,24 @@ package ImportantQ.Queue;
 
 import java.util.*;
 
-// Problem: Design a Data Structure a SpecialQueue which supports following operations enque, deque, getMin() or
+// Problem: Design a Data Structure a SpecialQueue which supports following operations enqueue, deque, getMin() or
 // getMax() where getMin() operation takes O(1) time.
 public class SpecialQueue {
     Queue<Integer> q;
-    Deque<Integer> dq;
+    Deque<Integer> dq; // in Deque, the elements are store in ascending order
     public SpecialQueue(){
         q = new LinkedList<>();
         dq = new ArrayDeque<>();
     }
     void enque(int data){
-        while(!dq.isEmpty() && data < dq.getLast()){
+        while(!dq.isEmpty() && data < dq.getLast()) {
             dq.removeLast();
         }
         dq.addLast(data);
         q.add(data);
     }
-    void deque(int data){
-        if(dq.getFirst() == q.peek()){
+    void deque(){
+        if(dq.getFirst() == q.peek()) { // if min element is to be removed
             dq.removeFirst();
         }
         q.remove();
@@ -35,6 +35,7 @@ public class SpecialQueue {
         SpecialQueue arr = new SpecialQueue();
         arr.enque(1);
         arr.enque(2);
+        arr.deque();
         System.out.println(arr.getMin());
         arr.enque(-1);
         System.out.println(arr.getMin());

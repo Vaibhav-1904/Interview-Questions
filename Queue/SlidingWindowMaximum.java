@@ -21,7 +21,7 @@ public class SlidingWindowMaximum {
     public int[] maxSlidingWindow(int[] nums, int k) {
         int[] result = new int[nums.length - k + 1];
         // we will try to store max elements in front of dq
-        Deque<Integer> dq = new ArrayDeque<>();
+        Deque<Integer> dq = new LinkedList<>();
         int j = 0;
 
         for(int i = 0; i < nums.length; i++){

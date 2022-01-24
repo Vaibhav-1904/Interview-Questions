@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class DiceThrows {
     public int numRollsToTarget(int dice, int faces, int target) {
 
-        if(dice * faces < target || dice == 0)
+        if(dice * faces < target || dice == 0 || target < dice)
             return 0;
 
         int[][] dp = new int[dice + 1][target + 1];
