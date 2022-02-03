@@ -36,8 +36,8 @@ public class ReverseNodesInGroups {
         ListNode cur = temp;
         ListNode nex = temp;
 
-        while(count >= k){
-            cur = pre.next; //
+        while(count >= k) {
+            cur = pre.next;
             nex = cur.next; // Element whose link is to be reversed
             for(int i = 1; i < k; i++){
                 cur.next = nex.next; // To maintain access to nex->next
