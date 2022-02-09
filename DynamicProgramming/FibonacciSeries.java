@@ -10,24 +10,47 @@ public class FibonacciSeries {
 //        return fib(n-1) + fib(n-2);
 //    }
 
-    // DP
-    int fib(int n)
-    {
-        // Declare an array to store Fibonacci numbers
-        int[] f = new int[n + 2];   // 1 extra to handle case, n = 0
-        int i;
+//    // DP -> Tabulation
+//    int fib(int n)
+//    {
+//        // Declare an array to store Fibonacci numbers
+//        int[] dp = new int[n + 2];   // 1 extra to handle case, n = 0
+//        int i;
+//
+//        // 0th and 1st number of the series are 0 and 1
+//        dp[0] = 0;
+//        dp[1] = 1;
+//
+//        for (i = 2; i <= n; i++)
+//        {
+//            // Add the previous 2 numbers in the series
+//            // and store it
+//            dp[i] = dp[i-1] + dp[i-2];
+//        }
+//        return dp[n];
+//    }
 
-        // 0th and 1st number of the series are 0 and 1
-        f[0] = 0;
-        f[1] = 1;
+    // Optimal
+    static int fib(int n) {
 
-        for (i = 2; i <= n; i++)
-        {
-            // Add the previous 2 numbers in the series
-            // and store it
-            f[i] = f[i-1] + f[i-2];
+        if(n <= 1)
+            return n;
+
+        int prev;
+        int prev2 = 0;
+        int result = 1;
+        for(int i = 2; i <= n; i++) {
+            prev = result;
+            result = prev + prev2;
+            prev2 = prev;
         }
+        return result;
+    }
 
-        return f[n];
+    public static void main(String[] args) {
+
+        for(int i = 0; i < 10; i++) {
+            System.out.print(fib(i) + "  ");
+        }
     }
 }
