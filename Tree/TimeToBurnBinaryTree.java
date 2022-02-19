@@ -45,11 +45,11 @@ public class TimeToBurnBinaryTree {
         Map<TreeNode, TreeNode> parents = new HashMap<>();
         markParents(root, parents);
 
-        Map<TreeNode, Boolean> visited = new HashMap<>(); // not to visit same node again
+        Map<TreeNode, Boolean> isVisited = new HashMap<>(); // not to visit same node again
         Queue<TreeNode> q = new LinkedList<>();
 
         TreeNode target = findTarget(root, start);
-        visited.put(target, true);
+        isVisited.put(target, true);
         q.add(target);
         int time = 0;
 
@@ -59,21 +59,21 @@ public class TimeToBurnBinaryTree {
             for(int i = 0; i < size; i++){
                 TreeNode current = q.remove();
                 // Downward Directions
-                if(current.left != null && visited.get(current.left) == null){
+                if(current.left != null && isVisited.get(current.left) == null){
                     f = 1;
                     q.add(current.left);
-                    visited.put(current.left, true);
+                    isVisited.put(current.left, true);
                 }
-                if(current.right != null && visited.get(current.right) == null){
+                if(current.right != null && isVisited.get(current.right) == null){
                     f = 1;
                     q.add(current.right);
-                    visited.put(current.right, true);
+                    isVisited.put(current.right, true);
                 }
                 // Upward Direction
-                if(parents.get(current) != null && visited.get(parents.get(current)) == null){
+                if(parents.get(current) != null && isVisited.get(parents.get(current)) == null){
                     f = 1;
                     q.add(parents.get(current));
-                    visited.put(parents.get(current), true);
+                    isVisited.put(parents.get(current), true);
                 }
             }
             if(f == 1)

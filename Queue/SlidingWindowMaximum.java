@@ -1,6 +1,6 @@
 package ImportantQ.Queue;
 import java.util.*;
-// https://leetcode.com/problems/sliding-window-maximum/
+// https://leetcode.com/problem s/sliding-window-maximum/
 public class SlidingWindowMaximum {
 
 //    // Naive T  -> O(n*k)

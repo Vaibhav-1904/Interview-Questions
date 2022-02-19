@@ -8,7 +8,7 @@ public class InfixEvaluation {
 
     // Optimal using 2 stacks in 1Pass
     static int infixEvaluate(String str){
-        Stack<Integer> operand = new Stack<>();
+        Stack<Integer> digit = new Stack<>();
         Stack<Character> operator = new Stack<>();
 
         for(char c: str.toCharArray()){
@@ -16,22 +16,22 @@ public class InfixEvaluation {
                 continue;
 
             if(Character.isLetterOrDigit(c))
-                operand.push(c - '0');
+                digit.push(c - '0');
             else if(c == '(')
                 operator.push(c);
             else if(c == ')'){
                 // Evaluate Bracket
                 while(!operator.isEmpty() && operator.peek() != '('){
-                    int val1 = operand.pop();
-                    int val2 = operand.pop();
+                    int val1 = digit.pop();
+                    int val2 = digit.pop();
                     switch(operator.pop()){
-                        case '*': operand.push(val2 * val1);
+                        case '*': digit.push(val2 * val1);
                             break;
-                        case '/': operand.push(val2 / val1);
+                        case '/': digit.push(val2 / val1);
                             break;
-                        case '+': operand.push(val1 + val2);
+                        case '+': digit.push(val1 + val2);
                             break;
-                        case '-': operand.push(val2 - val1);
+                        case '-': digit.push(val2 - val1);
                     }
                 }
                 operator.pop();
@@ -40,6 +40,6 @@ public class InfixEvaluation {
                 operator.push(c);
             }
         }
-        return operand.pop();
+        return digit.pop();
     }
 }

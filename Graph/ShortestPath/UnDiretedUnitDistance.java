@@ -11,7 +11,7 @@ import java.util.Queue;
 
 public class UnDiretedUnitDistance {
     // shortest distance form src node to every other node in graph
-    static int[] shortestPath(ArrayList<ArrayList<Integer>> graph, int V, int src){
+    static int[] shortestPath(ArrayList<ArrayList<Integer>> graph, int V, int src) {
         int[] distance  = new int[V];
         Queue<Integer> q = new LinkedList<>();
         // Initialising distance of every vertex from source node to that vertex to Infinity

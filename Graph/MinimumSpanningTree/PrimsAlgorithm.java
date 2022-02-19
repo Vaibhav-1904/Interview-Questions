@@ -3,20 +3,6 @@ import java.util.*;
 // https://www.youtube.com/watch?v=8KPEROaLK-0&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=22
 // It is used to find Minimum Spanning Tree
 public class PrimsAlgorithm {
-    static class Node{
-        int vertex, weight;
-
-        Node(int v, int w){
-            vertex = v;
-            weight = w;
-        }
-        int getVertex(){
-            return vertex;
-        }
-        int getWeight(){
-            return weight;
-        }
-    }
 
 ////         Naive Approach
 //    // T = O(V^2) n^2    S = O(3N)
@@ -54,6 +40,21 @@ public class PrimsAlgorithm {
 //        return parent;
 //    }
 
+    static class Node {
+        int vertex, weight;
+
+        Node(int v, int w){
+            vertex = v;
+            weight = w;
+        }
+        int getVertex(){
+            return vertex;
+        }
+        int getWeight(){
+            return weight;
+        }
+    }
+
     // Optimal  T = O((N+E) * log N) -> NLogN
     int[] primsAlgo(ArrayList<ArrayList<Node>>graph, int V) {
         boolean[] visited = new boolean[V];
@@ -76,10 +77,13 @@ public class PrimsAlgorithm {
             visited[current] = true; // You visit current Node
 
             for(Node n : graph.get(current)){
-                if(!visited[n.getVertex()] && n.getWeight() < distance[n.getVertex()]){
-                    distance[n.getVertex()] = n.getWeight(); // Update Table
-                    parent[n.getVertex()] = current; // Assign it's parent
-                    pq.add(new Node(n.getVertex(), distance[n.getVertex()]));
+                int vertex = n.getVertex();
+                int weight = n.getWeight();
+
+                if(!visited[vertex] && weight < distance[vertex]){
+                    distance[vertex] = weight; // Update Table
+                    parent[vertex] = current; // Assign it's parent
+                    pq.add(new Node(vertex, distance[vertex]));
                 }
             }
         }

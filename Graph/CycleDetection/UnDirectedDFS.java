@@ -15,7 +15,7 @@ public class UnDirectedDFS {
         return false;
     }
 
-    boolean checkForCycle(int current, int prev, ArrayList<ArrayList<Integer>> graph, boolean[] visited){
+    boolean checkForCycle(int current, int prev, ArrayList<ArrayList<Integer>> graph, boolean[] visited) {
 
         visited[current] = true;
 

@@ -5,7 +5,7 @@ import java.util.*;
 public class KLargestElements {
     //Given an array of N positive integers, print k the largest elements from array in decreasing order.
 
-    public static ArrayList<Integer> kLargest(int arr[], int n, int k)
+    public static ArrayList<Integer> kLargest(int[] arr, int n, int k)
     {
         PriorityQueue<Integer> pq = new PriorityQueue<>(k);
 
@@ -17,6 +17,10 @@ public class KLargestElements {
                 pq.add(i);
             }
         }
+//        int[] result = new int[k];
+//        int j = 0;
+//        for(int i : pq)
+//            result[j++] = i;
         return new ArrayList<>(pq);
     }
 

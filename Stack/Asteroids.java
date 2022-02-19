@@ -1,6 +1,6 @@
 package ImportantQ.Stack;
 import java.util.*;
-// https://leetcode.com/problems/asteroid-collision/submissions/
+// https://leetcode.com/problems/asteroid-collision/
 public class Asteroids {
     // T-> O(n)
     public int[] asteroidCollision(int[] asteroids) {

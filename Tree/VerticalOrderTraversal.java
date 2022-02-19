@@ -1,12 +1,8 @@
 package ImportantQ.Tree;
-
+// https://www.geeksforgeeks.org/print-binary-tree-vertical-order/
 import java.util.*;
 public class VerticalOrderTraversal {
 
-    static class Node{
-        int data;
-        Node left, right;
-    }
 //    static ArrayList<Integer> verticalOrder(Node root)
 //    {
 //        ArrayList<Integer> result = new ArrayList<>();
@@ -40,6 +36,10 @@ public class VerticalOrderTraversal {
 //        getVerticalOrder(root.right, map, line + 1);
 //    }
 
+    static class Node{
+        int data;
+        Node left, right;
+    }
     static class TreeNode{
         Node node;
         int line, level;
@@ -49,17 +49,17 @@ public class VerticalOrderTraversal {
             this.level = level;
         }
     }
-
+    // T-> O(n log n)
     static ArrayList<Integer> VerticalOrder(Node root) {
         ArrayList<Integer> result = new ArrayList<>();
-
+        // Priority Queue for sorting
         Queue<TreeNode> q = new LinkedList<>();
         q.add(new TreeNode(root, 0, 0));
         TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer> > > map = new TreeMap<>(); // line, level, sorting
 
         while(!q.isEmpty()) {
             TreeNode temp = q.poll();
-            Node cur = temp.node;
+            Node current = temp.node;
             int line = temp.line;
             int level = temp.level;
 
@@ -69,12 +69,12 @@ public class VerticalOrderTraversal {
             if(!map.get(line).containsKey(level))
                 map.get(line).put(level, new PriorityQueue<>());
 
-            map.get(line).get(level).add(cur.data);
+            map.get(line).get(level).add(current.data);
 
-            if(cur.left != null)
-                q.add(new TreeNode(cur.left, line - 1, level + 1));
-            if(cur.right != null)
-                q.add(new TreeNode(cur.right, line + 1, level + 1));
+            if(current.left != null)
+                q.add(new TreeNode(current.left, line - 1, level + 1));
+            if(current.right != null)
+                q.add(new TreeNode(current.right, line + 1, level + 1));
         }
 
         for(TreeMap<Integer, PriorityQueue<Integer>> mp : map.values()){

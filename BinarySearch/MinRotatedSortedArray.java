@@ -6,7 +6,7 @@ public class MinRotatedSortedArray {
         int r = nums.length - 1;
         if(r == 0)
             return nums[0];
-        int minIndex = 0;
+
         while(l <= r) {
             int mid = (l + r) >> 1;
 

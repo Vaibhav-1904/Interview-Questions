@@ -19,7 +19,7 @@ public class DirectedDFS {
         visited[i] = 1;
         dfsVisited[i] = 1;
 
-        for(Integer current : graph.get(i) ){
+        for(Integer current : graph.get(i) ) {
             if(visited[current] == 0){
                 if(checkCycleDFS(current, graph, visited, dfsVisited) )// IF it returns true, cycle in further DFS
                     return true;

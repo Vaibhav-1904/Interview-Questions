@@ -15,7 +15,7 @@ public class DAG {
         // A final variable cannot be changed
         private final int vertex;
         private final int weight;
-        Pair(int v, int w){
+        Pair(int v, int w) {
             vertex = v;
             weight = w;
         }
@@ -27,28 +27,29 @@ public class DAG {
         }
     }
     // T = O(N + E + N + E)   S = O(N + N + N + N)
-    int[] shortestPath(int V, ArrayList<ArrayList<Pair>> graph, int src){
-        int[] distance = new int[V];
+    int[] shortestPath(int V, ArrayList<ArrayList<Pair>> graph, int src) {
         Stack<Integer> stack = new Stack<>();
         Boolean[] visited = new Boolean[V];
-        for(int i = 0; i < V; i++){
+        for(int i = 0; i < V; i++) {
             if(!visited[i])
                 topoSort(i, graph, stack, visited);
         }
+
         // Update the Distance of every vertex form source to infinity
-        for(int i = 0; i < V; i++){
+        int[] distance = new int[V];
+        for(int i = 0; i < V; i++)
             distance[i] = Integer.MAX_VALUE;
-        }
 
         distance[src] = 0; // distance from source -> source is 0
+
         while(!stack.isEmpty()){
             int current = stack.pop();
             // If current has been reached previously,
-            if(distance[current] != Integer.MAX_VALUE){ // So that it always starts from source node
-                for(Pair p : graph.get(current)){
-                    if(p.getWeight() + distance[current] < distance[p.getVertex()]){
+            if(distance[current] != Integer.MAX_VALUE) { // So that it always starts from source node
+                for(Pair p : graph.get(current)) {
+                    if(p.getWeight() + distance[current] < distance[p.getVertex()])
                         distance[p.getVertex()] = distance[current] + p.getWeight();
-                    }
+
                 }
             }
         }

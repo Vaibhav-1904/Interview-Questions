@@ -34,17 +34,17 @@ public class BackSpaceStringCompare {
 //        return stack1.isEmpty() && stack2.isEmpty();
 //    }
 
-    // Optimal
-    public boolean backspaceCompare(String s, String t) {
+    // Optimal T->O(n)
+    public boolean backspaceCompare(String s1, String s2) {
 
-        int i = s.length() - 1;
-        int j = t.length() - 1;
+        int i = s1.length() - 1;
+        int j = s2.length() - 1;
 
         int c1 = 0, c2 = 0;
 
         while(i >= 0 || j >= 0) {
-            while((i >= 0 && s.charAt(i) == '#') || c1 > 0) {
-                if(i >= 0 && s.charAt(i) == '#')
+            while( (i >= 0 && s1.charAt(i) == '#') || c1 > 0) {
+                if(i >= 0 && s1.charAt(i) == '#')
                     c1++;
                 else
                     c1--;
@@ -52,8 +52,8 @@ public class BackSpaceStringCompare {
                 i--;
             }
 
-            while((j >= 0 && t.charAt(j) == '#') || c2 > 0) {
-                if(j >= 0 && t.charAt(j) == '#')
+            while( (j >= 0 && s2.charAt(j) == '#') || c2 > 0) {
+                if(j >= 0 && s2.charAt(j) == '#')
                     c2++;
                 else
                     c2--;
@@ -67,8 +67,9 @@ public class BackSpaceStringCompare {
             if(i < 0 || j < 0)
                 return false;
 
-            if(s.charAt(i--) != t.charAt(j--))
+            if(s1.charAt(i--) != s2.charAt(j--))
                 return false;
+
         }
         return true;
     }

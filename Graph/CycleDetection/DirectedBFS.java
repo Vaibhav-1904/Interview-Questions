@@ -4,8 +4,6 @@ import java.util.*;
 // using Kahn Algorithm
 public class DirectedBFS {
     public boolean isCyclic(int V, ArrayList<ArrayList<Integer>> graph) {
-
-        int[] result = new int[V];
         int[] inDegree = new int[V]; // Storing Inorder degrees for very Node i
         // Count InDegree of every vertex
         for(int i = 0; i < V; i++) {
@@ -24,7 +22,7 @@ public class DirectedBFS {
             Integer current = q.poll();
             // result[i++] = current;
             count++;
-            for(Integer j : graph.get(current)){
+            for(Integer j : graph.get(current)) {
                 inDegree[j]--;
 
                 if(inDegree[j] == 0)

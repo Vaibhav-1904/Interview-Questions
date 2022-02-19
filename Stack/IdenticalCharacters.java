@@ -24,10 +24,7 @@ public class IdenticalCharacters {
         for(int i = 0; i < n; i++) {
             if(stack.isEmpty()){
                 stack.push(new Pair(s.charAt(i), 1));
-                continue;
-            }
-
-            if(stack.peek().c == s.charAt(i)){
+            } else if(stack.peek().c == s.charAt(i)){
                 Pair p = stack.pop();
                 p.freq += 1;
                 if(p.freq != k)
@@ -37,15 +34,15 @@ public class IdenticalCharacters {
             }
         }
 
-        String ans = "";
+        StringBuilder ans = new StringBuilder();
         while(!stack.isEmpty()){
             Pair p = stack.pop();
             while(p.freq > 0){
-                ans += p.c;
+                ans.append(p.c);
                 p.freq--;
             }
         }
-        return ans;
+        return ans.toString();
     }
 
 

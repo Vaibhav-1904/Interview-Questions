@@ -9,10 +9,10 @@ public class DeleteNodeBST {
         if(root.val == key)
             return helper(root);
 
-        TreeNode temp = root;
-        while(root != null){
+        TreeNode head = root;
+        while(root != null) {
             if(root.val > key){
-                if(root.left != null && root.left.val == key){
+                if(root.left != null && root.left.val == key) {
                     root.left = helper(root.left);
                     break;
                 }else{
@@ -27,7 +27,7 @@ public class DeleteNodeBST {
                 }
             }
         }
-        return temp;
+        return head;
     }
 
     public TreeNode helper(TreeNode root){

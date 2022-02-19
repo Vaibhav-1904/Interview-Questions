@@ -24,7 +24,7 @@ public class MinimumPlatform {
         if(arr.length == 1){
             return 1;
         }
-        while(i < arr.length && j < dep.length){
+        while(i < arr.length && j < dep.length) {
             if(arr[i] <= dep[j]){
                 i++;
                 platform++;

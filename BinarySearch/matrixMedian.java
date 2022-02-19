@@ -30,7 +30,7 @@ public class matrixMedian {
         }
         // Our Search space will lie between minimum and maximum values present in the matrix
 
-        while(min <= max){ // Binary Search
+        while(min <= max) { // Binary Search
             int mid = (min+max) >> 1;
             int count = 0;
 

@@ -23,7 +23,7 @@ public class KruskalAlgorithm {
         }
     }
 
-    int findParent(int node, int[] parent){
+    int findParent(int node, int[] parent) {
         if(node == parent[node])
             return node;
         // Path Compression
@@ -31,7 +31,7 @@ public class KruskalAlgorithm {
     } // 7 -> 6 -> 3 -> 2, and 2 is main parent, then assign 2 to 6 and 7
 
     void Union(int node1, int node2, int[] rank, int[] parent){
-        node1 = findParent(node1,parent);
+        node1 = findParent(node1, parent);
         node2 = findParent(node2, parent);
 
         if(rank[node1] < rank[node2])
@@ -57,7 +57,7 @@ public class KruskalAlgorithm {
         int costMST = 0;
         ArrayList<Node> mst = new ArrayList<>();
 
-        for(Node n : graph){
+        for(Node n : graph) {
             if(findParent(n.getU(), parent) != findParent(n.getV(), parent)){ // if 2 Nodes are of different component
                 costMST += n.weight;
                 mst.add(n);

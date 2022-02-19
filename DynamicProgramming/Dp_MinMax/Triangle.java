@@ -5,15 +5,18 @@ import java.util.List;
 // https://leetcode.com/problems/triangle/
 public class Triangle {
     public int minimumTotal(List<List<Integer>> triangle) {
-        int[] dp = new int[triangle.size()];
+        int lastRow = triangle.size() - 1;
+        int[] dp = new int[lastRow + 1];
 
-        for(int i = triangle.size() - 1; i >= 0; i--){
-            for(int j = 0; j < triangle.get(i).size(); j++){
-                if(i == triangle.size() - 1){
+        for(int i = lastRow; i >= 0; i--) {
+
+            int rowSize = triangle.get(i).size();
+
+            for(int j = 0; j < rowSize; j++) {
+                if(i == lastRow)
                     dp[j] = triangle.get(i).get(j);
-                }else{
+                else
                     dp[j] = triangle.get(i).get(j) + Math.min(dp[j], dp[j + 1]);
-                }
             }
         }
 

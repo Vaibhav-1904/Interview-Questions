@@ -8,7 +8,7 @@ public class ConnectRopes {
     // so that array remains in sorted form
     // And while adding every 2 smallest ropes, maintain a cost variable
     // keep adding sum to that cost variable each time.
-    // T = O(nlogn)
+    // T = O(n^2)
 
     // Optimal Approach
     long minCost(long[] arr, int n)

@@ -1,11 +1,11 @@
 package ImportantQ.DynamicProgramming.LCS;
 // https://leetcode.com/problems/delete-operation-for-two-strings/
 // https://practice.geeksforgeeks.org/problems/minimum-number-of-deletions-and-insertions0209/1
-// Given two strings word1 and word2, return the minimum number of Insertions/Deletions required to make word1 and word2 the same.
+// Given two strings word1 and word2, return the minimum number of Insertions/Deletions
+// required to make word1 and word2 the same.
 //
 //In one step, you can delete exactly one character in either string.
 
-// Logic is to
 public class ConvertStringAtoB {
 
     // Naive -> Recursion

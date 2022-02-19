@@ -16,7 +16,7 @@ public class IPAddress4 {
         if(count != 3)
             return false;
 
-        HashSet<String> set = new HashSet<>();
+        HashSet<String> set = new HashSet<>(256);
         for(int i = 0; i < 256; i++){
             set.add(String.valueOf(i));
         }

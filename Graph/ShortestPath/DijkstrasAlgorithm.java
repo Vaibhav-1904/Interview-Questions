@@ -32,13 +32,18 @@ public class DijkstrasAlgorithm {
         PriorityQueue<Node> pq = new PriorityQueue<>((v1, v2) -> v1.getWeight() - v2.getWeight());
         pq.add(new Node(source, 0));
 
-        while(pq.size() > 0){
+        while(!pq.isEmpty()) {
             Node current = pq.poll();
+            int vertex = current.getVertex();
+            int weight = current.getWeight();
 
-            for(Node node : graph.get(current.getVertex())){
-                if(distance[current.getVertex()] + node.getWeight() < distance[node.getVertex()]) {
-                    distance[node.getVertex()] = node.getWeight() + distance[current.getVertex()];
-                    pq.add(new Node(node.getVertex(), distance[node.getVertex()])); //logn
+            for(Node node : graph.get(vertex)) {
+                int curVertex = node.getVertex();
+                int curWeight = node.getWeight();
+
+                if(distance[vertex] + curWeight < distance[curVertex]) {
+                    distance[curVertex] = curWeight + distance[vertex];
+                    pq.add(new Node(curVertex, distance[curVertex])); //logn
                 }
             }
         }

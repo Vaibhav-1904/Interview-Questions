@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class reverseStack {
 
+    // T-> O(n^2)
     private static void reverse(Stack<Integer> stack) {
 
         if(!stack.isEmpty()) {
@@ -14,7 +15,7 @@ public class reverseStack {
         }
     }
 
-    static void insertAtBottom(Stack<Integer> stack, int data){
+    static void insertAtBottom(Stack<Integer> stack, int data) {
         if(!stack.isEmpty()){
             int val = stack.pop();
             insertAtBottom(stack, data);

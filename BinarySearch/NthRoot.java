@@ -28,7 +28,7 @@ public class NthRoot {
             else
                 low = mid;
         }
-        return high;
+        return low;
     }
 
     public static void main(String[] args) {

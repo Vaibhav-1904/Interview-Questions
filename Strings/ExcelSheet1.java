@@ -4,7 +4,7 @@ package ImportantQ.Strings;
 // https://leetcode.com/problems/excel-sheet-column-title/
 //Note: The alphabets are all in uppercase.
 public class ExcelSheet1 {
-//    T -> O(longn)
+//    T -> O(logn)
     public static String excelColumn(int N){
         StringBuilder ans = new StringBuilder();
         while(N > 0){

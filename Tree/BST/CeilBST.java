@@ -8,9 +8,8 @@ public class CeilBST {
         // Write your code here
         int ans = -1;
         while(treeNode != null){
-            if(ceil == treeNode.val){
-                ans = treeNode.val;
-                break;
+            if(ceil == treeNode.val) {
+                return treeNode.val;
             }
             if(ceil > treeNode.val){
                 treeNode = treeNode.right;

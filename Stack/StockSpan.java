@@ -19,12 +19,13 @@ public class StockSpan {
 //    }
 
     // Optimal T -> O(n)
-    static int[] calculateSpan(int[] prices){
-        int[] span = new int[prices.length];
+    static int[] calculateSpan(int[] prices) {
+        int n = prices.length;
+        int[] span = new int[n];
         Stack<Integer> stack = new Stack<>();
         span[0] = 1;
         stack.push(0);
-        for(int i = 1; i < prices.length; i++){
+        for(int i = 1; i < n; i++){
             while(!stack.isEmpty() && prices[i] >= prices[stack.peek()])
                 stack.pop();
 

@@ -2,7 +2,7 @@ package ImportantQ.Strings;
 
 public class ExcelSheet2 {
     // https://leetcode.com/problems/excel-sheet-column-number/
-    public int titleToNumber(String str) {
+    public static int titleToNumber(String str) {
 
         int ans = 0;
         int i = str.length() - 1;
@@ -13,5 +13,9 @@ public class ExcelSheet2 {
             x++;
         }
         return ans;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(titleToNumber("AZ"));
     }
 }

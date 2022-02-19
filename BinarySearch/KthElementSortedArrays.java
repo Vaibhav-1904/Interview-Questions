@@ -57,7 +57,7 @@ public class KthElementSortedArrays{
         int low = 0;
         int high = arr1.length; // max elements which can be picked
 
-        while(low <= high){
+        while(low <= high) {
             int cut1 = (low + high) / 2; //  partitioning arr1 into left array and right array
             int cut2 = k - cut1; //  partitioning arr2 into left array and right array, remaining elements after taking some elements from arr1
 

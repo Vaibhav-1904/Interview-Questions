@@ -9,7 +9,7 @@ import java.util.Stack;
 //
 //Postfix Expression -> A B C * + D +
 public class InfixPostfix {
-    public static int precedence(char c){
+    public static int precedence(char c) {
         switch(c){
             case '+':
             case '-': return 1;
@@ -19,16 +19,16 @@ public class InfixPostfix {
 
             case '^': return 3;
 
-            default: return  - 1;
+            default: return  -1;
         }
     }
     // T -> O(n)
-    public static String toPostfix(String str){
+    public static String toPostfix(String str) {
         String ans = "";
-        Stack<Character> stack = new Stack<>();
+        Stack<Character> stack = new Stack<>(); // Only operator symbols will be stored
 
-        for(char i : str.toCharArray()){
-            if(Character.isLetterOrDigit(i))
+        for(char i : str.toCharArray()) {
+            if(Character.isLetter(i))
                 ans += i;
             else if(i == '('){
                 stack.push(i);
@@ -49,6 +49,6 @@ public class InfixPostfix {
     }
 
     public static void main(String[] args) {
-        System.out.println(toPostfix("(1+2)*3-4"));
+        System.out.println(toPostfix("A+B*C+D"));
     }
 }

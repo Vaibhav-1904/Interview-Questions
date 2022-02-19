@@ -24,7 +24,7 @@ public class bookAllocation {
 
         while(min <= max){
             int pages = (min+max) / 2;
-            if(isPossible(book, student, pages)){
+            if(isPossible(book, student, pages)) {
                 res = pages;
                 max = pages - 1; // if it's possible and since we want to minimize our answer, we can reduce our search
                 // space
@@ -53,7 +53,7 @@ public class bookAllocation {
         return student <= n; // if total pages are allocated to students <= given value in question
     }
 
-    public static int maxOf(ArrayList<Integer> A){
+    public static int maxOf(ArrayList<Integer> A) {
         int max = A.get(0);
         for(int i = 1; i < A.size(); i++)
             max = Math.max(max, A.get(i));

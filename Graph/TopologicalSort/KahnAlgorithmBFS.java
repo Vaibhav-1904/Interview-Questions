@@ -13,24 +13,24 @@ public class KahnAlgorithmBFS {
         int[] result = new int[V];
         int[] inDegree = new int[V]; // Storing Inorder degrees for very Node i
 
-        for(int i = 0; i < V; i++){
-            for(Integer j : graph.get(i)){
+        for(int i = 0; i < V; i++) {
+            for(Integer j : graph.get(i)) {
                 inDegree[j]++;
             }
         }
 
         Queue<Integer> q = new LinkedList<>();
         for(int i = 0; i < V; i++){
-            // Atleast one vertex will have indegree 0 as it is a DAG
+            // At least one vertex will have indegree 0 as it is a DAG
             if(inDegree[i] == 0)
                 q.add(i);
         }
         int i = 0;
-        while(!q.isEmpty()){
+        while(!q.isEmpty()) {
             Integer current = q.poll();
             result[i++] = current;
 
-            for(Integer j : graph.get(current)){
+            for(Integer j : graph.get(current)) {
                 inDegree[j]--;
 
                 if(inDegree[j] == 0)

@@ -6,7 +6,7 @@ import java.util.Stack;
 
 
 public class DecodeString {
-    //Naive Approach T->O(n) S->O(2n)
+////    Naive Approach T->O(n) S->O(2n)
 //    static String Decode(String str) {
 //        Stack<Integer> stack = new Stack<>();
 //        Stack<Character> stringStack = new Stack<>();
@@ -27,7 +27,7 @@ public class DecodeString {
 //                while(!stringStack.empty() && stringStack.peek() != '['){
 //                    temp.append(stringStack.pop());
 //                }
-////                temp = temp.reverse();
+//                temp.reverse();
 //
 //                if(!stringStack.isEmpty() && stringStack.peek() == '[')
 //                    stringStack.pop();
@@ -52,10 +52,10 @@ public class DecodeString {
 //        while(!stringStack.isEmpty()){
 //            result.append(stringStack.pop());
 //        }
-//        return result.toString();
+//        return result.reverse().toString();
 //    }
 
-    // optimal
+//    // optimal
     static String Decode(String str) {
         Stack<Character> stack = new Stack<>();
         StringBuilder result = new StringBuilder();
@@ -68,6 +68,7 @@ public class DecodeString {
                 }
 
                 stack.pop();
+
                 int digit = 0;
                 while(!stack.isEmpty() && Character.isDigit(stack.peek())){
                     digit = (digit * 10) + Integer.parseInt(String.valueOf(stack.pop()));

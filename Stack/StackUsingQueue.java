@@ -26,7 +26,6 @@ public class StackUsingQueue {
 //        return q1.isEmpty();
 //    }
 
-
     // Using Single Queue
     Queue<Integer> q = new LinkedList<>();
     public void push(int x) {
@@ -42,6 +41,7 @@ public class StackUsingQueue {
     public int pop() {
         return q.remove();
     }
+    // remove method return Exception, while poll method returns null.
 
     /** Get the top element. */
     public int top() {

@@ -1,5 +1,6 @@
 package ImportantQ.Stack;
 import java.util.Stack;
+// https://www.youtube.com/watch?v=X0X6G-eWgQ8&t=1011s
 // https://leetcode.com/problems/largest-rectangle-in-histogram/
 public class LargestRectangleHistogram {
 //    // T -> O(n^2)
@@ -66,7 +67,7 @@ public class LargestRectangleHistogram {
 //        return max;
 //    }
 
-    // Optimal T->O(n) 
+//    // Optimal T->O(n)
      public int largestRectangleArea(int[] heights) {
          Stack<Integer> stack = new Stack<>();
          int n = heights.length;

@@ -7,16 +7,16 @@ public class KthLargestElement {
 
     // T = O(n), Optimal
     public int findKthLargest(int[] nums, int k) {
-        PriorityQueue<Integer> q = new PriorityQueue<>(k); // minheap
-        for(int i = 0; i < k; i++)
-            q.add(nums[i]);
-        for(int i = k; i < nums.length; i++)
+        PriorityQueue<Integer> pq = new PriorityQueue<>(k); // minheap
+        for(int i = 0; i < nums.length; i++)
         {
-            if(q.peek() < nums[i]){
-                q.remove();
-                q.add(nums[i]);
+            if(pq.size() < k)
+                pq.add(nums[i]);
+            else if(pq.peek() < nums[i]){
+                pq.remove();
+                pq.add(nums[i]);
             }
         }
-        return q.peek();
+        return pq.peek();
     }
 }

@@ -1,7 +1,7 @@
 package ImportantQ.Strings;
 
 import java.util.*;
-
+// https://leetcode.com/problems/minimum-window-substring/
 public class MinWindowSubString {
     //Function to find the smallest window in the string s consisting
     //of all the characters of string p.
@@ -26,8 +26,8 @@ public class MinWindowSubString {
             if(ch[c] == 0)
                 count--;
 
-            if(count == 0){
-                while(count == 0){
+            if(count == 0) {
+                while(count == 0) {
                     if(min > (j - i + 1)){
                         min = j-i+1;
                         start = i;

@@ -1,6 +1,7 @@
 package ImportantQ.Heap;
 import java.util.*;
-
+// https://www.youtube.com/watch?v=Yv2jzDzYlp8
+//https://leetcode.com/problems/find-median-from-data-stream/
 public class MedianRunningStream {
 
     // Naive approach -> Use Sorting
@@ -23,32 +24,33 @@ public class MedianRunningStream {
 //        }
 //    }
 
-    // Optimal T -> O(n * long n), S->O(n)
+    // Optimal T -> O(n * log n), S->O(n)
     // log n is to insert into heap and n for n elements
-    PriorityQueue<Integer> min, max;
+    PriorityQueue<Integer> minHeap, maxHeap;
     public MedianRunningStream() {
-        min = new PriorityQueue<>();
-        max = new PriorityQueue<>(Collections.reverseOrder());
+        minHeap = new PriorityQueue<>();
+        maxHeap = new PriorityQueue<>(Collections.reverseOrder());
     }
 
+    // If total numbers are ODD, then one extra median element will be present in maxHeap
     public void addNum(int num) {
 
-        if(max.size() == 0 || num < max.peek())
-            max.add(num);
+        if(maxHeap.size() == 0 || num < maxHeap.peek())
+            maxHeap.add(num);
         else
-            min.add(num);
+            minHeap.add(num);
 
-        if(max.size() - min.size() > 1)
-            min.add(max.remove());
-        else if(min.size() - max.size() > 0)
-            max.add(min.remove());
+        if(maxHeap.size() - minHeap.size() > 1)
+            minHeap.add(maxHeap.remove());
+        else if(minHeap.size() - maxHeap.size() > 0)
+            maxHeap.add(minHeap.remove());
     }
 
     public double findMedian() {
-        if(max.size() == min.size()){
-            double sum = max.peek() + min.peek();
+        if(maxHeap.size() == minHeap.size()){
+            double sum = maxHeap.peek() + minHeap.peek();
             return sum / 2;
         }
-        return max.peek();
+        return maxHeap.peek();
     }
 }

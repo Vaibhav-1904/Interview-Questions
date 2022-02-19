@@ -1,7 +1,7 @@
 package ImportantQ.Heap;
 import java.util.*;
 // https://www.geeksforgeeks.org/merge-k-sorted-arrays/
-// https://leetcode.com/problems/merge-k-sorted-lists/submissions/
+// https://leetcode.com/problems/merge-k-sorted-lists/
 public class MergeKSortedArrays {
 //    // Naive Approach , T = O(n*k + n*k*log(n*k))
 //    public static ArrayList<Integer> mergeKArrays(int[][] arr, int K)
@@ -43,7 +43,7 @@ public class MergeKSortedArrays {
         PriorityQueue<ListNode> minHeap = new PriorityQueue<>((l1, l2) -> l1.val - l2.val);
 
         // Adding all first values of different LinkedLists
-        for(ListNode head: lists){
+        for(ListNode head: lists) {
             if(head != null)
                 minHeap.add(head);
         }
