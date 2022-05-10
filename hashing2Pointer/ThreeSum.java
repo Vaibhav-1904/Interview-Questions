@@ -31,37 +31,37 @@ public class ThreeSum {
 
     // Optimal    S->O(1)
     public List<List<Integer>> threeSum(int[] nums) {
-        int n = nums.length;
-        Arrays.sort(nums);
-        List<List<Integer>> ans = new ArrayList<>();
-        int sum = 0;
+            int n = nums.length;
+            Arrays.sort(nums);
+            List<List<Integer>> ans = new ArrayList<>();
+            int sum;
 
-        for(int i = 0; i < n - 1; i++){
-            int left = i + 1;
-            int right = n - 1;
+            for(int i = 0; i < n - 1; i++){
+                int left = i + 1;
+                int right = n - 1;
 
-            while(left < right){
-                sum = nums[i] + nums[left] + nums[right];
+                while(left < right){
+                    sum = nums[i] + nums[left] + nums[right];
 
-                if(sum < 0){
-                    left++;
-                }else if(sum > 0)
-                    right--;
-                else{
-                    List<Integer> Triplet = new ArrayList<>();
-                    Triplet.add(nums[i]);
-                    Triplet.add(nums[left]);
-                    Triplet.add(nums[right]);
+                    if(sum < 0){
+                        left++;
+                    }else if(sum > 0)
+                        right--;
+                    else{
+                        List<Integer> Triplet = new ArrayList<>();
+                        Triplet.add(nums[i]);
+                        Triplet.add(nums[left]);
+                        Triplet.add(nums[right]);
 
-                    if(!ans.contains(Triplet)){
-                        ans.add(Triplet);
+                        if(!ans.contains(Triplet)){
+                            ans.add(Triplet);
+                        }
+                        left++;
+                        right--;
                     }
-                    left++;
-                    right--;
                 }
             }
-        }
-        return ans;
+            return ans;
     }
 
 

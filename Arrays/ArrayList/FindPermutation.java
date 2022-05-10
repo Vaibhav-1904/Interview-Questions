@@ -1,6 +1,5 @@
-package ImportantQ.ArrayList;
+package ImportantQ.Arrays.ArrayList;
 import java.util.ArrayList;
-import java.util.Stack;
 // Given a positive integer n and a string s consisting only of letters D or I,
 // you have to find any permutation of first n positive integer that satisfy the given input string.
 //

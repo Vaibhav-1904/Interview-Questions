@@ -71,7 +71,7 @@ public class MergeSortedArrays {
         }
     }
 
-    public void mergeSortedArrays(int[] arr1, int[] arr2){
+    public void mergeSortedArrays(int[] arr1, int[] arr2) {
         //Optimal method  T->O(n + m)
         int gap = arr1.length + arr2.length;
         for(gap = nextGap(gap); gap > 0; gap = nextGap(gap)){

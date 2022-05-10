@@ -1,5 +1,5 @@
-package ImportantQ.ArrayList;
-import java.util.*;
+package ImportantQ.Arrays.ArrayList;
+
 // https://leetcode.com/problems/pascals-triangle-ii/
 public class PascalTriangle2 {
 

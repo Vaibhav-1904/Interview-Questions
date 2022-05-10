@@ -1,4 +1,4 @@
-package ImportantQ.ArrayList;
+package ImportantQ.Arrays.ArrayList;
 // Given an array A of integers, find the maximum of j - i subjected to the constraint of A[i] <= A[j].
 import java.util.List;
 

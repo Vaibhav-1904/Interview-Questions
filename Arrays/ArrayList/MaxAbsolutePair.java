@@ -1,4 +1,4 @@
-package ImportantQ.ArrayList;
+package ImportantQ.Arrays.ArrayList;
 // You are given an array of N integers, A1, A2 ,…, AN. Return maximum value of f(i, j)
 // for all 1 ≤ i, j ≤ N.
 // https://www.geeksforgeeks.org/maximum-absolute-difference-value-index-sums/

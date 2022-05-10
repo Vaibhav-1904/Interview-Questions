@@ -1,5 +1,5 @@
-package ImportantQ.ArrayList;
-import java.util.*;
+package ImportantQ.Arrays.ArrayList;
+
 // https://www.interviewbit.com/problems/first-missing-integer/
 public class FirstMissingInteger {
     // Naive, T -> O(n + nlog(n)), S -> O(n)

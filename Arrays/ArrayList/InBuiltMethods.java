@@ -1,4 +1,4 @@
-package ImportantQ.ArrayList;
+package ImportantQ.Arrays.ArrayList;
 
 public class InBuiltMethods {
 

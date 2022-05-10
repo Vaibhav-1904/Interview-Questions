@@ -49,6 +49,18 @@ public class ReverseNodesInGroups {
             pre = cur; // pre has been taken to next group's previous element
             count -= k;
         }
+        if(count > 0){
+            cur = pre.next;
+            nex = cur.next;
+
+            for(int i = 1; i < count; i++) {
+                cur.next = nex.next;
+                nex.next = pre.next;
+                pre.next = nex;
+                nex = cur.next;
+            }
+        }
+
         return temp.next; // Since we are not changing temp node it will always point at first element of LL.
     }
 }

@@ -1,4 +1,4 @@
-package ImportantQ.ArrayList;
+package ImportantQ.Arrays.ArrayList;
 import java.util.ArrayList;
 import java.util.List;
 // Given an integer numRows, return the first numRows of Pascal's triangle.

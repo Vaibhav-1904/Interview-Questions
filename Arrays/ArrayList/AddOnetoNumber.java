@@ -1,4 +1,4 @@
-package ImportantQ.ArrayList;
+package ImportantQ.Arrays.ArrayList;
 // https://www.interviewbit.com/problems/add-one-to-number/
 // https://leetcode.com/problems/plus-one/submissions/
 // Given a non-negative number represented as an array of digits, add 1 to the number
