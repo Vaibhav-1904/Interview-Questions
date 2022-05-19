@@ -2,7 +2,7 @@ package ImportantQ.Arrays.TwoDArrays;
 // https://leetcode.com/problems/flood-fill/
 import java.util.*;
 public class FloodFill {
-    class Pair{
+    static class Pair{
         int x, y;
         Pair(int x, int y){
             this.x = x;

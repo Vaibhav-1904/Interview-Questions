@@ -16,14 +16,15 @@ public class MaxAbsolutePair {
     // 3) A[i] < A[j] and i > j, this is (max2 & min2)
     // 4) A[i] > A[j] and i < j, this is (max2 & max2)
 
+    // Optimal T->O(n)
     // Cases 1 and 2 are same, and so cases 3 and 4
     public int maxArr(ArrayList<Integer> A) {
-        // Optimal
-        int max1 = Integer.MIN_VALUE;
         int min1 = Integer.MAX_VALUE;
-
-        int max2 = Integer.MIN_VALUE;
         int min2 = Integer.MAX_VALUE;
+
+        int max1 = Integer.MIN_VALUE;
+        int max2 = Integer.MIN_VALUE;
+
 
         for(int i = 0; i < A.size(); i++){
 

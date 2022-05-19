@@ -1,5 +1,6 @@
 package ImportantQ.Arrays.ArrayList;
 import java.util.ArrayList;
+import java.util.Stack;
 // Given a positive integer n and a string s consisting only of letters D or I,
 // you have to find any permutation of first n positive integer that satisfy the given input string.
 //
@@ -13,10 +14,10 @@ import java.util.ArrayList;
 //s = ID
 //
 //Return: [1, 3, 2]
-//https://www.interviewbit.com/problems/find-permutation/
+// https://www.interviewbit.com/problems/find-permutation/
 
 public class FindPermutation {
-//     Better Solution t -> O(N + N), S->O(N)
+////     Better Solution t -> O(N + N), S->O(N)
 //    public static ArrayList<Integer> findPerm(final String str, int B) {
 //        int n = str.length();
 //        int count = 0;
@@ -27,7 +28,7 @@ public class FindPermutation {
 //            count++;
 //            stack.push(count);
 //            if(str.charAt(i) == 'I'){
-//                while(!stack.isEmpty()){
+//                while(!stack.isEmpty()) {
 //                    ans.add(stack.peek());
 //                    stack.pop();
 //                }
@@ -42,14 +43,14 @@ public class FindPermutation {
 //    }
 
     // Optimal
-    public static ArrayList<Integer> findPermutation(String str, int B){
+    public static ArrayList<Integer> findPermutation(String str, int B ) {
         int n = str.length();
         ArrayList<Integer> ans = new ArrayList<>();
         int start = 1;
         int end = 0;
-        for(int i = 0;i < n; i++){
+        for(int i = 0; i < n; i++){
             end++;
-            if(str.charAt(i) == 'I'){
+            if(str.charAt(i) == 'I') {
                 for(int j = end; j >= start; j--)
                     ans.add(j);
 

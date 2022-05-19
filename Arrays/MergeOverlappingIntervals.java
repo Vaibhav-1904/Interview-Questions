@@ -20,16 +20,16 @@ public class MergeOverlappingIntervals {
         int end = intervals[0][1];
         for(int[] current : intervals){
 
-            if(current[0] <= end){
+            if(current[0] <= end)
                 end = Math.max(end, current[1]);
-            }
-            else{
+            else {
                 arr.add(new int[]{start,end});
                 start = current[0];
                 end = current[1];
             }
         }
         arr.add(new int[]{start,end});
+
         return arr.toArray(new int[0][]);
     }
 }

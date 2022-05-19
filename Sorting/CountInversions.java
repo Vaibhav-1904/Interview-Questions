@@ -1,4 +1,4 @@
-package ImportantQ.sorting;
+package ImportantQ.Sorting;
 //Inversion Count for an array indicates – how far (or close) the array is from being sorted.
 // If array is already sorted then inversion count is 0. If array is sorted in reverse
 // order that inversion count is the maximum.
@@ -46,14 +46,13 @@ public class CountInversions {
             k++;
         }
         /* Copy remaining elements of L[] if any */
-        while (i < n1) {
+        while (i < n1)
             arr[k++] = L[i++];
-        }
 
         /* Copy remaining elements of R[] if any */
-        while (j < n2) {
+        while (j < n2)
             arr[k++] = R[j++];
-        }
+
         return inv_count;
     }
 

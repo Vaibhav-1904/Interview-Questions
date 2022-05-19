@@ -6,41 +6,42 @@ package ImportantQ.Arrays;
 //Output: 9
 public class TrappingRainWater {
 
-//    // Brute Force
+//    // Brute Force S->O(n)
 //    public int trap(int[] height) {
 //
-//        int ans = 0;
 //        int n = height.length;
-//        int[] left =  new int[n];
+//        int[] left = new int[n];
 //        int[] right = new int[n];
 //
+//        int water = 0;
+//
 //        int max = 0;
-//        for(int i = 0; i < n; i++){
-//            if(max < height[i])
-//                max = height[i];
+//        for(int i = 0; i < n; i++) {
+//
+//            max = Math.max(max, height[i]);
 //
 //            left[i] = max;
 //        }
+//
 //        max = 0;
-//        for(int i = n-1; i >= 0; i--){
-//            if(max < height[i])
-//                max = height[i];
+//        for(int i = n - 1; i >= 0; i--) {
+//            max = Math.max(max, height[i]);
 //
 //            right[i] = max;
 //        }
-//        for(int i = 0; i < n; i++){  // You can use Math.min too directly in Next array.
-//            if(left[i] > right[i])
-//                left[i] = right[i];
+//
+//
+//        for(int i = 0; i < n; i++) {
+//            int min = Math.min(left[i], right[i]);
+//
+//            if(min > height[i])
+//                water += (min - height[i]);
 //        }
-//        for(int i = 0; i < n; i++){
-//            if(left[i] > height[i])
-//                ans += (left[i] - height[i]);
-//        }
-//        return ans;
+//
+//        return water;
 //    }
 
-    //Optimal
-
+    //Optimal S->O(1)
     public int trap(int[] height) {
 
         int ans = 0;

@@ -16,10 +16,11 @@ public class HotelRoomsPossible {
 
         Collections.sort(arrive);
         Collections.sort(depart);
+        int n = arrive.size();
         int roomsRequired = 0, i = 0, j = 0;
         // To check how many overlaps are present
-        while(i < arrive.size()  && j < arrive.size() && roomsRequired <= K){
-            if(arrive.get(i) < depart.get(j) ){
+        while(i < n  && j < n && roomsRequired <= K) {
+            if(arrive.get(i) < depart.get(j) ) {
                 i++;
                 roomsRequired++;
             }else{

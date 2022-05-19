@@ -10,7 +10,7 @@ public class ContainerMostWater {
 
     // Brute Force -> Use 2 for loops to calculate water between each subarray and find the maximum
 
-    // Optimal
+    // Optimal T-> O(n)
     public int maxArea(int[] height) {
         int n = height.length;
         int left = 0;

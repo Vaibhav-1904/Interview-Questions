@@ -1,4 +1,4 @@
-package ImportantQ.Arrays;
+package ImportantQ.DynamicProgramming;
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 public class BuySellStock2 {
     public int maxProfit(int[] prices) {

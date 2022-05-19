@@ -39,7 +39,6 @@ public class SetMatrixZero {
 //        }
 
 
-
         // Better Approach
 //        int[] rows = new int[arr.length];
 //        int[] column = new int[arr[0].length];
@@ -61,22 +60,18 @@ public class SetMatrixZero {
 //                    arr[i][j] = 0;
 //                }
 //            }
-//
-//
-//
 //        }
 
-
-        int cols = 1; // True, variable used for denoting 0th column zeros
+        int col = 1; // True, variable used for denoting 0th column zeros
         int rows = arr.length;
         int column = arr[0].length;
 
         for(int i = 0; i < rows; i++){
             if(arr[i][0] == 0){
-                cols = 0;
+                col = 0;
             }
-            for(int j = 1; j < column; j++){
-                if(arr[i][j] == 0){
+            for(int j = 1; j < column; j++) {
+                if(arr[i][j] == 0) {
                     arr[i][0] = 0;
                     arr[0][j] = 0;
                 }
@@ -89,7 +84,7 @@ public class SetMatrixZero {
                     arr[i][j] = 0;
                 }
             }
-            if(cols == 0){
+            if(col == 0){
                 arr[i][0] = 0;
             }
         }

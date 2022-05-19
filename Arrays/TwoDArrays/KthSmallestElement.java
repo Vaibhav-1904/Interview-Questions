@@ -1,7 +1,7 @@
 package ImportantQ.Arrays.TwoDArrays;
 // https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
 // You are given a row-column wise sorted Matrix, you need to find Kth Smallest Element in that Matrix
-// mat[][] =     {{16, 28, 60, 64},
+//         mat[][] = {{16, 28, 60, 64},
 //                   {22, 41, 63, 91},
 //                   {27, 50, 87, 93},
 //                   {36, 78, 87, 94 }}
@@ -21,7 +21,6 @@ public class KthSmallestElement {
             for(int[] i: arr)
                 count += getCount(i, mid); // log(n)
 
-
             if(count < k)
                 low = mid + 1;
             else
@@ -30,7 +29,7 @@ public class KthSmallestElement {
         return low;
     }
 
-    public static int getCount(int[] arr, int mid){ // Returns Number of elements less tha equal to mid.
+    public static int getCount(int[] arr, int mid) { // Returns Number of elements less tha equal to mid.
         int low = 0; int high = arr.length - 1;
 
         while(low <= high){
@@ -42,12 +41,5 @@ public class KthSmallestElement {
             }
         }
         return low;
-    }
-
-    public static void main(String[] args) {
-        int[][] arr = {{1, 4, 8},{5, 9, 11},{7, 16, 20}};
-        int k = 5;
-
-        System.out.println("Kth Smallest Element is : " + kthSmallestElement(arr, k));
     }
 }

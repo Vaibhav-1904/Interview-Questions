@@ -2,7 +2,7 @@ package ImportantQ.BinarySearch;
 
 public class BinarySearch {
 
-    int binarySearch(int[] nums, int l, int r, int target){
+    int binarySearch(int[] nums, int l, int r, int target) {
 
         int mid = (l + r) >> 1;
 

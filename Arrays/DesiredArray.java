@@ -11,21 +11,20 @@ public class DesiredArray {
     int countMinOperations(int[] target, int n) {
         int count = 0;
         int max = Integer.MIN_VALUE;
-        for(int i = 0; i < target.length; i++){
-
+        for(int i = 0; i < target.length; i++) {
             if((target[i] % 2) != 0){
                 target[i]--;
                 count++;
             }
-            if(target[i] > max){
-                max = target[i];
-            }
+            max = Math.max(target[i], max);
+
         }
         while(max != 1){
             count++;
             max = max >> 1;
         }
         count += target.length;
+
         return count;
     }
 }

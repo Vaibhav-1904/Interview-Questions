@@ -16,11 +16,11 @@ public class PascalTriangle {
             row = new ArrayList<>();
 
             for (int j = 0; j <= i; j++) {
-                if (i == j || j == 0) { // first and last element in a row is always 1
+                if (i == j || j == 0)  // first and last element in a row is always 1
                     row.add(1);
-                } else {
+                else
                     row.add(pre.get(j - 1) + pre.get(j));
-                }
+
             }
             pre = new ArrayList<>(row);
             ans.add(row);

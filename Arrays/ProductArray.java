@@ -1,7 +1,7 @@
 package ImportantQ.Arrays;
 // https://leetcode.com/problems/product-of-array-except-self/
 public class ProductArray {
-//    // Naive T, S -> O(n)
+//    // Naive T -> O(n), S -> O(n)
 //    public int[] productExceptSelf(int[] nums) {
 //        int n = nums.length;
 //
@@ -26,7 +26,7 @@ public class ProductArray {
 //        return productArray;
 //    }
 
-    // optimal
+    // optimal T->O(n) S->O(1)
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         int product = 1;
@@ -46,7 +46,7 @@ public class ProductArray {
                 prod[i] = 0;
             else if (flag == 0)
                 prod[i] = product / nums[i];
-            else if (flag == 1 && nums[i] == 0)
+            else if (nums[i] == 0)
                 prod[i] = product;
             else
                 prod[i] = 0;

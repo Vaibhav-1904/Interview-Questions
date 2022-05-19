@@ -1,8 +1,10 @@
 package ImportantQ.Arrays.ArrayList;
 
+import java.util.HashSet;
+
 // https://www.interviewbit.com/problems/first-missing-integer/
 public class FirstMissingInteger {
-    // Naive, T -> O(n + nlog(n)), S -> O(n)
+//    // Naive, T -> O(n + nlog(n)), S -> O(n)
 //    public int firstMissingPositive(int[] nums) {
 //
 //        HashSet<Integer> h = new HashSet<>();
@@ -17,13 +19,13 @@ public class FirstMissingInteger {
 //        return nums.length + 1;
 //    }
 
-    //Optimal T->O(n)
+//    //Optimal T->O(n)
     public int firstMissingPositive(int[] nums) {
         int n = nums.length;
 
         int i;
-        for(i = 0; i < n; i++){
-            while(nums[i] > 0 && nums[i] <= n && nums[i] != nums[nums[i] - 1]){
+        for(i = 0; i < n; i++) {
+            while(nums[i] > 0 && nums[i] <= n && nums[i] != nums[nums[i] - 1]) {
                 int correctPos = nums[i] - 1;
                 int temp = nums[i];
                 nums[i] = nums[correctPos];

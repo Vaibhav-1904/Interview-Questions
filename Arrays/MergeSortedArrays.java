@@ -6,36 +6,33 @@ package ImportantQ.Arrays;
 public class MergeSortedArrays {
 
     //Brute
-//    public static void merge(long arr1[], long arr2[], int n, int m)
-//    {
-//        long[] temp = new long[n+m];
-//        int p1 = 0;
-//        int p2 = 0;
-//        int i = 0;
-//
-//        while(p1 < n && p2 < m){
-//            if(arr1[p1] <= arr2[p2]){
-//                temp[i] = arr1[p1];
-//            }else{
-//                temp[i] = arr2[p2];
-//            }
-//        }
-//        p1 = 0;
-//        p2 = 0;
-//        i = 0;
-//        while(p1 < n){
-//            arr1[p1] = temp[i];
-//            p1++;
-//            i++;
-//        }
-//        while(p2 < m){
-//            arr2[p2] = temp[i];
-//            p2++;
-//            i++;
-//        }
-//    }
+    public static long[] merge(long[] arr1, long[] arr2, int n, int m) {
+        long[] temp = new long[n+m];
+        int p1 = 0;
+        int p2 = 0;
+        int i = 0;
 
-//    //Better Approach
+        while(p1 < n && p2 < m){
+            if(arr1[p1] <= arr2[p2]){
+                temp[i++] = arr1[p1++];
+            }else{
+                temp[i++] = arr2[p2++];
+            }
+        }
+        while(p1 < n){
+            temp[i] = arr1[p1];
+            p1++;
+            i++;
+        }
+        while(p2 < m){
+            temp[i] = arr2[p2];
+            p2++;
+            i++;
+        }
+        return temp;
+    }
+
+//    //Better Approach T-> O(n*m)
 //    public static void merge(long[] arr1, long[] arr2, int n, int m){
 //
 //        int i = 0, j = 0;
@@ -63,18 +60,16 @@ public class MergeSortedArrays {
 
 
     public static int nextGap(int gap){
-        if(gap <= 1){
+        if(gap <= 1)
             return 0;
-        }
-        else {
+        else
             return gap/2 + gap % 2;
-        }
     }
 
+    //Optimal method  T->O(LogN*N) N = n+m
     public void mergeSortedArrays(int[] arr1, int[] arr2) {
-        //Optimal method  T->O(n + m)
         int gap = arr1.length + arr2.length;
-        for(gap = nextGap(gap); gap > 0; gap = nextGap(gap)){
+        for(gap = nextGap(gap); gap > 0; gap = nextGap(gap)) {
 
             int i;
             int j;
@@ -110,7 +105,7 @@ public class MergeSortedArrays {
         }
     }
 
-    // T->On+m)
+    // T->On+m) Leetcode
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int index = m + n - 1;
         m--; n--;

@@ -9,9 +9,8 @@ public class MaxDistance {
 //        int ans = 0;
 //        for(int i = 0; i < n - 1; i++){
 //            for(int j = i + 1; j < n; j++){
-//                if(A.get(i) <= A.get(j)){
+//                if(A.get(i) <= A.get(j))
 //                    ans = Math.max(ans, j - i);
-//                }
 //            }
 //        }
 //        return ans;
@@ -31,10 +30,8 @@ public class MaxDistance {
             if(A.get(i) <= rightMax[j]) {
                 ans = Math.max(ans, j - i);
                 j++;
-            }
-            else {
+            } else
                 i++;
-            }
         }
         return ans;
     }

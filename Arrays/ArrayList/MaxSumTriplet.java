@@ -11,38 +11,37 @@ public class MaxSumTriplet {
     // Better, run a loop from 1 to n - 1 elements and take it as 2nd element, (ith element).
     // Run a loop to find max element from 0 to i as 1st max element
     // and a loop from i+1 to n to find 3rd max element
-//    public int maxTripletSum(ArrayList<Integer> A) {
+//    public int maxTripletSum(ArrayList<Integer> arr) {
 //        int ans = 0;
-//        for(int i = 1; i < A.size() - 1; i++){
+//        for(int i = 1; i < arr.size() - 1; i++){
 //
 //            int max1 = 0, max2 = 0;
-//            for(int j = 0; j < i; j++){
-//                if(A.get(i) > A.get(j)){
-//                    max1 = Math.max(A.get(j), max1);
-//                }
+//            for(int j = 0; j < i; j++) {
+//                if(arr.get(j) < arr.get(i))
+//                    max1 = Math.max(arr.get(j), max1);
 //            }
 //
-//            for(int j = i + 1; j < A.size(); j++){
-//                if(A.get(i) < A.get(j)){
-//                    max2 = Math.max(A.get(j), max2);
+//            for(int j = i + 1; j < arr.size(); j++){
+//                if(arr.get(i) < arr.get(j)){
+//                    max2 = Math.max(arr.get(j), max2);
 //                }
 //            }
 //            if(max1 > 0 && max2 > 0){
-//                ans = Math.max(ans, max1 + A.get(i) + max2);
+//                ans = Math.max(ans, max1 + arr.get(i) + max2);
 //            }
 //        }
 //        return ans;
 //    }
 
-    // Optimal T-> O(
-    public static int maxTripletSum(ArrayList<Integer> A){
-        int[] maxSuffixArr = new int[A.size() + 1];
-        maxSuffixArr[A.size()] = 0;
+    // Optimal T-> O(NlogN)
+    public static int maxTripletSum(ArrayList<Integer> arr) {
+        int[] maxSuffixArr = new int[arr.size() + 1];
+        maxSuffixArr[arr.size()] = 0;
         // Calculate suffix-array containing maximum
-        // value for index i, i+1, i+2, ... n-1 in
-        // ArrayList A
-        for(int j = A.size() - 1; j >= 1; j--)
-            maxSuffixArr[j] = Math.max(maxSuffixArr[j + 1], A.get(j));
+        // value for index i, i+1, i+2, ... n-1 in ArrayList arr
+
+        for(int j = arr.size() - 1; j >= 1; j--)
+            maxSuffixArr[j] = Math.max(arr.get(j), maxSuffixArr[j + 1]);
 
         int ans = 0;
         // Insert minimum value for first comparison
@@ -50,11 +49,10 @@ public class MaxSumTriplet {
         TreeSet<Integer> lowerBound = new TreeSet<>();
         // TreeSet.lower(n) function returns a number which is just smaller than n in TreeSet
         lowerBound.add(Integer.MIN_VALUE);
-        for(int j = 0; j < A.size() - 1; j++) {
-            if(maxSuffixArr[j + 1] > A.get(j))
-                ans = Math.max(ans, lowerBound.lower(A.get(j)) + A.get(j) + maxSuffixArr[j + 1]);
-
-            lowerBound.add(A.get(j));
+        for(int j = 0; j < arr.size() - 1; j++) {
+            if(maxSuffixArr[j + 1] > arr.get(j))
+                ans = Math.max(ans, lowerBound.lower(arr.get(j)) + arr.get(j) + maxSuffixArr[j + 1]);
+            lowerBound.add(arr.get(j));
         }
 
         return ans;

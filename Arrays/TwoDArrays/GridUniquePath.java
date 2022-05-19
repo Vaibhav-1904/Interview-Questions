@@ -7,7 +7,7 @@ import java.util.Arrays;
 //The robot can only move either down or right at any point in time. The robot is trying to reach the
 // bottom-right corner of the grid (marked 'Finish' in the diagram below).
 //
-//How many possible unique paths are there?
+// How many possible unique paths are there?
 public class GridUniquePath {
 //    //BruteForce -> recursive
 //    // (m - 1,n - 1) are the target coordinates
@@ -18,7 +18,7 @@ public class GridUniquePath {
 //        else if(i == m-1 && j == n-1)
 //            return 1;
 //        else
-//            return countPaths1(i+1, j, m, n) + countPaths1(i, j+1, m, n);
+//            return countPaths1(i + 1, j, m, n) + countPaths1(i, j + 1, m, n);
 //    }
 
     ///Better Approach in which recursive calls are stored in an array
@@ -52,19 +52,9 @@ public class GridUniquePath {
         int totalRights = n - 1;
         double ans = 1;
 
-        for(int i = 1; i <= totalRights; i++){
+        for(int i = 1; i <= totalRights; i++)
             ans = ans * (totalSteps - totalRights + i) / i;
-        }
+
         return (int)ans;
-    }
-
-    public static void main(String[] args) {
-        int[][] a = new int[3][7];
-        for (int[] ints : a) {
-            Arrays.fill(ints, 0);
-        }
-
-        int count = countPaths3( 3, 7);
-        System.out.println("Count is : " + count);
     }
 }

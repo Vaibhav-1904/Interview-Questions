@@ -1,4 +1,4 @@
-package ImportantQ.sorting;
+package ImportantQ.Sorting;
 import java.util.*;
 // https://leetcode.com/problems/largest-number/
 

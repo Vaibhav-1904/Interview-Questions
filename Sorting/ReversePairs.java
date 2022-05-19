@@ -1,4 +1,4 @@
-package ImportantQ.sorting;
+package ImportantQ.Sorting;
 // https://leetcode.com/problems/reverse-pairs/
 public class ReversePairs {
     //    //Brute-Force T->O(n^2)

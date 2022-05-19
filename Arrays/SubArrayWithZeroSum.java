@@ -10,32 +10,19 @@ public class SubArrayWithZeroSum {
         Scanner scan = new Scanner(System.in);
 
         boolean found = false;
-        int[] arr = {2, 4, -1, 2, -8, 6, -7, 0};
-//        Set<Integer> s = new HashSet<>();
+        int[] arr = {3, 4, -1, 2, -8, 6, -7, 0};
         int sum = 0;
 
-//        int count = 0;
-//        for(int element:arr){
-//            s.add(sum);
-//            sum += element;
-//            if(s.contains(sum)){
-//                found = true;
-//                break;
-//            }
-//        }
-
-        Map<Integer,Integer> m = new HashMap<>();
+        Map<Integer,Integer> map = new HashMap<>();
         int count = 0;
         int max = 0;
 
-        for(int i = 0; i < arr.length; i++){
-            m.putIfAbsent(sum,i);
+        for(int i = 0; i < arr.length; i++) {
+            map.putIfAbsent(sum, i);
             sum += arr[i];
-            if(m.containsKey(sum)){
-                count = i + 1 - m.get(sum);
-                if(count > max){
-                    max = count;
-                }
+            if(map.containsKey(sum)) {
+                count = i + 1 - map.get(sum);
+                max = Math.max(max, count);
                 found = true;
             }
         }

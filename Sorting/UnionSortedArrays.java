@@ -1,6 +1,5 @@
-package ImportantQ.sorting;
+package ImportantQ.Sorting;
 
-import java.util.*;
 // Union of two arrays can be defined as the common and distinct elements in the two arrays.
 
 public class UnionSortedArrays {

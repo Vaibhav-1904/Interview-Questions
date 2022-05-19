@@ -5,7 +5,7 @@ import java.util.*;
 //You may assume that the intervals were initially sorted according to their start times.
 
 public class MergeIntervals {
-    public static  class Interval{
+    public static class Interval{
         int start;
         int end;
 
